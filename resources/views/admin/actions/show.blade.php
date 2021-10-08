@@ -17,154 +17,154 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.id') }}
+                            {{ trans('cruds.action.fields.ID') }}
                         </th>
                         <td>
-                            {{ $action->id }}
+                            {{ $action->getKey() }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.i_dx') }}
+                            {{ trans('cruds.action.fields.IDx') }}
                         </th>
                         <td>
-                            {{ $action->i_dx }}
+                            {{ $action->IDx }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.record_name') }}
+                            {{ trans('cruds.action.fields.RecordName') }}
                         </th>
                         <td>
-                            {{ $action->record_name }}
+                            {{ $action->RecordName }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.form_name') }}
+                            {{ trans('cruds.action.fields.FormName') }}
                         </th>
                         <td>
-                            {{ $action->form_name }}
+                            {{ $action->FormName }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.value_name') }}
+                            {{ trans('cruds.action.fields.ValueName') }}
                         </th>
                         <td>
-                            {{ $action->value_name }}
+                            {{ $action->ValueName }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.value') }}
+                            {{ trans('cruds.action.fields.Value') }}
                         </th>
                         <td>
-                            {{ $action->value }}
+                            {{ $action->Value }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.rec_date') }}
+                            {{ trans('cruds.action.fields.RecDate') }}
                         </th>
                         <td>
-                            {{ $action->rec_date }}
+                            {{ $action->RecDate }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.act_date') }}
+                            {{ trans('cruds.action.fields.ActDate') }}
                         </th>
                         <td>
-                            {{ $action->act_date }}
+                            {{ $action->ActDate }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.complete') }}
+                            {{ trans('cruds.action.fields.Complete') }}
                         </th>
                         <td>
-                            <input type="checkbox" disabled="disabled" {{ $action->complete ? 'checked' : '' }}>
+                            <input type="checkbox" disabled="disabled" {{ $action->Complete ? 'checked' : '' }}>
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.rec_emp_code') }}
+                            {{ trans('cruds.action.fields.RecEmpCode') }}
                         </th>
                         <td>
-                            {{ $action->rec_emp_code }}
+                            {{ $action->RecEmpCode }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.unit') }}
+                            {{ trans('cruds.action.fields.Unit') }}
                         </th>
                         <td>
-                            {{ $action->unit }}
+                            {{ $action->Unit }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.act_value') }}
+                            {{ trans('cruds.action.fields.ActValue') }}
                         </th>
                         <td>
-                            {{ $action->act_value }}
+                            {{ $action->ActValue }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.scope_name') }}
+                            {{ trans('cruds.action.fields.ScopeName') }}
                         </th>
                         <td>
-                            {{ $action->scope_name }}
+                            {{ $action->ScopeName }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.comment') }}
+                            {{ trans('cruds.action.fields.Comment') }}
                         </th>
                         <td>
-                            {{ $action->comment }}
+                            {{ $action->Comment }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.tank') }}
+                            {{ trans('cruds.action.fields.Tank') }}
                         </th>
                         <td>
-                            {{ $action->tank }}
+                            {{ $action->Tank }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.time_stamp') }}
+                            {{ trans('cruds.action.fields.TimeStamp') }}
                         </th>
                         <td>
-                            {{ $action->time_stamp }}
+                            {{ $action->TimeStamp }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.emp_name') }}
+                            {{ trans('cruds.action.fields.EmpName') }}
                         </th>
                         <td>
-                            {{ $action->emp_name }}
+                            {{ $action->EmpName }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.i_dy') }}
+                            {{ trans('cruds.action.fields.IDy') }}
                         </th>
                         <td>
-                            {{ $action->i_dy }}
+                            {{ $action->IDy }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.action.fields.value_num') }}
+                            {{ trans('cruds.action.fields.ValueNum') }}
                         </th>
                         <td>
-                            {{ $action->value_num }}
+                            {{ $action->ValueNum }}
                         </td>
                     </tr>
                 </tbody>

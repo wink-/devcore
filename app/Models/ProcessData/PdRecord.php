@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\ProcessData;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +10,8 @@ class PdRecord extends Model
 {
     use HasFactory;
 
-    public $table = 'pd_records';
+    protected $connection = "process_data";
+    public $table = 'records';
 
     protected $dates = [
         'created_at',

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-@can('action_create')
+@can('pacsys')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.actions.create') }}">
@@ -15,68 +15,68 @@
     </div>
 
     <div class="card-body">
-        <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-Action">
+        <table class="table table-bordered table-striped table-hover ajaxTable datatable datatable-Action">
             <thead>
                 <tr>
                     <th width="10">
 
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.id') }}
+                        {{ trans('cruds.action.fields.ID') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.i_dx') }}
+                        {{ trans('cruds.action.fields.IDx') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.record_name') }}
+                        {{ trans('cruds.action.fields.RecordName') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.form_name') }}
+                        {{ trans('cruds.action.fields.FormName') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.value_name') }}
+                        {{ trans('cruds.action.fields.ValueName') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.value') }}
+                        {{ trans('cruds.action.fields.Value') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.rec_date') }}
+                        {{ trans('cruds.action.fields.RecDate') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.act_date') }}
+                        {{ trans('cruds.action.fields.ActDate') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.complete') }}
+                        {{ trans('cruds.action.fields.Complete') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.rec_emp_code') }}
+                        {{ trans('cruds.action.fields.RecEmpCode') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.unit') }}
+                        {{ trans('cruds.action.fields.Unit') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.act_value') }}
+                        {{ trans('cruds.action.fields.ActValue') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.scope_name') }}
+                        {{ trans('cruds.action.fields.ScopeName') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.comment') }}
+                        {{ trans('cruds.action.fields.Comment') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.tank') }}
+                        {{ trans('cruds.action.fields.Tank') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.time_stamp') }}
+                        {{ trans('cruds.action.fields.TimeStamp') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.emp_name') }}
+                        {{ trans('cruds.action.fields.EmpName') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.i_dy') }}
+                        {{ trans('cruds.action.fields.IDy') }}
                     </th>
                     <th>
-                        {{ trans('cruds.action.fields.value_num') }}
+                        {{ trans('cruds.action.fields.ValueNum') }}
                     </th>
                     <th>
                         &nbsp;
@@ -155,7 +155,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('action_delete')
+@can('pacsys_delete')
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
@@ -193,26 +193,26 @@
     aaSorting: [],
     ajax: "{{ route('admin.actions.index') }}",
     columns: [
-      { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
-{ data: 'i_dx', name: 'i_dx' },
-{ data: 'record_name', name: 'record_name' },
-{ data: 'form_name', name: 'form_name' },
-{ data: 'value_name', name: 'value_name' },
-{ data: 'value', name: 'value' },
-{ data: 'rec_date', name: 'rec_date' },
-{ data: 'act_date', name: 'act_date' },
-{ data: 'complete', name: 'complete' },
-{ data: 'rec_emp_code', name: 'rec_emp_code' },
-{ data: 'unit', name: 'unit' },
-{ data: 'act_value', name: 'act_value' },
-{ data: 'scope_name', name: 'scope_name' },
-{ data: 'comment', name: 'comment' },
-{ data: 'tank', name: 'tank' },
-{ data: 'time_stamp', name: 'time_stamp' },
-{ data: 'emp_name', name: 'emp_name' },
-{ data: 'i_dy', name: 'i_dy' },
-{ data: 'value_num', name: 'value_num' },
+{ data: 'placeholder', name: 'placeholder' },
+{ data: 'ID', name: 'ID' },
+{ data: 'IDx', name: 'IDx' },
+{ data: 'RecordName', name: 'RecordName' },
+{ data: 'FormName', name: 'FormName' },
+{ data: 'ValueName', name: 'ValueName' },
+{ data: 'Value', name: 'Value' },
+{ data: 'RecDate', name: 'RecDate' },
+{ data: 'ActDate', name: 'ActDate' },
+{ data: 'Complete', name: 'Complete' },
+{ data: 'RecEmpCode', name: 'RecEmpCode' },
+{ data: 'Unit', name: 'Unit' },
+{ data: 'ActValue', name: 'ActValue' },
+{ data: 'ScopeName', name: 'ScopeName' },
+{ data: 'Comment', name: 'Comment' },
+{ data: 'Tank', name: 'Tank' },
+{ data: 'TimeStamp', name: 'TimeStamp' },
+{ data: 'EmpName', name: 'EmpName' },
+{ data: 'IDy', name: 'IDy' },
+{ data: 'ValueNum', name: 'ValueNum' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,
@@ -224,7 +224,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 let visibleColumnsIndexes = null;
 $('.datatable thead').on('input', '.search', function () {
       let strict = $(this).attr('strict') || false
@@ -242,8 +242,8 @@ $('.datatable thead').on('input', '.search', function () {
   });
 table.on('column-visibility.dt', function(e, settings, column, state) {
       visibleColumnsIndexes = []
-      table.columns(":visible").every(function(colIdx) {
-          visibleColumnsIndexes.push(colIdx);
+      table.columns(":visible").every(function(colDx) {
+          visibleColumnsIndexes.push(colIDx);
       });
   })
 });

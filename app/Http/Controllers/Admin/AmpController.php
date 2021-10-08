@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyAmpRequest;
 use App\Http\Requests\StoreAmpRequest;
 use App\Http\Requests\UpdateAmpRequest;
-use App\Models\Amp;
-use App\Models\PdRecord;
+use App\Models\ProcessData\Amp;
+use App\Models\ProcessData\PdRecord;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +17,7 @@ class AmpController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('amp_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Amp::with(['record'])->select(sprintf('%s.*', (new Amp)->table));
@@ -27,9 +27,9 @@ class AmpController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'amp_show';
-                $editGate      = 'amp_edit';
-                $deleteGate    = 'amp_delete';
+                $viewGate      = 'process_data_access';
+                $editGate      = 'process_data_edit';
+                $deleteGate    = 'process_data_delete';
                 $crudRoutePart = 'amps';
 
                 return view('partials.datatablesActions', compact(
@@ -70,7 +70,7 @@ class AmpController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('amp_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $records = PdRecord::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -86,7 +86,7 @@ class AmpController extends Controller
 
     public function edit(Amp $amp)
     {
-        abort_if(Gate::denies('amp_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $records = PdRecord::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -104,7 +104,7 @@ class AmpController extends Controller
 
     public function show(Amp $amp)
     {
-        abort_if(Gate::denies('amp_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $amp->load('record');
 
@@ -113,7 +113,7 @@ class AmpController extends Controller
 
     public function destroy(Amp $amp)
     {
-        abort_if(Gate::denies('amp_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $amp->delete();
 

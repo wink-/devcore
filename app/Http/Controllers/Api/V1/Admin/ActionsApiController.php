@@ -15,7 +15,7 @@ class ActionsApiController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('action_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return new ActionResource(Action::all());
     }
@@ -31,7 +31,7 @@ class ActionsApiController extends Controller
 
     public function show(Action $action)
     {
-        abort_if(Gate::denies('action_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return new ActionResource($action);
     }
@@ -47,7 +47,7 @@ class ActionsApiController extends Controller
 
     public function destroy(Action $action)
     {
-        abort_if(Gate::denies('action_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $action->delete();
 

@@ -7,155 +7,155 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.actions.update", [$action->id]) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("admin.actions.update", [$action->getKey()]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="form-group">
-                <label for="i_dx">{{ trans('cruds.action.fields.i_dx') }}</label>
-                <input class="form-control {{ $errors->has('i_dx') ? 'is-invalid' : '' }}" type="number" name="i_dx" id="i_dx" value="{{ old('i_dx', $action->i_dx) }}" step="1">
-                @if($errors->has('i_dx'))
-                    <span class="text-danger">{{ $errors->first('i_dx') }}</span>
+                <label for="IDx">{{ trans('cruds.action.fields.IDx') }}</label>
+                <input class="form-control {{ $errors->has('IDx') ? 'is-invalid' : '' }}" type="number" name="IDx" id="IDx" value="{{ old('IDx', $action->IDx) }}" step="1">
+                @if($errors->has('IDx'))
+                    <span class="text-danger">{{ $errors->first('IDx') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.i_dx_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.IDx_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="record_name">{{ trans('cruds.action.fields.record_name') }}</label>
-                <input class="form-control {{ $errors->has('record_name') ? 'is-invalid' : '' }}" type="text" name="record_name" id="record_name" value="{{ old('record_name', $action->record_name) }}">
-                @if($errors->has('record_name'))
-                    <span class="text-danger">{{ $errors->first('record_name') }}</span>
+                <label for="RecordName">{{ trans('cruds.action.fields.RecordName') }}</label>
+                <input class="form-control {{ $errors->has('RecordName') ? 'is-invalid' : '' }}" type="text" name="RecordName" id="RecordName" value="{{ old('RecordName', $action->RecordName) }}">
+                @if($errors->has('RecordName'))
+                    <span class="text-danger">{{ $errors->first('RecordName') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.record_name_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.RecordName_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="form_name">{{ trans('cruds.action.fields.form_name') }}</label>
-                <input class="form-control {{ $errors->has('form_name') ? 'is-invalid' : '' }}" type="text" name="form_name" id="form_name" value="{{ old('form_name', $action->form_name) }}">
-                @if($errors->has('form_name'))
-                    <span class="text-danger">{{ $errors->first('form_name') }}</span>
+                <label for="FormName">{{ trans('cruds.action.fields.FormName') }}</label>
+                <input class="form-control {{ $errors->has('FormName') ? 'is-invalid' : '' }}" type="text" name="FormName" id="FormName" value="{{ old('FormName', $action->FormName) }}">
+                @if($errors->has('FormName'))
+                    <span class="text-danger">{{ $errors->first('FormName') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.form_name_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.FormName_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="value_name">{{ trans('cruds.action.fields.value_name') }}</label>
-                <input class="form-control {{ $errors->has('value_name') ? 'is-invalid' : '' }}" type="text" name="value_name" id="value_name" value="{{ old('value_name', $action->value_name) }}">
-                @if($errors->has('value_name'))
-                    <span class="text-danger">{{ $errors->first('value_name') }}</span>
+                <label for="ValueName">{{ trans('cruds.action.fields.ValueName') }}</label>
+                <input class="form-control {{ $errors->has('ValueName') ? 'is-invalid' : '' }}" type="text" name="ValueName" id="ValueName" value="{{ old('ValueName', $action->ValueName) }}">
+                @if($errors->has('ValueName'))
+                    <span class="text-danger">{{ $errors->first('ValueName') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.value_name_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.ValueName_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="value">{{ trans('cruds.action.fields.value') }}</label>
-                <input class="form-control {{ $errors->has('value') ? 'is-invalid' : '' }}" type="text" name="value" id="value" value="{{ old('value', $action->value) }}">
-                @if($errors->has('value'))
-                    <span class="text-danger">{{ $errors->first('value') }}</span>
+                <label for="Value">{{ trans('cruds.action.fields.Value') }}</label>
+                <input class="form-control {{ $errors->has('Value') ? 'is-invalid' : '' }}" type="text" name="Value" id="Value" value="{{ old('Value', $action->Value) }}">
+                @if($errors->has('Value'))
+                    <span class="text-danger">{{ $errors->first('Value') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.value_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.Value_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="rec_date">{{ trans('cruds.action.fields.rec_date') }}</label>
-                <input class="form-control date {{ $errors->has('rec_date') ? 'is-invalid' : '' }}" type="text" name="rec_date" id="rec_date" value="{{ old('rec_date', $action->rec_date) }}">
-                @if($errors->has('rec_date'))
-                    <span class="text-danger">{{ $errors->first('rec_date') }}</span>
+                <label for="RecDate">{{ trans('cruds.action.fields.RecDate') }}</label>
+                <input class="form-control date {{ $errors->has('RecDate') ? 'is-invalid' : '' }}" type="text" name="RecDate" id="RecDate" value="{{ old('RecDate', $action->RecDate) }}">
+                @if($errors->has('RecDate'))
+                    <span class="text-danger">{{ $errors->first('RecDate') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.rec_date_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.RecDate_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="act_date">{{ trans('cruds.action.fields.act_date') }}</label>
-                <input class="form-control date {{ $errors->has('act_date') ? 'is-invalid' : '' }}" type="text" name="act_date" id="act_date" value="{{ old('act_date', $action->act_date) }}">
-                @if($errors->has('act_date'))
-                    <span class="text-danger">{{ $errors->first('act_date') }}</span>
+                <label for="ActDate">{{ trans('cruds.action.fields.ActDate') }}</label>
+                <input class="form-control date {{ $errors->has('ActDate') ? 'is-invalid' : '' }}" type="text" name="ActDate" id="ActDate" value="{{ old('ActDate', $action->ActDate) }}">
+                @if($errors->has('ActDate'))
+                    <span class="text-danger">{{ $errors->first('ActDate') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.act_date_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.ActDate_helper') }}</span>
             </div>
             <div class="form-group">
-                <div class="form-check {{ $errors->has('complete') ? 'is-invalid' : '' }}">
-                    <input type="hidden" name="complete" value="0">
-                    <input class="form-check-input" type="checkbox" name="complete" id="complete" value="1" {{ $action->complete || old('complete', 0) === 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="complete">{{ trans('cruds.action.fields.complete') }}</label>
+                <div class="form-check {{ $errors->has('Complete') ? 'is-invalid' : '' }}">
+                    <input type="hidden" name="Complete" value="0">
+                    <input class="form-check-input" type="checkbox" name="Complete" id="Complete" value="1" {{ $action->Complete || old('Complete', 0) === 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="Complete">{{ trans('cruds.action.fields.Complete') }}</label>
                 </div>
-                @if($errors->has('complete'))
-                    <span class="text-danger">{{ $errors->first('complete') }}</span>
+                @if($errors->has('Complete'))
+                    <span class="text-danger">{{ $errors->first('Complete') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.complete_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.Complete_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="rec_emp_code">{{ trans('cruds.action.fields.rec_emp_code') }}</label>
-                <input class="form-control {{ $errors->has('rec_emp_code') ? 'is-invalid' : '' }}" type="text" name="rec_emp_code" id="rec_emp_code" value="{{ old('rec_emp_code', $action->rec_emp_code) }}">
-                @if($errors->has('rec_emp_code'))
-                    <span class="text-danger">{{ $errors->first('rec_emp_code') }}</span>
+                <label for="RecEmpCode">{{ trans('cruds.action.fields.RecEmpCode') }}</label>
+                <input class="form-control {{ $errors->has('RecEmpCode') ? 'is-invalid' : '' }}" type="text" name="RecEmpCode" id="RecEmpCode" value="{{ old('RecEmpCode', $action->RecEmpCode) }}">
+                @if($errors->has('RecEmpCode'))
+                    <span class="text-danger">{{ $errors->first('RecEmpCode') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.rec_emp_code_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.RecEmpCode_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="unit">{{ trans('cruds.action.fields.unit') }}</label>
-                <input class="form-control {{ $errors->has('unit') ? 'is-invalid' : '' }}" type="text" name="unit" id="unit" value="{{ old('unit', $action->unit) }}">
-                @if($errors->has('unit'))
-                    <span class="text-danger">{{ $errors->first('unit') }}</span>
+                <label for="Unit">{{ trans('cruds.action.fields.Unit') }}</label>
+                <input class="form-control {{ $errors->has('Unit') ? 'is-invalid' : '' }}" type="text" name="Unit" id="Unit" value="{{ old('Unit', $action->Unit) }}">
+                @if($errors->has('Unit'))
+                    <span class="text-danger">{{ $errors->first('Unit') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.unit_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.Unit_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="act_value">{{ trans('cruds.action.fields.act_value') }}</label>
-                <input class="form-control {{ $errors->has('act_value') ? 'is-invalid' : '' }}" type="text" name="act_value" id="act_value" value="{{ old('act_value', $action->act_value) }}">
-                @if($errors->has('act_value'))
-                    <span class="text-danger">{{ $errors->first('act_value') }}</span>
+                <label for="ActValue">{{ trans('cruds.action.fields.ActValue') }}</label>
+                <input class="form-control {{ $errors->has('ActValue') ? 'is-invalid' : '' }}" type="text" name="ActValue" id="ActValue" value="{{ old('ActValue', $action->ActValue) }}">
+                @if($errors->has('ActValue'))
+                    <span class="text-danger">{{ $errors->first('ActValue') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.act_value_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.ActValue_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="scope_name">{{ trans('cruds.action.fields.scope_name') }}</label>
-                <input class="form-control {{ $errors->has('scope_name') ? 'is-invalid' : '' }}" type="text" name="scope_name" id="scope_name" value="{{ old('scope_name', $action->scope_name) }}">
-                @if($errors->has('scope_name'))
-                    <span class="text-danger">{{ $errors->first('scope_name') }}</span>
+                <label for="ScopeName">{{ trans('cruds.action.fields.ScopeName') }}</label>
+                <input class="form-control {{ $errors->has('ScopeName') ? 'is-invalid' : '' }}" type="text" name="ScopeName" id="ScopeName" value="{{ old('ScopeName', $action->ScopeName) }}">
+                @if($errors->has('ScopeName'))
+                    <span class="text-danger">{{ $errors->first('ScopeName') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.scope_name_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.ScopeName_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="comment">{{ trans('cruds.action.fields.comment') }}</label>
-                <input class="form-control {{ $errors->has('comment') ? 'is-invalid' : '' }}" type="text" name="comment" id="comment" value="{{ old('comment', $action->comment) }}">
-                @if($errors->has('comment'))
-                    <span class="text-danger">{{ $errors->first('comment') }}</span>
+                <label for="Comment">{{ trans('cruds.action.fields.Comment') }}</label>
+                <input class="form-control {{ $errors->has('Comment') ? 'is-invalid' : '' }}" type="text" name="Comment" id="Comment" value="{{ old('Comment', $action->Comment) }}">
+                @if($errors->has('Comment'))
+                    <span class="text-danger">{{ $errors->first('Comment') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.comment_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.Comment_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="tank">{{ trans('cruds.action.fields.tank') }}</label>
-                <input class="form-control {{ $errors->has('tank') ? 'is-invalid' : '' }}" type="text" name="tank" id="tank" value="{{ old('tank', $action->tank) }}">
-                @if($errors->has('tank'))
-                    <span class="text-danger">{{ $errors->first('tank') }}</span>
+                <label for="Tank">{{ trans('cruds.action.fields.Tank') }}</label>
+                <input class="form-control {{ $errors->has('Tank') ? 'is-invalid' : '' }}" type="text" name="Tank" id="Tank" value="{{ old('Tank', $action->Tank) }}">
+                @if($errors->has('Tank'))
+                    <span class="text-danger">{{ $errors->first('Tank') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.tank_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.Tank_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="time_stamp">{{ trans('cruds.action.fields.time_stamp') }}</label>
-                <input class="form-control datetime {{ $errors->has('time_stamp') ? 'is-invalid' : '' }}" type="text" name="time_stamp" id="time_stamp" value="{{ old('time_stamp', $action->time_stamp) }}">
-                @if($errors->has('time_stamp'))
-                    <span class="text-danger">{{ $errors->first('time_stamp') }}</span>
+                <label for="TimeStamp">{{ trans('cruds.action.fields.TimeStamp') }}</label>
+                <input class="form-control datetime {{ $errors->has('TimeStamp') ? 'is-invalid' : '' }}" type="text" name="TimeStamp" id="TimeStamp" value="{{ old('TimeStamp', $action->TimeStamp) }}">
+                @if($errors->has('TimeStamp'))
+                    <span class="text-danger">{{ $errors->first('TimeStamp') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.time_stamp_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.TimeStamp_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="emp_name">{{ trans('cruds.action.fields.emp_name') }}</label>
-                <input class="form-control {{ $errors->has('emp_name') ? 'is-invalid' : '' }}" type="text" name="emp_name" id="emp_name" value="{{ old('emp_name', $action->emp_name) }}">
-                @if($errors->has('emp_name'))
-                    <span class="text-danger">{{ $errors->first('emp_name') }}</span>
+                <label for="EmpName">{{ trans('cruds.action.fields.EmpName') }}</label>
+                <input class="form-control {{ $errors->has('EmpName') ? 'is-invalid' : '' }}" type="text" name="EmpName" id="EmpName" value="{{ old('EmpName', $action->EmpName) }}">
+                @if($errors->has('EmpName'))
+                    <span class="text-danger">{{ $errors->first('EmpName') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.emp_name_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.EmpName_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="i_dy">{{ trans('cruds.action.fields.i_dy') }}</label>
-                <input class="form-control {{ $errors->has('i_dy') ? 'is-invalid' : '' }}" type="text" name="i_dy" id="i_dy" value="{{ old('i_dy', $action->i_dy) }}">
-                @if($errors->has('i_dy'))
-                    <span class="text-danger">{{ $errors->first('i_dy') }}</span>
+                <label for="IDy">{{ trans('cruds.action.fields.IDy') }}</label>
+                <input class="form-control {{ $errors->has('IDy') ? 'is-invalid' : '' }}" type="text" name="IDy" id="IDy" value="{{ old('IDy', $action->IDy) }}">
+                @if($errors->has('IDy'))
+                    <span class="text-danger">{{ $errors->first('IDy') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.i_dy_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.IDy_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="value_num">{{ trans('cruds.action.fields.value_num') }}</label>
-                <input class="form-control {{ $errors->has('value_num') ? 'is-invalid' : '' }}" type="number" name="value_num" id="value_num" value="{{ old('value_num', $action->value_num) }}" step="1">
-                @if($errors->has('value_num'))
-                    <span class="text-danger">{{ $errors->first('value_num') }}</span>
+                <label for="ValueNum">{{ trans('cruds.action.fields.ValueNum') }}</label>
+                <input class="form-control {{ $errors->has('ValueNum') ? 'is-invalid' : '' }}" type="number" name="ValueNum" id="ValueNum" value="{{ old('ValueNum', $action->ValueNum) }}" step="1">
+                @if($errors->has('ValueNum'))
+                    <span class="text-danger">{{ $errors->first('ValueNum') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.action.fields.value_num_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.action.fields.ValueNum_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

@@ -11,39 +11,40 @@ class ActionsTemp extends Model
 {
     use HasFactory;
 
-    public $table = 'actions_temps';
+    public $table = 'ActionsTemp';
+
+    public $connection = 'pacsys'
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;
 
     protected $dates = [
-        'rec_date',
-        'act_date',
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'RecDate',
+        'ActDate',
+        'TimeStamp',
     ];
 
     protected $fillable = [
-        'i_dx',
-        'record_name',
-        'form_name',
-        'value_name',
-        'value',
-        'rec_date',
-        'act_date',
-        'complete',
-        'rec_emp_code',
-        'unit',
-        'act_value',
-        'scope_name',
-        'comment',
-        'tank',
-        'time_stamp',
-        'emp_name',
-        'i_dy',
-        'value_num',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'IDx',
+        'RecordName',
+        'FormName',
+        'ValueName',
+        'Value',
+        'RecDate',
+        'ActDate',
+        'Complete',
+        'RecEmpCode',
+        'Unit',
+        'ActValue',
+        'ScopeName',
+        'Comment',
+        'Tank',
+        'TimeStamp',
+        'EmpName',
+        'IDy',
+        'ValueNum',
+
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -58,7 +59,7 @@ class ActionsTemp extends Model
 
     public function setRecDateAttribute($value)
     {
-        $this->attributes['rec_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+        $this->attributes['RecDate'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
     public function getActDateAttribute($value)
@@ -68,7 +69,7 @@ class ActionsTemp extends Model
 
     public function setActDateAttribute($value)
     {
-        $this->attributes['act_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
+        $this->attributes['ActDate'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
 
     public function getTimeStampAttribute($value)
@@ -78,6 +79,6 @@ class ActionsTemp extends Model
 
     public function setTimeStampAttribute($value)
     {
-        $this->attributes['time_stamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        $this->attributes['TimeStamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 }

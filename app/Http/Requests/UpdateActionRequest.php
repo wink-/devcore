@@ -11,79 +11,77 @@ class UpdateActionRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('action_edit');
+        return Gate::allows('pacsys');
     }
 
     public function rules()
     {
         return [
-            'i_dx'         => [
-                'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
-            ],
-            'record_name'  => [
+            'IDx'         => [
                 'string',
                 'nullable',
             ],
-            'form_name'    => [
+            'RecordName'  => [
                 'string',
                 'nullable',
             ],
-            'value_name'   => [
+            'FormName'    => [
                 'string',
                 'nullable',
             ],
-            'value'        => [
+            'ValueName'   => [
                 'string',
                 'nullable',
             ],
-            'rec_date'     => [
+            'Value'        => [
+                'string',
+                'nullable',
+            ],
+            'RecDate'     => [
                 'date_format:' . config('panel.date_format'),
                 'nullable',
             ],
-            'act_date'     => [
+            'ActDate'     => [
                 'date_format:' . config('panel.date_format'),
                 'nullable',
             ],
-            'rec_emp_code' => [
+            'RecEmpCode' => [
                 'string',
                 'nullable',
             ],
-            'unit'         => [
+            'Unit'         => [
                 'string',
                 'nullable',
             ],
-            'act_value'    => [
+            'ActValue'    => [
                 'string',
                 'nullable',
             ],
-            'scope_name'   => [
+            'ScopeName'   => [
                 'string',
                 'nullable',
             ],
-            'comment'      => [
+            'Comment'      => [
                 'string',
                 'nullable',
             ],
-            'tank'         => [
+            'Tank'         => [
                 'string',
                 'nullable',
             ],
-            'time_stamp'   => [
+            'TimeStamp'   => [
                 'date_format:' . config('panel.date_format') . ' ' . config('panel.time_format'),
                 'nullable',
             ],
-            'emp_name'     => [
+            'EmpName'     => [
                 'string',
                 'nullable',
             ],
-            'i_dy'         => [
+            'IDy'         => [
                 'string',
                 'nullable',
             ],
-            'value_num'    => [
+            'ValueNum'    => [
                 'nullable',
                 'integer',
                 'min:-2147483648',

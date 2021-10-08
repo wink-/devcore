@@ -21,6 +21,7 @@
         "laravel/ui": "^3.0",
         "laraveldaily/laravel-charts": "^0.1.24",
         "livewire/livewire": "^2.4",
+        "rappasoft/laravel-livewire-tables": "^1.6",
         "yajra/laravel-datatables-oracle": "^9.11"
     },
     "require-dev": {

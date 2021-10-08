@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ trans('panel.site_title') }}</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
@@ -25,7 +26,7 @@
 
 <body class="sidebar-mini layout-fixed" style="height: auto;">
     <div class="wrapper">
-        <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+        <nav class="bg-white main-header navbar navbar-expand navbar-light border-bottom">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -35,7 +36,7 @@
 
             <!-- Right navbar links -->
             @if(count(config('panel.available_languages', [])) > 1)
-                <ul class="navbar-nav ml-auto">
+                <ul class="ml-auto navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
                             {{ strtoupper(app()->getLocale()) }}
@@ -56,7 +57,7 @@
             <!-- Main content -->
             <section class="content" style="padding-top: 20px">
                 @if(session('message'))
-                    <div class="row mb-2">
+                    <div class="mb-2 row">
                         <div class="col-lg-12">
                             <div class="alert alert-success" role="alert">{{ session('message') }}</div>
                         </div>

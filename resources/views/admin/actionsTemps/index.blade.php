@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-@can('actions_temp_create')
+@can('pacsys')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.actions-temps.create') }}">
@@ -155,7 +155,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('actions_temp_delete')
+@can('pacsys')
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
@@ -194,25 +194,25 @@
     ajax: "{{ route('admin.actions-temps.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
-{ data: 'i_dx', name: 'i_dx' },
-{ data: 'record_name', name: 'record_name' },
-{ data: 'form_name', name: 'form_name' },
-{ data: 'value_name', name: 'value_name' },
-{ data: 'value', name: 'value' },
-{ data: 'rec_date', name: 'rec_date' },
-{ data: 'act_date', name: 'act_date' },
-{ data: 'complete', name: 'complete' },
-{ data: 'rec_emp_code', name: 'rec_emp_code' },
-{ data: 'unit', name: 'unit' },
-{ data: 'act_value', name: 'act_value' },
-{ data: 'scope_name', name: 'scope_name' },
-{ data: 'comment', name: 'comment' },
-{ data: 'tank', name: 'tank' },
-{ data: 'time_stamp', name: 'time_stamp' },
-{ data: 'emp_name', name: 'emp_name' },
-{ data: 'i_dy', name: 'i_dy' },
-{ data: 'value_num', name: 'value_num' },
+{ data: 'ID', name: 'ID' },
+{ data: 'IDx', name: 'IDx' },
+{ data: 'RecordName', name: 'RecordName' },
+{ data: 'FormName', name: 'FormName' },
+{ data: 'ValueName', name: 'ValueName' },
+{ data: 'Value', name: 'Value' },
+{ data: 'RecDate', name: 'RecDate' },
+{ data: 'ActDate', name: 'ActDate' },
+{ data: 'Complete', name: 'Complete' },
+{ data: 'RecEmpCode', name: 'RecEmpCode' },
+{ data: 'Unit', name: 'Unit' },
+{ data: 'ActValue', name: 'ActValue' },
+{ data: 'ScopeName', name: 'ScopeName' },
+{ data: 'Comment', name: 'Comment' },
+{ data: 'Tank', name: 'Tank' },
+{ data: 'TimeStamp', name: 'TimeStamp' },
+{ data: 'EmpName', name: 'EmpName' },
+{ data: 'IDy', name: 'IDy' },
+{ data: 'ValueNum', name: 'ValueNum' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,

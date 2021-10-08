@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\ProcessData;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \DateTimeInterface;
 
-class Amp extends Model
+class Temperature extends Model
 {
     use HasFactory;
 
-    public $table = 'amps';
+    public $table = 'temperatures';
 
     protected $dates = [
         'created_at',
@@ -20,8 +20,7 @@ class Amp extends Model
 
     protected $fillable = [
         'record_id',
-        'amp',
-        'amp_minute',
+        'temperature',
         'created_at',
         'updated_at',
         'deleted_at',

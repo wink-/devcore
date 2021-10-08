@@ -664,7 +664,7 @@
                         </ul>
                     </li>
                 @endcan
-                @can('pac_sy_access')
+                @can('pacsys')
                     <li class="nav-item has-treeview {{ request()->is("admin/actions*") ? "menu-open" : "" }} {{ request()->is("admin/actions-temps*") ? "menu-open" : "" }} {{ request()->is("admin/analysis*") ? "menu-open" : "" }} {{ request()->is("admin/analysis-news*") ? "menu-open" : "" }} {{ request()->is("admin/calc-values*") ? "menu-open" : "" }} {{ request()->is("admin/p-employees*") ? "menu-open" : "" }} {{ request()->is("admin/forms*") ? "menu-open" : "" }} {{ request()->is("admin/form-types*") ? "menu-open" : "" }} {{ request()->is("admin/form-value-actions*") ? "menu-open" : "" }} {{ request()->is("admin/form-value-names*") ? "menu-open" : "" }} {{ request()->is("admin/form-value-periods*") ? "menu-open" : "" }} {{ request()->is("admin/form-value-ranges*") ? "menu-open" : "" }} {{ request()->is("admin/form-value-types*") ? "menu-open" : "" }} {{ request()->is("admin/form-value-units*") ? "menu-open" : "" }} {{ request()->is("admin/form-value-visibles*") ? "menu-open" : "" }} {{ request()->is("admin/months*") ? "menu-open" : "" }} {{ request()->is("admin/periods*") ? "menu-open" : "" }} {{ request()->is("admin/records*") ? "menu-open" : "" }} {{ request()->is("admin/scopes*") ? "menu-open" : "" }} {{ request()->is("admin/securities*") ? "menu-open" : "" }} {{ request()->is("admin/p-units*") ? "menu-open" : "" }} {{ request()->is("admin/years*") ? "menu-open" : "" }} {{ request()->is("admin/validations*") ? "menu-open" : "" }}">
                         <a class="nav-link nav-dropdown-toggle" href="#">
                             <i class="fa-fw nav-icon fas fa-cogs">
@@ -676,7 +676,7 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            @can('action_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.actions.index") }}" class="nav-link {{ request()->is("admin/actions") || request()->is("admin/actions/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -687,8 +687,8 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('actions_temp_access')
+
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.actions-temps.index") }}" class="nav-link {{ request()->is("admin/actions-temps") || request()->is("admin/actions-temps/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -699,8 +699,8 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('analysi_access')
+
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.analysis.index") }}" class="nav-link {{ request()->is("admin/analysis") || request()->is("admin/analysis/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -711,8 +711,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('analysis_new_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.analysis-news.index") }}" class="nav-link {{ request()->is("admin/analysis-news") || request()->is("admin/analysis-news/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -723,8 +722,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('calc_value_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.calc-values.index") }}" class="nav-link {{ request()->is("admin/calc-values") || request()->is("admin/calc-values/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -735,8 +733,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('p_employee_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.p-employees.index") }}" class="nav-link {{ request()->is("admin/p-employees") || request()->is("admin/p-employees/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -747,8 +744,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('form_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.forms.index") }}" class="nav-link {{ request()->is("admin/forms") || request()->is("admin/forms/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -759,8 +755,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('form_type_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.form-types.index") }}" class="nav-link {{ request()->is("admin/form-types") || request()->is("admin/form-types/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -771,8 +766,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('form_value_action_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.form-value-actions.index") }}" class="nav-link {{ request()->is("admin/form-value-actions") || request()->is("admin/form-value-actions/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -783,8 +777,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('form_value_name_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.form-value-names.index") }}" class="nav-link {{ request()->is("admin/form-value-names") || request()->is("admin/form-value-names/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -795,8 +788,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('form_value_period_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.form-value-periods.index") }}" class="nav-link {{ request()->is("admin/form-value-periods") || request()->is("admin/form-value-periods/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -807,8 +799,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('form_value_range_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.form-value-ranges.index") }}" class="nav-link {{ request()->is("admin/form-value-ranges") || request()->is("admin/form-value-ranges/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -819,8 +810,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('form_value_type_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.form-value-types.index") }}" class="nav-link {{ request()->is("admin/form-value-types") || request()->is("admin/form-value-types/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -831,8 +821,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('form_value_unit_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.form-value-units.index") }}" class="nav-link {{ request()->is("admin/form-value-units") || request()->is("admin/form-value-units/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -843,8 +832,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('form_value_visible_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.form-value-visibles.index") }}" class="nav-link {{ request()->is("admin/form-value-visibles") || request()->is("admin/form-value-visibles/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -855,8 +843,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('month_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.months.index") }}" class="nav-link {{ request()->is("admin/months") || request()->is("admin/months/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -867,8 +854,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('period_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.periods.index") }}" class="nav-link {{ request()->is("admin/periods") || request()->is("admin/periods/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -879,8 +865,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('record_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.records.index") }}" class="nav-link {{ request()->is("admin/records") || request()->is("admin/records/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -891,8 +876,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('scope_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.scopes.index") }}" class="nav-link {{ request()->is("admin/scopes") || request()->is("admin/scopes/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -903,8 +887,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('security_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.securities.index") }}" class="nav-link {{ request()->is("admin/securities") || request()->is("admin/securities/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -915,8 +898,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('p_unit_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.p-units.index") }}" class="nav-link {{ request()->is("admin/p-units") || request()->is("admin/p-units/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -927,8 +909,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('year_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.years.index") }}" class="nav-link {{ request()->is("admin/years") || request()->is("admin/years/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -939,8 +920,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('validation_access')
+
                                 <li class="nav-item">
                                     <a href="{{ route("admin.validations.index") }}" class="nav-link {{ request()->is("admin/validations") || request()->is("admin/validations/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -951,7 +931,7 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
+
                         </ul>
                     </li>
                 @endcan
@@ -967,7 +947,6 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            @can('amp_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.amps.index") }}" class="nav-link {{ request()->is("admin/amps") || request()->is("admin/amps/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -978,8 +957,6 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('record_type_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.record-types.index") }}" class="nav-link {{ request()->is("admin/record-types") || request()->is("admin/record-types/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -990,8 +967,6 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('logger_type_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.logger-types.index") }}" class="nav-link {{ request()->is("admin/logger-types") || request()->is("admin/logger-types/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -1002,8 +977,6 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('pd_unit_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.pd-units.index") }}" class="nav-link {{ request()->is("admin/pd-units") || request()->is("admin/pd-units/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -1014,8 +987,6 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('pd_record_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.pd-records.index") }}" class="nav-link {{ request()->is("admin/pd-records") || request()->is("admin/pd-records/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -1026,8 +997,6 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('logger_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.loggers.index") }}" class="nav-link {{ request()->is("admin/loggers") || request()->is("admin/loggers/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -1038,8 +1007,6 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('temperature_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.temperatures.index") }}" class="nav-link {{ request()->is("admin/temperatures") || request()->is("admin/temperatures/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -1050,8 +1017,6 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('volt_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.volts.index") }}" class="nav-link {{ request()->is("admin/volts") || request()->is("admin/volts/*") ? "active" : "" }}">
                                         <i class="fa-fw nav-icon fas fa-cogs">
@@ -1062,7 +1027,6 @@
                                         </p>
                                     </a>
                                 </li>
-                            @endcan
                         </ul>
                     </li>
                 @endcan

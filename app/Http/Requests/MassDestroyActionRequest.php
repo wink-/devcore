@@ -11,7 +11,7 @@ class MassDestroyActionRequest extends FormRequest
 {
     public function authorize()
     {
-        abort_if(Gate::denies('action_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return true;
     }

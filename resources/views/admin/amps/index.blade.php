@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-@can('amp_create')
+@can('process_data_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.amps.create') }}">
@@ -78,7 +78,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('amp_delete')
+@can('process_data_delete')
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,

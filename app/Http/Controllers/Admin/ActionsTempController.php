@@ -16,7 +16,7 @@ class ActionsTempController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('actions_temp_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = ActionsTemp::query()->select(sprintf('%s.*', (new ActionsTemp)->table));
@@ -26,10 +26,10 @@ class ActionsTempController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'actions_temp_show';
-                $editGate      = 'actions_temp_edit';
-                $deleteGate    = 'actions_temp_delete';
-                $crudRoutePart = 'actions-temps';
+                $viewGate      = 'pacsys';
+                $editGate      = 'pacsys_edit';
+                $deleteGate    = 'pacsys_delete';
+                $crudRoutePart = 'actions';
 
                 return view('partials.datatablesActions', compact(
                     'viewGate',
@@ -41,54 +41,57 @@ class ActionsTempController extends Controller
             });
 
             $table->editColumn('id', function ($row) {
-                return $row->id ? $row->id : "";
+                return $row->getKey() ? $row->getKey() : "";
             });
-            $table->editColumn('i_dx', function ($row) {
-                return $row->i_dx ? $row->i_dx : "";
+            $table->editColumn('IDx', function ($row) {
+                return $row->IDx ? $row->IDx : "";
             });
-            $table->editColumn('record_name', function ($row) {
-                return $row->record_name ? $row->record_name : "";
+            $table->editColumn('RecordName', function ($row) {
+                return $row->RecordName ? $row->RecordName : "";
             });
-            $table->editColumn('form_name', function ($row) {
-                return $row->form_name ? $row->form_name : "";
+            $table->editColumn('FormName', function ($row) {
+                return $row->FormName ? $row->FormName : "";
             });
-            $table->editColumn('value_name', function ($row) {
-                return $row->value_name ? $row->value_name : "";
+            $table->editColumn('ValueName', function ($row) {
+                return $row->ValueName ? $row->ValueName : "";
             });
-            $table->editColumn('value', function ($row) {
-                return $row->value ? $row->value : "";
+            $table->editColumn('Value', function ($row) {
+                return $row->Value ? $row->Value : "";
+            });
+            $table->editColumn('RecDate', function ($row) {
+                return $row->RecDate ? $row->RecDate : "";
+            });
+            $table->editColumn('Complete', function ($row) {
+                //return '<input type="checkbox" disabled ' . ($row->Complete ? 'checked' : null) . '>';
+                return $row->Complete ? $row->Complete : "";
+            });
+            $table->editColumn('RecEmpCode', function ($row) {
+                return $row->RecEmpCode ? $row->RecEmpCode : "";
+            });
+            $table->editColumn('Unit', function ($row) {
+                return $row->Unit ? $row->Unit : "";
+            });
+            $table->editColumn('ActValue', function ($row) {
+                return $row->ActValue ? $row->ActValue : "";
+            });
+            $table->editColumn('ScopeName', function ($row) {
+                return $row->ScopeName ? $row->ScopeName : "";
+            });
+            $table->editColumn('Comment', function ($row) {
+                return $row->Comment ? $row->Comment : "";
+            });
+            $table->editColumn('Tank', function ($row) {
+                return $row->Tank ? $row->Tank : "";
             });
 
-            $table->editColumn('complete', function ($row) {
-                return '<input type="checkbox" disabled ' . ($row->complete ? 'checked' : null) . '>';
+            $table->editColumn('EmpName', function ($row) {
+                return $row->EmpName ? $row->EmpName : "";
             });
-            $table->editColumn('rec_emp_code', function ($row) {
-                return $row->rec_emp_code ? $row->rec_emp_code : "";
+            $table->editColumn('IDy', function ($row) {
+                return $row->IDy ? $row->IDy : "";
             });
-            $table->editColumn('unit', function ($row) {
-                return $row->unit ? $row->unit : "";
-            });
-            $table->editColumn('act_value', function ($row) {
-                return $row->act_value ? $row->act_value : "";
-            });
-            $table->editColumn('scope_name', function ($row) {
-                return $row->scope_name ? $row->scope_name : "";
-            });
-            $table->editColumn('comment', function ($row) {
-                return $row->comment ? $row->comment : "";
-            });
-            $table->editColumn('tank', function ($row) {
-                return $row->tank ? $row->tank : "";
-            });
-
-            $table->editColumn('emp_name', function ($row) {
-                return $row->emp_name ? $row->emp_name : "";
-            });
-            $table->editColumn('i_dy', function ($row) {
-                return $row->i_dy ? $row->i_dy : "";
-            });
-            $table->editColumn('value_num', function ($row) {
-                return $row->value_num ? $row->value_num : "";
+            $table->editColumn('ValueNum', function ($row) {
+                return $row->ValueNum ? $row->ValueNum : "";
             });
 
             $table->rawColumns(['actions', 'placeholder', 'complete']);
@@ -101,7 +104,7 @@ class ActionsTempController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('actions_temp_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.actionsTemps.create');
     }
@@ -115,7 +118,7 @@ class ActionsTempController extends Controller
 
     public function edit(ActionsTemp $actionsTemp)
     {
-        abort_if(Gate::denies('actions_temp_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.actionsTemps.edit', compact('actionsTemp'));
     }
@@ -129,14 +132,14 @@ class ActionsTempController extends Controller
 
     public function show(ActionsTemp $actionsTemp)
     {
-        abort_if(Gate::denies('actions_temp_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.actionsTemps.show', compact('actionsTemp'));
     }
 
     public function destroy(ActionsTemp $actionsTemp)
     {
-        abort_if(Gate::denies('actions_temp_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $actionsTemp->delete();
 
