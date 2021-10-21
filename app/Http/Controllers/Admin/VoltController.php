@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyVoltRequest;
 use App\Http\Requests\StoreVoltRequest;
 use App\Http\Requests\UpdateVoltRequest;
-use App\Models\PdRecord;
-use App\Models\Volt;
+use App\Models\ProcessData\PdRecord;
+use App\Models\ProcessData\Volt;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +16,7 @@ class VoltController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('volt_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $volts = Volt::with(['record'])->get();
 
@@ -25,7 +25,7 @@ class VoltController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('volt_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $records = PdRecord::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -41,7 +41,7 @@ class VoltController extends Controller
 
     public function edit(Volt $volt)
     {
-        abort_if(Gate::denies('volt_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $records = PdRecord::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -59,7 +59,7 @@ class VoltController extends Controller
 
     public function show(Volt $volt)
     {
-        abort_if(Gate::denies('volt_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $volt->load('record');
 
@@ -68,7 +68,7 @@ class VoltController extends Controller
 
     public function destroy(Volt $volt)
     {
-        abort_if(Gate::denies('volt_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $volt->delete();
 

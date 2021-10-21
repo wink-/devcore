@@ -9,7 +9,7 @@ use \DateTimeInterface;
 class PdUnit extends Model
 {
     use HasFactory;
-
+    protected $connection = "process_data";
     public $table = 'pd_units';
 
     protected $dates = [

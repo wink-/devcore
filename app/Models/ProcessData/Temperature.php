@@ -9,7 +9,7 @@ use \DateTimeInterface;
 class Temperature extends Model
 {
     use HasFactory;
-
+    protected $connection = "process_data";
     public $table = 'temperatures';
 
     protected $dates = [

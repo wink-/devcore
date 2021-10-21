@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-@can('volt_create')
+@can('process_data_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.volts.create') }}">
@@ -58,19 +58,19 @@
                                 {{ $volt->volt ?? '' }}
                             </td>
                             <td>
-                                @can('volt_show')
+                                @can('process_data_access')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.volts.show', $volt->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
-                                @can('volt_edit')
+                                @can('process_data_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.volts.edit', $volt->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
 
-                                @can('volt_delete')
+                                @can('process_data_delete')
                                     <form action="{{ route('admin.volts.destroy', $volt->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -96,7 +96,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('volt_delete')
+@can('process_data_delete')
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,

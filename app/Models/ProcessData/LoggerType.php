@@ -9,7 +9,7 @@ use \DateTimeInterface;
 class LoggerType extends Model
 {
     use HasFactory;
-
+    protected $connection = "process_data";
     public $table = 'logger_types';
 
     protected $dates = [

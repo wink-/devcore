@@ -9,7 +9,7 @@ use \DateTimeInterface;
 class RecordType extends Model
 {
     use HasFactory;
-
+    protected $connection = "process_data";
     public $table = 'record_types';
 
     protected $dates = [

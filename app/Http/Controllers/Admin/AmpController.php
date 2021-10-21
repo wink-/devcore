@@ -20,7 +20,8 @@ class AmpController extends Controller
         abort_if(Gate::denies('process_data_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
-            $query = Amp::with(['record'])->select(sprintf('%s.*', (new Amp)->table));
+            //$query = Amp::with(['record'])->select(sprintf('%s.*', (new Amp)->table));
+            $query = Amp::query()->select(sprintf('%s.*', (new Amp)->table));
             $table = Datatables::of($query);
 
             $table->addColumn('placeholder', '&nbsp;');

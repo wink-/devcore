@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-@can('record_type_create')
+@can('process_data_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.record-types.create') }}">
@@ -52,19 +52,19 @@
                                 {{ $recordType->description ?? '' }}
                             </td>
                             <td>
-                                @can('record_type_show')
+                                @can('process_data_access')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.record-types.show', $recordType->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
-                                @can('record_type_edit')
+                                @can('process_data_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.record-types.edit', $recordType->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
 
-                                @can('record_type_delete')
+                                @can('process_data_delete')
                                     <form action="{{ route('admin.record-types.destroy', $recordType->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -90,7 +90,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('record_type_delete')
+@can('process_data_delete')
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,

@@ -4,13 +4,14 @@ namespace App\Models\ProcessData;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\ProcessData\PdRecord;
 use \DateTimeInterface;
 
 class Volt extends Model
 {
     use HasFactory;
-
-    public $table = 'volts';
+    protected $connection = "process_data";
+    public $table = 'volt';
 
     protected $dates = [
         'created_at',
