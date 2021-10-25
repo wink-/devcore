@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Calsys;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +11,11 @@ class CalDevice extends Model
 {
     use HasFactory;
 
-    public $table = 'cal_devices';
+    public $table = 'device';
+
+    protected $connection = 'calsys';
+
+    protected $primaryKey = 'ID';
 
     protected $dates = [
         'init_date',
@@ -24,17 +28,15 @@ class CalDevice extends Model
     protected $fillable = [
         'name',
         'description',
-        'serial_number',
-        'source_id',
-        'type_id',
-        'period_id',
-        'location_id',
-        'init_date',
-        'time_stamp',
-        'owner_id',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'serialNumber',
+        'sourceID',
+        'typeID',
+        'period',
+        'location',
+        'initDate',
+        'timeStamp',
+        'ownerID',
+        
     ];
 
     protected function serializeDate(DateTimeInterface $date)

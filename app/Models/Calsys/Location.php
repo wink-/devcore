@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Calsys;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \DateTimeInterface;
 
-class CalType extends Model
+class CalLocation extends Model
 {
     use HasFactory;
 
-    public $table = 'cal_types';
+    public $table = 'cal_locations';
 
     protected $dates = [
         'created_at',
@@ -20,7 +20,6 @@ class CalType extends Model
 
     protected $fillable = [
         'name',
-        'proc_link',
         'created_at',
         'updated_at',
         'deleted_at',

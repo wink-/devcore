@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Calsys;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \DateTimeInterface;
 
-class CalOwner extends Model
+class CalStatus extends Model
 {
     use HasFactory;
 
-    public $table = 'cal_owners';
+    public $table = 'cal_statuses';
 
     protected $dates = [
         'created_at',

@@ -10,7 +10,7 @@ class PdUnit extends Model
 {
     use HasFactory;
     protected $connection = "process_data";
-    public $table = 'pd_units';
+    public $table = 'units';
 
     protected $dates = [
         'created_at',
