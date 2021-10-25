@@ -13,7 +13,7 @@
 ## PacSys Models
 1. Action
 2. ActionTemp
-3. Analysi
+3. Analysis
 4. AnalysisNew
 5. CalcValue
 6. Employees
