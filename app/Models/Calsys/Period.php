@@ -10,19 +10,21 @@ class CalPeriod extends Model
 {
     use HasFactory;
 
-    public $table = 'cal_periods';
+    public $table = 'period';
+
+    protected $connection = 'calsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;    
 
     protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at',
+
     ];
 
     protected $fillable = [
+        'ID',
         'name',
-        'created_at',
-        'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

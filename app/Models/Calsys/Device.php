@@ -17,12 +17,11 @@ class CalDevice extends Model
 
     protected $primaryKey = 'ID';
 
+    public $timestamps = false;
+
     protected $dates = [
-        'init_date',
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'initDate',
+        'timeStamp',
     ];
 
     protected $fillable = [

@@ -10,19 +10,21 @@ class CalOwner extends Model
 {
     use HasFactory;
 
-    public $table = 'cal_owners';
+    public $table = 'owner';
+
+    protected $connection = 'calsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;    
 
     protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at',
+
     ];
 
     protected $fillable = [
+        'ID',
         'name',
-        'created_at',
-        'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

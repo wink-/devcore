@@ -10,21 +10,23 @@ class Calemployee extends Model
 {
     use HasFactory;
 
-    public $table = 'calemployees';
+    public $table = 'employee';
+
+    protected $connection ='calsys';
+
+    protected $privateKey = 'ID';
+
+    
+    public $timestamps = false;
 
     protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at',
+
     ];
 
     protected $fillable = [
-        'iden',
-        'user_init',
+        'ID',
+        'userInit',
         'name',
-        'created_at',
-        'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

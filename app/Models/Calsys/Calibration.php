@@ -14,6 +14,8 @@ class Calibration extends Model
     
     protected $connection = 'calsys';
 
+    protected $primaryKey = 'ID';
+
     public $timestamps = false;
     
     protected $dates = [

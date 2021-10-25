@@ -10,20 +10,22 @@ class CalType extends Model
 {
     use HasFactory;
 
-    public $table = 'cal_types';
+    public $table = 'type';
+
+    protected $connection = 'calsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;    
 
     protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at',
+
     ];
 
     protected $fillable = [
+        'ID',
         'name',
-        'proc_link',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'procLink',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
