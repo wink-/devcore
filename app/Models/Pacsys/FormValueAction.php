@@ -11,43 +11,44 @@ class FormValueAction extends Model
 {
     use HasFactory;
 
-    public $table = 'form_value_actions';
+    public $table = 'FormValueAction';
+
+    protected $connection ='pacsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;
 
     protected $dates = [
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'TimeStamp',
     ];
 
     protected $fillable = [
-        'name',
-        'form_name',
-        'action_1',
-        'action_2',
-        'action_3',
-        'action_4',
-        'action_5',
-        'action_6',
-        'action_7',
-        'action_8',
-        'action_9',
-        'action_10',
-        'action_11',
-        'action_12',
-        'action_13',
-        'action_14',
-        'action_15',
-        'action_16',
-        'action_17',
-        'action_18',
-        'action_19',
-        'action_20',
-        'tank',
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'Name',
+        'FormName',
+        'Action1',
+        'Action2',
+        'Action3',
+        'Action4',
+        'Action5',
+        'Action6',
+        'Action7',
+        'Action8',
+        'Action9',
+        'Action10',
+        'Action11',
+        'Action12',
+        'Action13',
+        'Action14',
+        'Action15',
+        'Action16',
+        'Action17',
+        'Action18',
+        'Action19',
+        'Action20',
+        'Tank',
+        'TimeStamp',
+
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -62,6 +63,6 @@ class FormValueAction extends Model
 
     public function setTimeStampAttribute($value)
     {
-        $this->attributes['time_stamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        $this->attributes['TimeStamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 }

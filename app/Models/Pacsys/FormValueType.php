@@ -9,7 +9,7 @@ use \DateTimeInterface;
 
 class FormValueType extends Model
 {
-    use Auditable, HasFactory;
+    use HasFactory;
 
     public $table = 'form_value_types';
 

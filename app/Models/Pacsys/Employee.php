@@ -2,16 +2,15 @@
 
 namespace App\Models\Pacsys;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \DateTimeInterface;
 
-class Security extends Model
+class Employee extends Model
 {
     use HasFactory;
 
-    public $table = 'Security';
+    public $table = 'employees';
 
     protected $connection ='pacsys';
 
@@ -19,15 +18,18 @@ class Security extends Model
 
     public $timestamps = false;
 
-
     protected $dates = [
-        'TimeStamp',
+        'timestamp',
     ];
 
     protected $fillable = [
-        'EmpCode',
-        'Scope',
-        'TimeStamp',
+        'name',
+        'user_name',
+        'code',
+        'pin',
+        'production',
+        'supervisor',
+
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -42,6 +44,6 @@ class Security extends Model
 
     public function setTimeStampAttribute($value)
     {
-        $this->attributes['TimeStamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
-    }
+        $this->attributes['timestamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+    }    
 }

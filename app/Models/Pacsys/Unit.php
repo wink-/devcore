@@ -10,25 +10,24 @@ class Unit extends Model
 {
     use HasFactory;
 
-    public $table = 'units';
+    public $table = 'Unit';
+
+    protected $connection ='pacsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;
+
 
     protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at',
+
     ];
 
     protected $fillable = [
-        'code',
-        'description',
-        'name_singular',
-        'name_plural',
-        'archive',
-        'revision',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'Unit',
+        'Description',
     ];
+
 
     protected function serializeDate(DateTimeInterface $date)
     {

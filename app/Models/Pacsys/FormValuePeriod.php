@@ -11,43 +11,43 @@ class FormValuePeriod extends Model
 {
     use HasFactory;
 
-    public $table = 'form_value_periods';
+    public $table = 'FormValuePeriod';
+
+    protected $connection ='pacsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;
 
     protected $dates = [
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'TimeStamp',
     ];
 
     protected $fillable = [
-        'name',
-        'form_name',
-        'period_1',
-        'period_2',
-        'period_3',
-        'period_4',
-        'period_5',
-        'period_6',
-        'period_7',
-        'period_8',
-        'period_9',
-        'period_10',
-        'period_11',
-        'period_12',
-        'period_13',
-        'period_14',
-        'period_15',
-        'period_16',
-        'period_17',
-        'period_18',
-        'period_19',
-        'period_20',
-        'tank',
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'Name',
+        'FormName',
+        'Period1',
+        'Period2',
+        'Period3',
+        'Period4',
+        'Period5',
+        'Period6',
+        'Period7',
+        'Period8',
+        'Period9',
+        'Period10',
+        'Period11',
+        'Period12',
+        'Period13',
+        'Period14',
+        'Period15',
+        'Period16',
+        'Period17',
+        'Period18',
+        'Period19',
+        'Period20',
+        'Tank',
+        'TimeStamp',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -62,6 +62,6 @@ class FormValuePeriod extends Model
 
     public function setTimeStampAttribute($value)
     {
-        $this->attributes['time_stamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        $this->attributes['TimeStamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 }

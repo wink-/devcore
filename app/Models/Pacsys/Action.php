@@ -23,8 +23,6 @@ class Action extends Model
         'RecDate',
         'ActDate',
         'TimeStamp',
-        // 'created_at',
-        // 'updated_at',
     ];
 
     protected $fillable = [

@@ -11,43 +11,43 @@ class FormValueUnit extends Model
 {
     use HasFactory;
 
-    public $table = 'form_value_units';
+    public $table = 'FormValueUnit';
+
+    protected $connection ='pacsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;
 
     protected $dates = [
-        'timestamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'TimeStamp',
     ];
 
     protected $fillable = [
-        'name',
-        'form_name',
-        'unit_1',
-        'unit_2',
-        'unit_3',
-        'unit_4',
-        'unit_5',
-        'unit_6',
-        'unit_7',
-        'unit_8',
-        'unit_9',
-        'unit_10',
-        'unit_11',
-        'unit_12',
-        'unit_13',
-        'unit_14',
-        'unit_15',
-        'unit_16',
-        'unit_17',
-        'unit_18',
-        'unit_19',
-        'unit_20',
-        'tank',
-        'timestamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'Name',
+        'FormName',
+        'Unit1',
+        'Unit2',
+        'Unit3',
+        'Unit4',
+        'Unit5',
+        'Unit6',
+        'Unit7',
+        'Unit8',
+        'Unit9',
+        'Unit10',
+        'Unit11',
+        'Unit12',
+        'Unit13',
+        'Unit14',
+        'Unit15',
+        'Unit16',
+        'Unit17',
+        'Unit18',
+        'Unit19',
+        'Unit20',
+        'Tank',
+        'TimeStamp',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -62,6 +62,6 @@ class FormValueUnit extends Model
 
     public function setTimestampAttribute($value)
     {
-        $this->attributes['timestamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        $this->attributes['TimeStamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 }

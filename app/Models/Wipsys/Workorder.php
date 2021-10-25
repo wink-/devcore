@@ -2,7 +2,6 @@
 
 namespace App\Models\Wipsys;
 
-use App\Traits\Auditable;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +9,7 @@ use \DateTimeInterface;
 
 class Workorder extends Model
 {
-    use Auditable, HasFactory;
+    use HasFactory;
 
     public $table = 'workorders';
 

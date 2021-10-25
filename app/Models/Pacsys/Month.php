@@ -10,24 +10,20 @@ class Month extends Model
 {
     use HasFactory;
 
-    public $table = 'months';
+    public $table = 'Months';
+
+    protected $connection ='pacsys';
+
+    public $timestamps = false;
 
     protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at',
-    ];
 
+    ];
     protected $fillable = [
-        'month_number',
-        'month_name',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'MonthNumber',
+        'MonthName',
+
     ];
 
-    protected function serializeDate(DateTimeInterface $date)
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
+
 }

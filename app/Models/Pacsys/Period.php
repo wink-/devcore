@@ -10,20 +10,22 @@ class Period extends Model
 {
     use HasFactory;
 
-    public $table = 'periods';
+    public $table = 'Period';
+
+    protected $connection ='pacsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;
+
 
     protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'TimeStamp',
     ];
 
     protected $fillable = [
-        'period',
-        'description',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'Period',
+        'Description',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

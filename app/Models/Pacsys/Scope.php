@@ -11,22 +11,23 @@ class Scope extends Model
 {
     use HasFactory;
 
-    public $table = 'scopes';
+    public $table = 'Scope';
+
+    protected $connection ='pacsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;
+
 
     protected $dates = [
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'TimeStamp',
     ];
 
     protected $fillable = [
-        'name',
-        'description',
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'Name',
+        'Description',
+        'TimeStamp',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -41,6 +42,6 @@ class Scope extends Model
 
     public function setTimeStampAttribute($value)
     {
-        $this->attributes['time_stamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        $this->attributes['TimeStamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 }

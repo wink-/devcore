@@ -11,26 +11,28 @@ class CalcValue extends Model
 {
     use HasFactory;
 
-    public $table = 'calc_values';
+    public $table = 'CalcValue';
+
+    protected $connection ='pacsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;
+
 
     protected $dates = [
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'TimeStamp',
     ];
 
     protected $fillable = [
-        'value_name',
-        'description',
-        'formula',
-        'order_calc',
-        'form_name',
-        'decimal_places',
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'ValueName',
+        'Description',
+        'Formula',
+        'OrderCalc',
+        'FormName',
+        'DecimalPlaces',
+        'TimeStamp',
+
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -45,6 +47,6 @@ class CalcValue extends Model
 
     public function setTimeStampAttribute($value)
     {
-        $this->attributes['time_stamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        $this->attributes['TimeStamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 }

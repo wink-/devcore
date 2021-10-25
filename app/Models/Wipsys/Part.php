@@ -3,13 +3,11 @@
 namespace App\Models\Wipsys;
 
 use \DateTimeInterface;
-use App\Traits\Auditable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Part extends Model
 {
-    use Auditable;
     use HasFactory;
 
     public $table = 'parts';

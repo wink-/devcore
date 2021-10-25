@@ -2,14 +2,14 @@
 
 namespace App\Models\Wipsys;
 
-use App\Traits\Auditable;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \DateTimeInterface;
 
 class Employee extends Model
 {
-    use Auditable, HasFactory;
+    use HasFactory;
 
     public $table = 'employees';
 

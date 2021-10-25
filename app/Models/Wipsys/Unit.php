@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \DateTimeInterface;
 
-class PUnit extends Model
+class Unit extends Model
 {
     use HasFactory;
 
-    public $table = 'p_units';
+    public $table = 'units';
 
     protected $dates = [
         'created_at',
@@ -19,8 +19,12 @@ class PUnit extends Model
     ];
 
     protected $fillable = [
-        'unit',
+        'code',
         'description',
+        'name_singular',
+        'name_plural',
+        'archive',
+        'revision',
         'created_at',
         'updated_at',
         'deleted_at',

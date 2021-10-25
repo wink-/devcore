@@ -10,23 +10,21 @@ class Year extends Model
 {
     use HasFactory;
 
-    public $table = 'years';
+    public $table = 'Years';
+
+    protected $connection ='pacsys';
+
+    protected $primaryKey = 'Year';
+
+    public $timestamps = false;
+
 
     protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
-        'year',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'Year',
     ];
 
-    protected function serializeDate(DateTimeInterface $date)
-    {
-        return $date->format('Y-m-d H:i:s');
-    }
+
 }

@@ -11,26 +11,28 @@ class Form extends Model
 {
     use HasFactory;
 
-    public $table = 'forms';
+    public $table = 'Form';
+
+    protected $connection ='pacsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;
+
 
     protected $dates = [
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'TimeStamp',
     ];
 
     protected $fillable = [
-        'name',
-        'description',
-        'form_type',
-        'time_stamp',
-        'archived',
-        'revision',
-        'analysis_procedure',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'Name',
+        'Description',
+        'FormType',
+        'TimeStamp',
+        'Archived',
+        'Revision',
+        'AnalysisProcedure',
+
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -45,6 +47,6 @@ class Form extends Model
 
     public function setTimeStampAttribute($value)
     {
-        $this->attributes['time_stamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        $this->attributes['TimeStamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 }

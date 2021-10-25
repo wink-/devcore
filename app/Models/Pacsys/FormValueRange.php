@@ -11,63 +11,63 @@ class FormValueRange extends Model
 {
     use HasFactory;
 
-    public $table = 'form_value_ranges';
+    public $table = 'FormValueRange';
+
+    protected $connection ='pacsys';
+
+    protected $primaryKey = 'ID';
+
+    public $timestamps = false;
 
     protected $dates = [
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'TimeStamp',
     ];
 
     protected $fillable = [
-        'name',
-        'form_name',
-        'min_1',
-        'max_1',
-        'min_2',
-        'max_2',
-        'min_3',
-        'max_3',
-        'min_4',
-        'max_4',
-        'min_5',
-        'max_5',
-        'min_6',
-        'max_6',
-        'min_7',
-        'max_7',
-        'min_8',
-        'max_8',
-        'min_9',
-        'max_9',
-        'min_10',
-        'max_10',
-        'min_11',
-        'max_11',
-        'min_12',
-        'max_12',
-        'min_13',
-        'max_13',
-        'min_14',
-        'max_14',
-        'min_15',
-        'max_15',
-        'min_16',
-        'max_16',
-        'min_17',
-        'max_17',
-        'min_18',
-        'max_18',
-        'min_19',
-        'max_19',
-        'min_20',
-        'max_20',
-        'tank',
-        'time_stamp',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'Name',
+        'FormName',
+        'Min1',
+        'Max1',
+        'Min2',
+        'Max2',
+        'Min3',
+        'Max3',
+        'Min4',
+        'Max4',
+        'Min5',
+        'Max5',
+        'Min6',
+        'Max6',
+        'Min7',
+        'Max7',
+        'Min8',
+        'Max8',
+        'Min9',
+        'Max9',
+        'Min10',
+        'Max10',
+        'Min11',
+        'Max11',
+        'Min12',
+        'Max12',
+        'Min13',
+        'Max13',
+        'Min14',
+        'Max14',
+        'Min15',
+        'Max15',
+        'Min16',
+        'Max16',
+        'Min17',
+        'Max17',
+        'Min18',
+        'Max18',
+        'Min19',
+        'Max19',
+        'Min20',
+        'Max20',
+        'Tank',
+        'TimeStamp',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -82,6 +82,6 @@ class FormValueRange extends Model
 
     public function setTimeStampAttribute($value)
     {
-        $this->attributes['time_stamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        $this->attributes['TimeStamp'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 }

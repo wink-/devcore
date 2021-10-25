@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \DateTimeInterface;
 
-class AnalysisNew extends Model
+class Analysis extends Model
 {
     use HasFactory;
 
-    public $table = 'AnalysisNew';
+    public $table = 'Analysis';
 
     protected $connection ='pacsys';
 
@@ -52,7 +52,27 @@ class AnalysisNew extends Model
         'EmpCode',
         'TimeStamp',
         'DeleteVisible',
-        'Label',
+        'IDy',
+        'ActValue1',
+        'ActValue2',
+        'ActValue3',
+        'ActValue4',
+        'ActValue5',
+        'ActValue6',
+        'ActValue7',
+        'ActValue8',
+        'ActValue9',
+        'ActValue10',
+        'ActValue11',
+        'ActValue12',
+        'ActValue13',
+        'ActValue14',
+        'ActValue15',
+        'ActValue16',
+        'ActValue17',
+        'ActValue18',
+        'ActValue19',
+        'ActValue20',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
