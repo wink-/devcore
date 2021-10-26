@@ -11,7 +11,7 @@ class PackingList extends Model
 {
     use HasFactory;
 
-    public $table = 'packing_lists';
+    public $table = 'sft_packing_lists';
 
     protected $dates = [
         'date',

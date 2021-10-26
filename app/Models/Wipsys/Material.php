@@ -10,7 +10,7 @@ class Material extends Model
 {
     use HasFactory;
 
-    public $table = 'materials';
+    public $table = 'sft_materials';
 
     protected $dates = [
         'created_at',

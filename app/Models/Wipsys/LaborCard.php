@@ -11,7 +11,7 @@ class LaborCard extends Model
 {
     use HasFactory;
 
-    public $table = 'labor_cards';
+    public $table = 'sft_labor_cards';
 
     protected $dates = [
         'job_date',

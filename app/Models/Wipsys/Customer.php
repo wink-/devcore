@@ -12,7 +12,7 @@ class Customer extends Model
 {
     use SoftDeletes, Auditable, HasFactory;
 
-    public $table = 'customers';
+    public $table = 'sft_customers';
 
     public static $searchable = [
         'code',

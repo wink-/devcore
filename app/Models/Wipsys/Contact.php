@@ -12,7 +12,7 @@ class Contact extends Model
     use SoftDeletes;
     use HasFactory;
 
-    public $table = 'contacts';
+    public $table = 'sft_ontacts';
 
     protected $dates = [
         'created_at',

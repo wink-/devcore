@@ -10,7 +10,7 @@ class Carrier extends Model
 {
     use HasFactory;
 
-    public $table = 'carriers';
+    public $table = 'sft_carriers';
 
     protected $dates = [
         'created_at',

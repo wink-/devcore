@@ -10,7 +10,7 @@ class Part extends Model
 {
     use HasFactory;
 
-    public $table = 'parts';
+    public $table = 'sft_parts';
 
     protected $dates = [
         'created_at',

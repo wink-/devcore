@@ -11,7 +11,7 @@ class Invoice extends Model
 {
     use HasFactory;
 
-    public $table = 'invoices';
+    public $table = 'sft_invoices';
 
     protected $dates = [
         'date',

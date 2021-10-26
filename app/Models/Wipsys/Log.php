@@ -10,7 +10,7 @@ class Log extends Model
 {
     use HasFactory;
 
-    public $table = 'logs';
+    public $table = 'sft_logs';
 
     protected $dates = [
         'created_at',

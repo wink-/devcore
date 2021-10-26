@@ -10,7 +10,7 @@ class Method extends Model
 {
     use HasFactory;
 
-    public $table = 'methods';
+    public $table = 'sft_methods';
 
     protected $dates = [
         'created_at',

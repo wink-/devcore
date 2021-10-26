@@ -11,7 +11,7 @@ class Employee extends Model
 {
     use HasFactory;
 
-    public $table = 'employees';
+    public $table = 'sft_employees';
 
     protected $dates = [
         'created_at',

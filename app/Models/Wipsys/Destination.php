@@ -10,7 +10,7 @@ class Destination extends Model
 {
     use HasFactory;
 
-    public $table = 'destinations';
+    public $table = 'sft_destinations';
 
     protected $dates = [
         'created_at',

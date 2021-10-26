@@ -10,7 +10,7 @@ class Partshistory extends Model
 {
     use HasFactory;
 
-    public $table = 'partshistories';
+    public $table = 'sft_partshistories';
 
     protected $dates = [
         'created_at',

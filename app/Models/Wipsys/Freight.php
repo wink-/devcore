@@ -10,7 +10,7 @@ class Freight extends Model
 {
     use HasFactory;
 
-    public $table = 'freights';
+    public $table = 'sft_freights';
 
     protected $dates = [
         'created_at',
