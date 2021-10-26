@@ -9,13 +9,12 @@ use \DateTimeInterface;
 class Temperature extends Model
 {
     use HasFactory;
-    protected $connection = "process_data";
+    protected $connection = 'process_data';
     public $table = 'temperatures';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -23,7 +22,6 @@ class Temperature extends Model
         'temperature',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -33,6 +31,6 @@ class Temperature extends Model
 
     public function record()
     {
-        return $this->belongsTo(PdRecord::class, 'record_id');
+        return $this->belongsTo(Record::class, 'record_id');
     }
 }

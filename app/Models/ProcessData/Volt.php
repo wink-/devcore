@@ -4,19 +4,18 @@ namespace App\Models\ProcessData;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\ProcessData\PdRecord;
+use App\Models\ProcessData\Record;
 use \DateTimeInterface;
 
 class Volt extends Model
 {
     use HasFactory;
-    protected $connection = "process_data";
+    protected $connection = 'process_data';
     public $table = 'volt';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -24,7 +23,6 @@ class Volt extends Model
         'volt',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -34,6 +32,6 @@ class Volt extends Model
 
     public function record()
     {
-        return $this->belongsTo(PdRecord::class, 'record_id');
+        return $this->belongsTo(Record::class, 'record_id');
     }
 }

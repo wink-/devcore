@@ -16,7 +16,6 @@ class Amp extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -25,7 +24,6 @@ class Amp extends Model
         'amp_minute',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -35,6 +33,6 @@ class Amp extends Model
 
     public function record()
     {
-        return $this->belongsTo(PdRecord::class, 'record_id');
+        return $this->belongsTo(Record::class, 'record_id');
     }
 }

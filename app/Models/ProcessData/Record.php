@@ -6,17 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \DateTimeInterface;
 
-class PdRecord extends Model
+class Record extends Model
 {
     use HasFactory;
 
-    protected $connection = "process_data";
+    protected $connection = 'process_data';
     public $table = 'records';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -32,7 +31,6 @@ class PdRecord extends Model
         'graph_y_upper',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -52,6 +50,6 @@ class PdRecord extends Model
 
     public function unit()
     {
-        return $this->belongsTo(PdUnit::class, 'unit_id');
+        return $this->belongsTo(Unit::class, 'unit_id');
     }
 }

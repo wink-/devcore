@@ -9,13 +9,12 @@ use \DateTimeInterface;
 class LoggerType extends Model
 {
     use HasFactory;
-    protected $connection = "process_data";
+    protected $connection = 'process_data';
     public $table = 'logger_types';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -23,7 +22,6 @@ class LoggerType extends Model
         'description',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

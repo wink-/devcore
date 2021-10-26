@@ -6,16 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \DateTimeInterface;
 
-class PdUnit extends Model
+class Unit extends Model
 {
     use HasFactory;
-    protected $connection = "process_data";
+    protected $connection = 'process_data';
     public $table = 'units';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -23,7 +22,6 @@ class PdUnit extends Model
         'description',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
