@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyActionRequest;
 use App\Http\Requests\StoreActionRequest;
 use App\Http\Requests\UpdateActionRequest;
-use App\Models\Action;
+use App\Models\Pacsys\Action;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
