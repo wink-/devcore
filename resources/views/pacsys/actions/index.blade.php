@@ -3,7 +3,7 @@
 @can('pacsys')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.actions.create') }}">
+            <a class="btn btn-success" href="{{ route('pacsys.actions.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.action.title_singular') }}
             </a>
         </div>
@@ -159,7 +159,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.actions.massDestroy') }}",
+    url: "{{ route('pacsys.actions.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).data(), function (entry) {
@@ -191,7 +191,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.actions.index') }}",
+    ajax: "{{ route('pacsys.actions.index') }}",
     columns: [
 { data: 'placeholder', name: 'placeholder' },
 { data: 'ID', name: 'ID' },

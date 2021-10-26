@@ -10,7 +10,11 @@ Route::get('/home', function () {
 });
 
 Auth::routes(['register' => false]);
-
+Route::group(['prefix' => 'pacsys', 'as' => 'pacsys.', 'namespace' => 'Pacsys', 'middleware' => ['auth']], function () {
+    // Actions
+    Route::delete('actions/destroy', 'ActionsController@massDestroy')->name('actions.massDestroy');
+    Route::resource('actions', 'ActionsController');    
+});    
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
     // Permissions
@@ -184,10 +188,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Ups
     Route::resource('ups', 'UpsController', ['except' => ['create', 'store', 'edit', 'update', 'destroy']]);
-
-    // Actions
-    Route::delete('actions/destroy', 'ActionsController@massDestroy')->name('actions.massDestroy');
-    Route::resource('actions', 'ActionsController');
 
     // Actions Temp
     Route::delete('actions-temps/destroy', 'ActionsTempController@massDestroy')->name('actions-temps.massDestroy');
