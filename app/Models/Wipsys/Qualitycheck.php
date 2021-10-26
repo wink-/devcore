@@ -10,12 +10,11 @@ class Qualitycheck extends Model
 {
     use HasFactory;
 
-    public $table = 'qualitychecks';
+    public $table = 'sft_quality_checks';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -24,7 +23,6 @@ class Qualitycheck extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

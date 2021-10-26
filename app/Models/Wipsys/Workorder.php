@@ -11,7 +11,7 @@ class Workorder extends Model
 {
     use HasFactory;
 
-    public $table = 'workorders';
+    public $table = 'sft_work_orders';
 
     public static $searchable = [
         'number',
@@ -24,7 +24,6 @@ class Workorder extends Model
         'invoice_date',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -66,7 +65,6 @@ class Workorder extends Model
         'printed',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

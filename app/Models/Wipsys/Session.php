@@ -10,12 +10,11 @@ class Session extends Model
 {
     use HasFactory;
 
-    public $table = 'sessions';
+    public $table = 'sft_sessions';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -30,7 +29,6 @@ class Session extends Model
         'user_code',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

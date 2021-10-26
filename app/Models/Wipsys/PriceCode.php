@@ -10,12 +10,11 @@ class PriceCode extends Model
 {
     use HasFactory;
 
-    public $table = 'price_codes';
+    public $table = 'sft_price_codes';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -25,7 +24,6 @@ class PriceCode extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

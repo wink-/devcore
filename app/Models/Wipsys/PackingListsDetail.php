@@ -11,14 +11,13 @@ class PackingListsDetail extends Model
 {
     use HasFactory;
 
-    public $table = 'sft_packing_lists_details';
+    public $table = 'sft_packing_lists_detail';
 
     protected $dates = [
         'packing_list_date',
         'date_received',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -46,7 +45,6 @@ class PackingListsDetail extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

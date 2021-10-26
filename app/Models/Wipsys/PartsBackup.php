@@ -10,12 +10,11 @@ class PartsBackup extends Model
 {
     use HasFactory;
 
-    public $table = 'sft_parts_backups';
+    public $table = 'sft_parts_backup';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -72,7 +71,6 @@ class PartsBackup extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

@@ -10,12 +10,11 @@ class Procedure extends Model
 {
     use HasFactory;
 
-    public $table = 'procedures';
+    public $table = 'sft_procedures';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -28,7 +27,6 @@ class Procedure extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

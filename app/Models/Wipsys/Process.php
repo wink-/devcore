@@ -12,12 +12,11 @@ class Process extends Model
     use SoftDeletes;
     use HasFactory;
 
-    public $table = 'processes';
+    public $table = 'sft_processes';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -30,7 +29,6 @@ class Process extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     public function processQuotes()

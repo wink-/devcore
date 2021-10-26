@@ -12,7 +12,7 @@ class Quote extends Model
     use Auditable;
     use HasFactory;
 
-    public $table = 'quotes';
+    public $table = 'sft_quotes';
 
     public static $searchable = [
         'part_number',

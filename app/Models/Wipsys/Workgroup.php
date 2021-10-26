@@ -10,12 +10,12 @@ class Workgroup extends Model
 {
     use HasFactory;
 
-    public $table = 'workgroups';
+    public $table = 'sft_work_groups';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
+
     ];
 
     protected $fillable = [
@@ -28,7 +28,7 @@ class Workgroup extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
+
     ];
 
     protected function serializeDate(DateTimeInterface $date)

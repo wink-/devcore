@@ -10,12 +10,11 @@ class Priority extends Model
 {
     use HasFactory;
 
-    public $table = 'priorities';
+    public $table = 'sft_priorities';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -26,7 +25,6 @@ class Priority extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

@@ -10,12 +10,11 @@ class State extends Model
 {
     use HasFactory;
 
-    public $table = 'states';
+    public $table = 'sft_states';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -25,7 +24,6 @@ class State extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

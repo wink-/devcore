@@ -11,13 +11,12 @@ class Tag extends Model
 {
     use HasFactory;
 
-    public $table = 'tags';
+    public $table = 'sft_tags';
 
     protected $dates = [
         'date_received',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -36,7 +35,7 @@ class Tag extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
+
     ];
 
     protected function serializeDate(DateTimeInterface $date)

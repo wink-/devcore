@@ -15,7 +15,6 @@ class Part extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -73,7 +72,6 @@ class Part extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     public function partWorkorders()

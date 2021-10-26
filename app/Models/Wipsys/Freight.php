@@ -10,12 +10,11 @@ class Freight extends Model
 {
     use HasFactory;
 
-    public $table = 'sft_freights';
+    public $table = 'sft_freight';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -26,7 +25,6 @@ class Freight extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

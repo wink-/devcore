@@ -10,12 +10,11 @@ class Partshistory extends Model
 {
     use HasFactory;
 
-    public $table = 'sft_partshistories';
+    public $table = 'sft_parts_history';
 
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -72,7 +71,6 @@ class Partshistory extends Model
         'revision',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

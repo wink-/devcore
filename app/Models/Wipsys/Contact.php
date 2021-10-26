@@ -17,7 +17,6 @@ class Contact extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     protected $fillable = [
@@ -37,7 +36,6 @@ class Contact extends Model
         'email_quote_print',
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     public function customer()
