@@ -34,10 +34,6 @@ Check if you are using created_at and updated_at and if not disable timestamps -
 
 Check attributes to make sure they are using the correct table name.
 
-## Refactor Views
-Replace references to ID in views with getKey()
-
-
 
 Map the weird column names to the conventional names ->
     protected $maps = [
@@ -57,3 +53,11 @@ And then add a public mapper method for your properiest ->
     {
         return $this->attributes['dbCol2'];
     }
+## Refactor Views
+Replace references to ID in views with getKey()
+
+## Permission Structure
+    domain_access
+    domain_create
+    domain_edit
+    domain_delete

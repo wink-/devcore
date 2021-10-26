@@ -16,7 +16,7 @@ class ActionsController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Action::query()->select(sprintf('%s.*', (new Action)->table));
@@ -26,7 +26,7 @@ class ActionsController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'pacsys';
+                $viewGate      = 'pacsys_access';
                 $editGate      = 'pacsys_edit';
                 $deleteGate    = 'pacsys_delete';
                 $crudRoutePart = 'actions';
@@ -104,7 +104,7 @@ class ActionsController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.actions.create');
     }
@@ -118,7 +118,7 @@ class ActionsController extends Controller
 
     public function edit(Action $action)
     {
-        abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.actions.edit', compact('action'));
     }
@@ -132,7 +132,7 @@ class ActionsController extends Controller
 
     public function show(Action $action)
     {
-        abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.actions.show', compact('action'));
     }
