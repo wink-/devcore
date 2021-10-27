@@ -13,6 +13,8 @@ class Contact extends Model
     use HasFactory;
 
     public $table = 'sft_contacts';
+    
+    protected $connection ='wipsys';
 
     protected $dates = [
         'created_at',

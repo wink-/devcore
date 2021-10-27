@@ -12,6 +12,8 @@ class Workgroup extends Model
 
     public $table = 'sft_work_groups';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

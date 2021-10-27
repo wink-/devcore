@@ -12,6 +12,8 @@ class State extends Model
 
     public $table = 'sft_states';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

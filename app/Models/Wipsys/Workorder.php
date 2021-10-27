@@ -13,6 +13,8 @@ class Workorder extends Model
 
     public $table = 'sft_work_orders';
 
+    protected $connection ='wipsys';
+
     public static $searchable = [
         'number',
     ];

@@ -13,6 +13,8 @@ class Invoice extends Model
 
     public $table = 'sft_invoices';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'date',
         'created_at',

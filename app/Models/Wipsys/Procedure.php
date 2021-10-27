@@ -12,6 +12,8 @@ class Procedure extends Model
 
     public $table = 'sft_procedures';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

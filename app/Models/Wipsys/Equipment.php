@@ -12,6 +12,8 @@ class Equipment extends Model
 
     public $table = 'sft_equipment';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

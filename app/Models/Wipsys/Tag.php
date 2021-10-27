@@ -13,6 +13,8 @@ class Tag extends Model
 
     public $table = 'sft_tags';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'date_received',
         'created_at',

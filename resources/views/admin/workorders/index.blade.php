@@ -131,12 +131,7 @@
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
                     <td>
-                        <select class="search">
-                            <option value>{{ trans('global.all') }}</option>
-                            @foreach($parts as $key => $item)
-                                <option value="{{ $item->number }}">{{ $item->number }}</option>
-                            @endforeach
-                        </select>
+                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
                     <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
@@ -224,35 +219,6 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('workorder_delete')
-  let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
-  let deleteButton = {
-    text: deleteButtonTrans,
-    url: "{{ route('admin.workorders.massDestroy') }}",
-    className: 'btn-danger',
-    action: function (e, dt, node, config) {
-      var ids = $.map(dt.rows({ selected: true }).data(), function (entry) {
-          return entry.id
-      });
-
-      if (ids.length === 0) {
-        alert('{{ trans('global.datatables.zero_selected') }}')
-
-        return
-      }
-
-      if (confirm('{{ trans('global.areYouSure') }}')) {
-        $.ajax({
-          headers: {'x-csrf-token': _token},
-          method: 'POST',
-          url: config.url,
-          data: { ids: ids, _method: 'DELETE' }})
-          .done(function () { location.reload() })
-      }
-    }
-  }
-  dtButtons.push(deleteButton)
-@endcan
 
   let dtOverrideGlobals = {
     buttons: dtButtons,
@@ -266,7 +232,7 @@
 { data: 'id', name: 'id' },
 { data: 'number', name: 'number' },
 { data: 'customer_code', name: 'customer_code' },
-{ data: 'part_number', name: 'part.number' },
+//{ data: 'part_number', name: 'part.number' },
 { data: 'part_number', name: 'part_number' },
 { data: 'process_code', name: 'process_code' },
 { data: 'price', name: 'price' },
@@ -321,12 +287,12 @@ $('.datatable thead').on('input', '.search', function () {
         .search(value, strict)
         .draw()
   });
-table.on('column-visibility.dt', function(e, settings, column, state) {
-      visibleColumnsIndexes = []
-      table.columns(":visible").every(function(colIdx) {
-          visibleColumnsIndexes.push(colIdx);
-      });
-  })
+// table.on('column-visibility.dt', function(e, settings, column, state) {
+//       visibleColumnsIndexes = []
+//       table.columns(":visible").every(function(colIdx) {
+//           visibleColumnsIndexes.push(colIdx);
+//       });
+//   })
 });
 
 </script>

@@ -13,6 +13,8 @@ class LaborCard extends Model
 
     public $table = 'sft_labor_cards';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'job_date',
         'time_of_day',

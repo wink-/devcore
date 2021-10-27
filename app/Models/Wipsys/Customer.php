@@ -14,6 +14,8 @@ class Customer extends Model
 
     public $table = 'sft_customers';
 
+    protected $connection ='wipsys';
+
     public static $searchable = [
         'code',
         'name',

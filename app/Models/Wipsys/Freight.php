@@ -12,6 +12,8 @@ class Freight extends Model
 
     public $table = 'sft_freight';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

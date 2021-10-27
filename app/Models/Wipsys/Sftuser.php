@@ -12,6 +12,8 @@ class Sftuser extends Model
 
     public $table = 'sft_users';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

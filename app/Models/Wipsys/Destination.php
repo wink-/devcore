@@ -12,6 +12,8 @@ class Destination extends Model
 
     public $table = 'sft_destinations';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

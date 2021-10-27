@@ -12,6 +12,8 @@ class PriceCode extends Model
 
     public $table = 'sft_price_codes';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

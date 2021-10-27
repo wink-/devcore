@@ -12,6 +12,8 @@ class Method extends Model
 
     public $table = 'sft_methods';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

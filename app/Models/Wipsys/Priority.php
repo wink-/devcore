@@ -12,6 +12,8 @@ class Priority extends Model
 
     public $table = 'sft_priorities';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

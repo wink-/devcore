@@ -13,6 +13,8 @@ class PackingList extends Model
 
     public $table = 'sft_packing_lists';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'date',
         'date_received',

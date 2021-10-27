@@ -25,9 +25,9 @@ class PartsController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate = 'part_show';
-                $editGate = 'part_edit';
-                $deleteGate = 'part_delete';
+                $viewGate = 'wipsys_access';
+                $editGate = 'wipsys_edit';
+                $deleteGate = 'wapsys_delete';
                 $crudRoutePart = 'parts';
 
                 return view('partials.datatablesActions', compact(
@@ -67,7 +67,7 @@ class PartsController extends Controller
                 return $row->minimum_lot_charge ? $row->minimum_lot_charge : '';
             });
             $table->editColumn('quote', function ($row) {
-                return $row->quote ? $row->quote : '';
+                return $row->quote_id ? $row->quote_id : '';
             });
             $table->editColumn('specification', function ($row) {
                 return $row->specification ? $row->specification : '';
@@ -89,7 +89,7 @@ class PartsController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('part_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.parts.create');
     }
@@ -103,7 +103,7 @@ class PartsController extends Controller
 
     public function edit(Part $part)
     {
-        abort_if(Gate::denies('part_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.parts.edit', compact('part'));
     }
@@ -117,7 +117,7 @@ class PartsController extends Controller
 
     public function show(Part $part)
     {
-        abort_if(Gate::denies('part_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $part->load('partWorkorders', 'partWorkorderhistories');
 

@@ -12,6 +12,8 @@ class Ups extends Model
 
     public $table = 'ups';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

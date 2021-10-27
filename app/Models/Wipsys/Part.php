@@ -12,6 +12,8 @@ class Part extends Model
 
     public $table = 'sft_parts';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',
@@ -32,7 +34,7 @@ class Part extends Model
         'unit_code',
         'minimum_lot_charge',
         'minimum_line_charge',
-        'quote',
+        'quote_id',
         'certify',
         'specification',
         'bake',

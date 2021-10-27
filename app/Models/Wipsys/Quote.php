@@ -14,6 +14,8 @@ class Quote extends Model
 
     public $table = 'sft_quotes';
 
+    protected $connection ='wipsys';
+
     public static $searchable = [
         'part_number',
     ];

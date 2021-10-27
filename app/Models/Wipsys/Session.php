@@ -12,6 +12,8 @@ class Session extends Model
 
     public $table = 'sft_sessions';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

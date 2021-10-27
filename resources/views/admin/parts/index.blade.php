@@ -141,7 +141,7 @@
 { data: 'process_code', name: 'process_code' },
 { data: 'price', name: 'price' },
 { data: 'minimum_lot_charge', name: 'minimum_lot_charge' },
-{ data: 'quote', name: 'quote' },
+{ data: 'quote_id', name: 'quote_id' },
 { data: 'specification', name: 'specification' },
 { data: 'procedure_code', name: 'procedure_code' },
 { data: 'operator_note', name: 'operator_note' },

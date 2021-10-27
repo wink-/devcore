@@ -14,6 +14,8 @@ class Process extends Model
 
     public $table = 'sft_processes';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

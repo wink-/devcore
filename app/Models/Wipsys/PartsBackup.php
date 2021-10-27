@@ -12,6 +12,8 @@ class PartsBackup extends Model
 
     public $table = 'sft_parts_backup';
 
+    protected $connection ='wipsys';
+
     protected $dates = [
         'created_at',
         'updated_at',

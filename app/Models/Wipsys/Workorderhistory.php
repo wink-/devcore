@@ -13,6 +13,8 @@ class Workorderhistory extends Model
 
     public $table = 'sft_work_orders_history';
 
+    protected $connection ='wipsys';
+
     public static $searchable = [
         'number',
     ];
