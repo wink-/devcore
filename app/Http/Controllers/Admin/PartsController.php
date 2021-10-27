@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePartRequest;
 use App\Http\Requests\UpdatePartRequest;
-use App\Models\Part;
+use App\Models\Wipsys\Part;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

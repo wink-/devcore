@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyWorkorderRequest;
 use App\Http\Requests\StoreWorkorderRequest;
 use App\Http\Requests\UpdateWorkorderRequest;
-use App\Models\Part;
-use App\Models\Workorder;
+use App\Models\Wipsys\Part;
+use App\Models\Wipsys\Workorder;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +17,7 @@ class WorkordersController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('workorder_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Workorder::with(['part'])->select(sprintf('%s.*', (new Workorder)->table));
@@ -27,9 +27,9 @@ class WorkordersController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'workorder_show';
-                $editGate      = 'workorder_edit';
-                $deleteGate    = 'workorder_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'workorders';
 
                 return view('partials.datatablesActions', compact(

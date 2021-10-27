@@ -12,11 +12,12 @@ class Contact extends Model
     use SoftDeletes;
     use HasFactory;
 
-    public $table = 'sft_ontacts';
+    public $table = 'sft_contacts';
 
     protected $dates = [
         'created_at',
         'updated_at',
+        'deleted_at'
     ];
 
     protected $fillable = [
@@ -36,6 +37,7 @@ class Contact extends Model
         'email_quote_print',
         'created_at',
         'updated_at',
+        'deleted_at'
     ];
 
     public function customer()

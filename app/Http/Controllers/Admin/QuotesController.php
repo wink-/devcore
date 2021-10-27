@@ -6,10 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyQuoteRequest;
 use App\Http\Requests\StoreQuoteRequest;
 use App\Http\Requests\UpdateQuoteRequest;
-use App\Models\Contact;
-use App\Models\Customer;
-use App\Models\Process;
-use App\Models\Quote;
+use App\Models\Wipsys\Contact;
+use App\Models\Wipsys\Customer;
+use App\Models\Wipsys\Process;
+use App\Models\Wipsys\Quote;
 use App\Models\User;
 use Gate;
 use Illuminate\Http\Request;
@@ -20,7 +20,7 @@ class QuotesController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('quote_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Quote::with(['customer', 'contact', 'process', 'user'])->select(sprintf('%s.*', (new Quote())->table));
@@ -30,9 +30,9 @@ class QuotesController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate = 'quote_show';
-                $editGate = 'quote_edit';
-                $deleteGate = 'quote_delete';
+                $viewGate = 'wipsys_access';
+                $editGate = 'wipsys_edit';
+                $deleteGate = 'wipsys_delete';
                 $crudRoutePart = 'quotes';
 
                 return view('partials.datatablesActions', compact(
