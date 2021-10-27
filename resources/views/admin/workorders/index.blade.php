@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-@can('workorder_create')
+@can('wipsys_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.workorders.create') }}">
@@ -22,24 +22,24 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.workorder.fields.id') }}
+                        ID
                     </th>
                     <th>
-                        {{ trans('cruds.workorder.fields.number') }}
+                        Number
                     </th>
                     <th>
-                        {{ trans('cruds.workorder.fields.customer_code') }}
+                        Cust Code
                     </th>
                     <th>
-                        {{ trans('cruds.workorder.fields.part') }}
+                        Part Number
                     </th>
                     <th>
-                        {{ trans('cruds.workorder.fields.part_number') }}
+                        Part ID
                     </th>
                     <th>
-                        {{ trans('cruds.workorder.fields.process_code') }}
+                        Process Code
                     </th>
-                    <th>
+<!--                     <th>
                         {{ trans('cruds.workorder.fields.price') }}
                     </th>
                     <th>
@@ -113,16 +113,13 @@
                     </th>
                     <th>
                         {{ trans('cruds.workorder.fields.invoiced') }}
-                    </th>
+                    </th> -->
                     <th>
                         &nbsp;
                     </th>
                 </tr>
                 <tr>
                     <td>
-                    </td>
-                    <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
                     <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
@@ -219,7 +216,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-
+  
   let dtOverrideGlobals = {
     buttons: dtButtons,
     processing: true,
@@ -232,34 +229,16 @@
 { data: 'id', name: 'id' },
 { data: 'number', name: 'number' },
 { data: 'customer_code', name: 'customer_code' },
-//{ data: 'part_number', name: 'part.number' },
 { data: 'part_number', name: 'part_number' },
+{ data: 'part_id', name: 'part_id' },
 { data: 'process_code', name: 'process_code' },
-{ data: 'price', name: 'price' },
-{ data: 'price_code', name: 'price_code' },
-{ data: 'date_received', name: 'date_received' },
-{ data: 'date_required', name: 'date_required' },
-{ data: 'customer_purchase_order', name: 'customer_purchase_order' },
-{ data: 'customer_packing_list', name: 'customer_packing_list' },
-{ data: 'quantity', name: 'quantity' },
-{ data: 'unit_code', name: 'unit_code' },
-{ data: 'quantity_shipped', name: 'quantity_shipped' },
-{ data: 'our_last_packing_list', name: 'our_last_packing_list' },
-{ data: 'destination_code', name: 'destination_code' },
-{ data: 'carrier_code', name: 'carrier_code' },
-{ data: 'freight_code', name: 'freight_code' },
-{ data: 'date_shipped', name: 'date_shipped' },
-{ data: 'invoice_number', name: 'invoice_number' },
-{ data: 'invoice_date', name: 'invoice_date' },
-{ data: 'invoice_amount', name: 'invoice_amount' },
-{ data: 'priority', name: 'priority' },
-{ data: 'rework', name: 'rework' },
-{ data: 'hot', name: 'hot' },
-{ data: 'started', name: 'started' },
-{ data: 'completed', name: 'completed' },
-{ data: 'shipped', name: 'shipped' },
-{ data: 'cod', name: 'cod' },
-{ data: 'invoiced', name: 'invoiced' },
+// { data: 'customer_name', name: 'customer_name' },
+// { data: 'price', name: 'price' },
+// { data: 'minimum_lot_charge', name: 'minimum_lot_charge' },
+// { data: 'quote_id', name: 'quote_id' },
+// { data: 'specification', name: 'specification' },
+// { data: 'procedure_code', name: 'procedure_code' },
+// { data: 'operator_note', name: 'operator_note' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,
@@ -287,12 +266,12 @@ $('.datatable thead').on('input', '.search', function () {
         .search(value, strict)
         .draw()
   });
-// table.on('column-visibility.dt', function(e, settings, column, state) {
-//       visibleColumnsIndexes = []
-//       table.columns(":visible").every(function(colIdx) {
-//           visibleColumnsIndexes.push(colIdx);
-//       });
-//   })
+table.on('column-visibility.dt', function(e, settings, column, state) {
+      visibleColumnsIndexes = []
+      table.columns(":visible").every(function(colIdx) {
+          visibleColumnsIndexes.push(colIdx);
+      });
+  })
 });
 
 </script>

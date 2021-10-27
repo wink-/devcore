@@ -20,9 +20,11 @@
             <div class="form-group">
                 <label class="required" for="part_id">{{ trans('cruds.workorder.fields.part') }}</label>
                 <select class="form-control select2 {{ $errors->has('part') ? 'is-invalid' : '' }}" name="part_id" id="part_id" required>
+                    @if(isset($parts))
                     @foreach($parts as $id => $part)
                         <option value="{{ $id }}" {{ old('part_id') == $id ? 'selected' : '' }}>{{ $part }}</option>
                     @endforeach
+                    @endif
                 </select>
                 @if($errors->has('part'))
                     <span class="text-danger">{{ $errors->first('part') }}</span>
