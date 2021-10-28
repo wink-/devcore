@@ -129,6 +129,6 @@ class WorkordersController extends Controller
     {
         abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.workorder.show', compact('workorder'));
+        return view('admin.workorders.show', compact('workorder'));
     }
 }
