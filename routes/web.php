@@ -1,6 +1,7 @@
 <?php
 
 Route::redirect('/', '/login');
+Route::view('/playground', 'playground');
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));

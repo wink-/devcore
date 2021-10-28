@@ -2,10 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Wipsys\Workorder;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use App\Models\App/Models/Workorder;
 
 class WorkorderTable extends DataTableComponent
 {
@@ -13,17 +13,23 @@ class WorkorderTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make('Column Name'),
+            Column::make('Workorder', 'number')
+                ->sortable()
+                ->searchable(),
+            Column::make('Customer Code', 'customer_code')
+                ->sortable()
+                ->searchable(),
+            Column::make('Part Number', 'part_number')
+                ->sortable()
+                ->searchable(),
+            Column::make('Process', 'process_code')
+                ->sortable()
+                ->searchable(),                
         ];
     }
 
     public function query(): Builder
     {
-        return App/Models/Workorder::query();
-    }
-
-    public function rowView(): string
-    {
-        return 'livewire-tables.rows.workorder_table';
+        return Workorder::query();
     }
 }

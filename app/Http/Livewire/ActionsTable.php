@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Action:
+use App\Models\Pacsys\Action;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
