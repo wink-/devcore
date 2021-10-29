@@ -3,16 +3,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Livewire Tables</title>
-	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-    <livewire:styles />
-
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
-
-    <style>
-        [x-cloak] { display: none !important; }
-    </style>
 </head>
+@extends('layouts.admin')
+@section('content')
+@can('wipsys_create')
+    <div style="margin-bottom: 10px;" class="row">
+        <div class="col-lg-12">
+            <a class="btn btn-success" href="{{ route('admin.workorders.create') }}">
+                {{ trans('global.add') }} {{ trans('cruds.workorder.title_singular') }}
+            </a>
+        </div>
+    </div>
+@endcan
 <body>
 	<livewire:workorders-table/>
 	
