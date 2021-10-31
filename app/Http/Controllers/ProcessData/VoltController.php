@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\ProcessData;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyVoltRequest;
 use App\Http\Requests\StoreVoltRequest;
 use App\Http\Requests\UpdateVoltRequest;
-use App\Models\ProcessData\PdRecord;
+use App\Models\ProcessData\Record;
 use App\Models\ProcessData\Volt;
 use Gate;
 use Illuminate\Http\Request;
@@ -27,7 +27,7 @@ class VoltController extends Controller
     {
         abort_if(Gate::denies('process_data_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $records = PdRecord::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $records = Record::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.volts.create', compact('records'));
     }
@@ -43,7 +43,7 @@ class VoltController extends Controller
     {
         abort_if(Gate::denies('process_data_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $records = PdRecord::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $records = Record::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $volt->load('record');
 

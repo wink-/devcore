@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\ProcessData;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyLoggerTypeRequest;
 use App\Http\Requests\StoreLoggerTypeRequest;
 use App\Http\Requests\UpdateLoggerTypeRequest;
-use App\Models\LoggerType;
+use App\Models\ProcessData\LoggerType;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +15,7 @@ class LoggerTypesController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('logger_type_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $loggerTypes = LoggerType::all();
 
@@ -24,7 +24,7 @@ class LoggerTypesController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('logger_type_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.loggerTypes.create');
     }
@@ -38,7 +38,7 @@ class LoggerTypesController extends Controller
 
     public function edit(LoggerType $loggerType)
     {
-        abort_if(Gate::denies('logger_type_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.loggerTypes.edit', compact('loggerType'));
     }
@@ -52,14 +52,14 @@ class LoggerTypesController extends Controller
 
     public function show(LoggerType $loggerType)
     {
-        abort_if(Gate::denies('logger_type_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.loggerTypes.show', compact('loggerType'));
     }
 
     public function destroy(LoggerType $loggerType)
     {
-        abort_if(Gate::denies('logger_type_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('process_data_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $loggerType->delete();
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\ProcessData;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyAmpRequest;
 use App\Http\Requests\StoreAmpRequest;
 use App\Http\Requests\UpdateAmpRequest;
 use App\Models\ProcessData\Amp;
-use App\Models\ProcessData\PdRecord;
+use App\Models\ProcessData\Record;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
