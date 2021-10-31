@@ -15,7 +15,7 @@ class MaterialsController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('material_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $materials = Material::all();
 
@@ -24,7 +24,7 @@ class MaterialsController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('material_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.materials.create');
     }
@@ -38,7 +38,7 @@ class MaterialsController extends Controller
 
     public function edit(Material $material)
     {
-        abort_if(Gate::denies('material_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.materials.edit', compact('material'));
     }
@@ -52,14 +52,14 @@ class MaterialsController extends Controller
 
     public function show(Material $material)
     {
-        abort_if(Gate::denies('material_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.materials.show', compact('material'));
     }
 
     public function destroy(Material $material)
     {
-        abort_if(Gate::denies('material_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $material->delete();
 

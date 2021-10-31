@@ -14,7 +14,7 @@ class PackingListsDetailController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('packing_lists_detail_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = PackingListsDetail::query()->select(sprintf('%s.*', (new PackingListsDetail)->table));
@@ -24,9 +24,9 @@ class PackingListsDetailController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'packing_lists_detail_show';
-                $editGate      = 'packing_lists_detail_edit';
-                $deleteGate    = 'packing_lists_detail_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'packing-lists-details';
 
                 return view('partials.datatablesActions', compact(
@@ -113,7 +113,7 @@ class PackingListsDetailController extends Controller
 
     public function edit(PackingListsDetail $packingListsDetail)
     {
-        abort_if(Gate::denies('packing_lists_detail_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.packingListsDetails.edit', compact('packingListsDetail'));
     }
@@ -127,7 +127,7 @@ class PackingListsDetailController extends Controller
 
     public function show(PackingListsDetail $packingListsDetail)
     {
-        abort_if(Gate::denies('packing_lists_detail_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.packingListsDetails.show', compact('packingListsDetail'));
     }

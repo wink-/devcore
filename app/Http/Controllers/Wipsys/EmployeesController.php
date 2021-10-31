@@ -15,7 +15,7 @@ class EmployeesController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('employee_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Employee::query()->select(sprintf('%s.*', (new Employee)->table));
@@ -25,9 +25,9 @@ class EmployeesController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'employee_show';
-                $editGate      = 'employee_edit';
-                $deleteGate    = 'employee_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'employees';
 
                 return view('partials.datatablesActions', compact(
@@ -59,7 +59,7 @@ class EmployeesController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('employee_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.employees.create');
     }
@@ -73,7 +73,7 @@ class EmployeesController extends Controller
 
     public function edit(Employee $employee)
     {
-        abort_if(Gate::denies('employee_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.employees.edit', compact('employee'));
     }
@@ -87,7 +87,7 @@ class EmployeesController extends Controller
 
     public function show(Employee $employee)
     {
-        abort_if(Gate::denies('employee_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.employees.show', compact('employee'));
     }

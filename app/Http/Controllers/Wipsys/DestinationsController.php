@@ -16,7 +16,7 @@ class DestinationsController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('destination_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $destinations = Destination::with(['customer_code'])->get();
 
@@ -25,7 +25,7 @@ class DestinationsController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('destination_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $customer_codes = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -41,7 +41,7 @@ class DestinationsController extends Controller
 
     public function edit(Destination $destination)
     {
-        abort_if(Gate::denies('destination_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $customer_codes = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -59,7 +59,7 @@ class DestinationsController extends Controller
 
     public function show(Destination $destination)
     {
-        abort_if(Gate::denies('destination_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $destination->load('customer_code');
 
@@ -68,7 +68,7 @@ class DestinationsController extends Controller
 
     public function destroy(Destination $destination)
     {
-        abort_if(Gate::denies('destination_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $destination->delete();
 

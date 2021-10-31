@@ -14,7 +14,7 @@ class EquipmentController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('equipment_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $equipment = Equipment::all();
 
@@ -23,7 +23,7 @@ class EquipmentController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('equipment_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.equipment.create');
     }
@@ -37,7 +37,7 @@ class EquipmentController extends Controller
 
     public function edit(Equipment $equipment)
     {
-        abort_if(Gate::denies('equipment_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.equipment.edit', compact('equipment'));
     }
@@ -51,7 +51,7 @@ class EquipmentController extends Controller
 
     public function show(Equipment $equipment)
     {
-        abort_if(Gate::denies('equipment_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.equipment.show', compact('equipment'));
     }

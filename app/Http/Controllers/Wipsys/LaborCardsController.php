@@ -14,7 +14,7 @@ class LaborCardsController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('labor_card_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = LaborCard::query()->select(sprintf('%s.*', (new LaborCard)->table));
@@ -24,9 +24,9 @@ class LaborCardsController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'labor_card_show';
-                $editGate      = 'labor_card_edit';
-                $deleteGate    = 'labor_card_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'labor-cards';
 
                 return view('partials.datatablesActions', compact(
@@ -93,7 +93,7 @@ class LaborCardsController extends Controller
 
     public function edit(LaborCard $laborCard)
     {
-        abort_if(Gate::denies('labor_card_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.laborCards.edit', compact('laborCard'));
     }
@@ -107,7 +107,7 @@ class LaborCardsController extends Controller
 
     public function show(LaborCard $laborCard)
     {
-        abort_if(Gate::denies('labor_card_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.laborCards.show', compact('laborCard'));
     }

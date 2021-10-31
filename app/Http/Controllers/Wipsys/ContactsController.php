@@ -16,7 +16,7 @@ class ContactsController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('contact_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $contacts = Contact::with(['customer'])->get();
 
@@ -25,7 +25,7 @@ class ContactsController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('contact_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $customers = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -41,7 +41,7 @@ class ContactsController extends Controller
 
     public function edit(Contact $contact)
     {
-        abort_if(Gate::denies('contact_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $customers = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -59,7 +59,7 @@ class ContactsController extends Controller
 
     public function show(Contact $contact)
     {
-        abort_if(Gate::denies('contact_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $contact->load('customer');
 
@@ -68,7 +68,7 @@ class ContactsController extends Controller
 
     public function destroy(Contact $contact)
     {
-        abort_if(Gate::denies('contact_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $contact->delete();
 

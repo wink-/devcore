@@ -14,7 +14,7 @@ class PartshistoryController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('partshistory_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Partshistory::query()->select(sprintf('%s.*', (new Partshistory)->table));
@@ -24,9 +24,9 @@ class PartshistoryController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'partshistory_show';
-                $editGate      = 'partshistory_edit';
-                $deleteGate    = 'partshistory_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'partshistories';
 
                 return view('partials.datatablesActions', compact(
@@ -118,7 +118,7 @@ class PartshistoryController extends Controller
 
     public function edit(Partshistory $partshistory)
     {
-        abort_if(Gate::denies('partshistory_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.partshistories.edit', compact('partshistory'));
     }
@@ -132,7 +132,7 @@ class PartshistoryController extends Controller
 
     public function show(Partshistory $partshistory)
     {
-        abort_if(Gate::denies('partshistory_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.partshistories.show', compact('partshistory'));
     }

@@ -15,7 +15,7 @@ class PackingListsController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('packing_list_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = PackingList::query()->select(sprintf('%s.*', (new PackingList)->table));
@@ -25,9 +25,9 @@ class PackingListsController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'packing_list_show';
-                $editGate      = 'packing_list_edit';
-                $deleteGate    = 'packing_list_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'packing-lists';
 
                 return view('partials.datatablesActions', compact(
@@ -94,7 +94,7 @@ class PackingListsController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('packing_list_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.packingLists.create');
     }
@@ -108,7 +108,7 @@ class PackingListsController extends Controller
 
     public function edit(PackingList $packingList)
     {
-        abort_if(Gate::denies('packing_list_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.packingLists.edit', compact('packingList'));
     }
@@ -122,7 +122,7 @@ class PackingListsController extends Controller
 
     public function show(PackingList $packingList)
     {
-        abort_if(Gate::denies('packing_list_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.packingLists.show', compact('packingList'));
     }

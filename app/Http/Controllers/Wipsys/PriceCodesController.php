@@ -15,7 +15,7 @@ class PriceCodesController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('price_code_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $priceCodes = PriceCode::all();
 
@@ -24,7 +24,7 @@ class PriceCodesController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('price_code_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.priceCodes.create');
     }
@@ -38,7 +38,7 @@ class PriceCodesController extends Controller
 
     public function edit(PriceCode $priceCode)
     {
-        abort_if(Gate::denies('price_code_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.priceCodes.edit', compact('priceCode'));
     }
@@ -52,14 +52,14 @@ class PriceCodesController extends Controller
 
     public function show(PriceCode $priceCode)
     {
-        abort_if(Gate::denies('price_code_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.priceCodes.show', compact('priceCode'));
     }
 
     public function destroy(PriceCode $priceCode)
     {
-        abort_if(Gate::denies('price_code_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $priceCode->delete();
 

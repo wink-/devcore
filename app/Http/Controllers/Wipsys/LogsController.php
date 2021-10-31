@@ -12,7 +12,7 @@ class LogsController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('log_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $logs = Log::all();
 
@@ -21,7 +21,7 @@ class LogsController extends Controller
 
     public function show(Log $log)
     {
-        abort_if(Gate::denies('log_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.logs.show', compact('log'));
     }

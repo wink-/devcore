@@ -15,7 +15,7 @@ class FreightController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('freight_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $freights = Freight::all();
 
@@ -24,7 +24,7 @@ class FreightController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('freight_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.freights.create');
     }
@@ -38,7 +38,7 @@ class FreightController extends Controller
 
     public function edit(Freight $freight)
     {
-        abort_if(Gate::denies('freight_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.freights.edit', compact('freight'));
     }
@@ -52,14 +52,14 @@ class FreightController extends Controller
 
     public function show(Freight $freight)
     {
-        abort_if(Gate::denies('freight_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.freights.show', compact('freight'));
     }
 
     public function destroy(Freight $freight)
     {
-        abort_if(Gate::denies('freight_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $freight->delete();
 

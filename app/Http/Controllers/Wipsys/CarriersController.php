@@ -15,7 +15,7 @@ class CarriersController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('carrier_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $carriers = Carrier::all();
 
@@ -24,7 +24,7 @@ class CarriersController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('carrier_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.carriers.create');
     }
@@ -38,7 +38,7 @@ class CarriersController extends Controller
 
     public function edit(Carrier $carrier)
     {
-        abort_if(Gate::denies('carrier_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.carriers.edit', compact('carrier'));
     }
@@ -52,14 +52,14 @@ class CarriersController extends Controller
 
     public function show(Carrier $carrier)
     {
-        abort_if(Gate::denies('carrier_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.carriers.show', compact('carrier'));
     }
 
     public function destroy(Carrier $carrier)
     {
-        abort_if(Gate::denies('carrier_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $carrier->delete();
 

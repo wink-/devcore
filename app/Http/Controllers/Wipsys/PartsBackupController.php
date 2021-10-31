@@ -14,7 +14,7 @@ class PartsBackupController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('parts_backup_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = PartsBackup::query()->select(sprintf('%s.*', (new PartsBackup)->table));
@@ -24,9 +24,9 @@ class PartsBackupController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'parts_backup_show';
-                $editGate      = 'parts_backup_edit';
-                $deleteGate    = 'parts_backup_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'parts-backups';
 
                 return view('partials.datatablesActions', compact(
@@ -118,7 +118,7 @@ class PartsBackupController extends Controller
 
     public function edit(PartsBackup $partsBackup)
     {
-        abort_if(Gate::denies('parts_backup_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.partsBackups.edit', compact('partsBackup'));
     }
@@ -132,7 +132,7 @@ class PartsBackupController extends Controller
 
     public function show(PartsBackup $partsBackup)
     {
-        abort_if(Gate::denies('parts_backup_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.partsBackups.show', compact('partsBackup'));
     }

@@ -13,7 +13,7 @@ class InvoicesController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('invoice_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Invoice::query()->select(sprintf('%s.*', (new Invoice)->table));
@@ -23,9 +23,9 @@ class InvoicesController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'invoice_show';
-                $editGate      = 'invoice_edit';
-                $deleteGate    = 'invoice_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'invoices';
 
                 return view('partials.datatablesActions', compact(
@@ -79,7 +79,7 @@ class InvoicesController extends Controller
 
     public function show(Invoice $invoice)
     {
-        abort_if(Gate::denies('invoice_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.invoices.show', compact('invoice'));
     }

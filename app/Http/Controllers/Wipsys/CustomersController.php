@@ -16,7 +16,7 @@ class CustomersController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('customer_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Customer::with(['carrier'])->select(sprintf('%s.*', (new Customer)->table));
@@ -26,9 +26,9 @@ class CustomersController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'customer_show';
-                $editGate      = 'customer_edit';
-                $deleteGate    = 'customer_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'customers';
 
                 return view('partials.datatablesActions', compact(
@@ -72,7 +72,7 @@ class CustomersController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('customer_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $carriers = Carrier::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -88,7 +88,7 @@ class CustomersController extends Controller
 
     public function edit(Customer $customer)
     {
-        abort_if(Gate::denies('customer_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $carriers = Carrier::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -106,7 +106,7 @@ class CustomersController extends Controller
 
     public function show(Customer $customer)
     {
-        abort_if(Gate::denies('customer_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $customer->load('carrier', 'customerCodeDestinations', 'customerContacts', 'customerQuotes');
 

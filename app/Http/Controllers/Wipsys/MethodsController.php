@@ -15,7 +15,7 @@ class MethodsController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('method_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $methods = Method::all();
 
@@ -24,7 +24,7 @@ class MethodsController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('method_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.methods.create');
     }
@@ -38,7 +38,7 @@ class MethodsController extends Controller
 
     public function edit(Method $method)
     {
-        abort_if(Gate::denies('method_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.methods.edit', compact('method'));
     }
@@ -52,14 +52,14 @@ class MethodsController extends Controller
 
     public function show(Method $method)
     {
-        abort_if(Gate::denies('method_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.methods.show', compact('method'));
     }
 
     public function destroy(Method $method)
     {
-        abort_if(Gate::denies('method_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $method->delete();
 
