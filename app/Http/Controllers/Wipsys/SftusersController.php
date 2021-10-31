@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroySftuserRequest;
 use App\Http\Requests\StoreSftuserRequest;
 use App\Http\Requests\UpdateSftuserRequest;
-use App\Models\Sftuser;
+use App\Models\Wipsys\Sftuser;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +15,7 @@ class SftusersController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('sftuser_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $sftusers = Sftuser::all();
 
@@ -24,7 +24,7 @@ class SftusersController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('sftuser_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.sftusers.create');
     }
@@ -38,7 +38,7 @@ class SftusersController extends Controller
 
     public function edit(Sftuser $sftuser)
     {
-        abort_if(Gate::denies('sftuser_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.sftusers.edit', compact('sftuser'));
     }
@@ -52,14 +52,14 @@ class SftusersController extends Controller
 
     public function show(Sftuser $sftuser)
     {
-        abort_if(Gate::denies('sftuser_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.sftusers.show', compact('sftuser'));
     }
 
     public function destroy(Sftuser $sftuser)
     {
-        abort_if(Gate::denies('sftuser_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $sftuser->delete();
 

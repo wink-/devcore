@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Models\Up;
+use App\Models\Wipsys\Ups;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +13,7 @@ class UpsController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('up_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Up::query()->select(sprintf('%s.*', (new Up)->table));
@@ -23,9 +23,9 @@ class UpsController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'up_show';
-                $editGate      = 'up_edit';
-                $deleteGate    = 'up_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'ups';
 
                 return view('partials.datatablesActions', compact(
@@ -87,7 +87,7 @@ class UpsController extends Controller
 
     public function show(Up $up)
     {
-        abort_if(Gate::denies('up_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.ups.show', compact('up'));
     }

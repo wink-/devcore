@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroySessionRequest;
 use App\Http\Requests\StoreSessionRequest;
 use App\Http\Requests\UpdateSessionRequest;
-use App\Models\Session;
+use App\Models\Wipsys\Session;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +15,7 @@ class SessionsController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('session_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $sessions = Session::all();
 
@@ -24,7 +24,7 @@ class SessionsController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('session_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.sessions.create');
     }
@@ -38,7 +38,7 @@ class SessionsController extends Controller
 
     public function edit(Session $session)
     {
-        abort_if(Gate::denies('session_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.sessions.edit', compact('session'));
     }
@@ -52,14 +52,14 @@ class SessionsController extends Controller
 
     public function show(Session $session)
     {
-        abort_if(Gate::denies('session_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.sessions.show', compact('session'));
     }
 
     public function destroy(Session $session)
     {
-        abort_if(Gate::denies('session_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $session->delete();
 

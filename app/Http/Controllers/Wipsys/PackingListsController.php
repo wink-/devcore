@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePackingListRequest;
 use App\Http\Requests\UpdatePackingListRequest;
-use App\Models\PackingList;
+use App\Models\Wipsys\PackingList;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

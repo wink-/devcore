@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyUnitRequest;
 use App\Http\Requests\StoreUnitRequest;
 use App\Http\Requests\UpdateUnitRequest;
-use App\Models\Unit;
+use App\Models\Wipsys\Unit;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +16,7 @@ class UnitsController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('unit_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Unit::query()->select(sprintf('%s.*', (new Unit)->table));
@@ -26,9 +26,9 @@ class UnitsController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'unit_show';
-                $editGate      = 'unit_edit';
-                $deleteGate    = 'unit_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'units';
 
                 return view('partials.datatablesActions', compact(
@@ -66,7 +66,7 @@ class UnitsController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('unit_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.units.create');
     }
@@ -80,7 +80,7 @@ class UnitsController extends Controller
 
     public function edit(Unit $unit)
     {
-        abort_if(Gate::denies('unit_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.units.edit', compact('unit'));
     }
@@ -94,14 +94,14 @@ class UnitsController extends Controller
 
     public function show(Unit $unit)
     {
-        abort_if(Gate::denies('unit_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.units.show', compact('unit'));
     }
 
     public function destroy(Unit $unit)
     {
-        abort_if(Gate::denies('unit_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $unit->delete();
 

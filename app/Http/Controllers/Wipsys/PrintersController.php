@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePrinterRequest;
 use App\Http\Requests\UpdatePrinterRequest;
-use App\Models\Printer;
+use App\Models\Wipsys\Printer;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,7 +14,7 @@ class PrintersController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('printer_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $printers = Printer::all();
 
@@ -23,7 +23,7 @@ class PrintersController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('printer_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.printers.create');
     }
@@ -37,7 +37,7 @@ class PrintersController extends Controller
 
     public function edit(Printer $printer)
     {
-        abort_if(Gate::denies('printer_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.printers.edit', compact('printer'));
     }
@@ -51,7 +51,7 @@ class PrintersController extends Controller
 
     public function show(Printer $printer)
     {
-        abort_if(Gate::denies('printer_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.printers.show', compact('printer'));
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyQuoteRequest;
@@ -184,7 +184,7 @@ class QuotesController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('quote_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $customers = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -206,7 +206,7 @@ class QuotesController extends Controller
 
     public function edit(Quote $quote)
     {
-        abort_if(Gate::denies('quote_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $customers = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -230,7 +230,7 @@ class QuotesController extends Controller
 
     public function show(Quote $quote)
     {
-        abort_if(Gate::denies('quote_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $quote->load('customer', 'contact', 'process', 'user');
 
@@ -239,7 +239,7 @@ class QuotesController extends Controller
 
     public function destroy(Quote $quote)
     {
-        abort_if(Gate::denies('quote_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $quote->delete();
 

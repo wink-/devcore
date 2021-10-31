@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyWorkgroupRequest;
 use App\Http\Requests\StoreWorkgroupRequest;
 use App\Http\Requests\UpdateWorkgroupRequest;
-use App\Models\Workgroup;
+use App\Models\Wipsys\Workgroup;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +15,7 @@ class WorkgroupsController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('workgroup_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $workgroups = Workgroup::all();
 
@@ -24,7 +24,7 @@ class WorkgroupsController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('workgroup_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.workgroups.create');
     }
@@ -38,7 +38,7 @@ class WorkgroupsController extends Controller
 
     public function edit(Workgroup $workgroup)
     {
-        abort_if(Gate::denies('workgroup_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.workgroups.edit', compact('workgroup'));
     }
@@ -52,14 +52,14 @@ class WorkgroupsController extends Controller
 
     public function show(Workgroup $workgroup)
     {
-        abort_if(Gate::denies('workgroup_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.workgroups.show', compact('workgroup'));
     }
 
     public function destroy(Workgroup $workgroup)
     {
-        abort_if(Gate::denies('workgroup_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $workgroup->delete();
 

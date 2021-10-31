@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyPriorityRequest;
 use App\Http\Requests\StorePriorityRequest;
 use App\Http\Requests\UpdatePriorityRequest;
-use App\Models\Priority;
+use App\Models\Wipsys\Priority;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +15,7 @@ class PrioritiesController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('priority_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $priorities = Priority::all();
 
@@ -24,7 +24,7 @@ class PrioritiesController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('priority_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.priorities.create');
     }
@@ -38,7 +38,7 @@ class PrioritiesController extends Controller
 
     public function edit(Priority $priority)
     {
-        abort_if(Gate::denies('priority_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.priorities.edit', compact('priority'));
     }
@@ -52,14 +52,14 @@ class PrioritiesController extends Controller
 
     public function show(Priority $priority)
     {
-        abort_if(Gate::denies('priority_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.priorities.show', compact('priority'));
     }
 
     public function destroy(Priority $priority)
     {
-        abort_if(Gate::denies('priority_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $priority->delete();
 

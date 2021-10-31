@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyCarrierRequest;
 use App\Http\Requests\StoreCarrierRequest;
 use App\Http\Requests\UpdateCarrierRequest;
-use App\Models\Carrier;
+use App\Models\Wipsys\Carrier;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

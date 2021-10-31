@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Tag;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTagRequest;
 use App\Http\Requests\UpdateTagRequest;
-use App\Models\Tag;
+use App\Models\Wipsys\Tag;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +15,7 @@ class TagsController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('tag_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Tag::query()->select(sprintf('%s.*', (new Tag)->table));
@@ -25,9 +25,9 @@ class TagsController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'tag_show';
-                $editGate      = 'tag_edit';
-                $deleteGate    = 'tag_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'tags';
 
                 return view('partials.datatablesActions', compact(
@@ -75,7 +75,7 @@ class TagsController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('tag_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.tags.create');
     }
@@ -89,7 +89,7 @@ class TagsController extends Controller
 
     public function edit(Tag $tag)
     {
-        abort_if(Gate::denies('tag_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.tags.edit', compact('tag'));
     }
@@ -103,7 +103,7 @@ class TagsController extends Controller
 
     public function show(Tag $tag)
     {
-        abort_if(Gate::denies('tag_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('admin.tags.show', compact('tag'));
     }

@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreWorkorderhistoryRequest;
 use App\Http\Requests\UpdateWorkorderhistoryRequest;
-use App\Models\Part;
-use App\Models\Workorderhistory;
+use App\Models\Wipsys\Part;
+use App\Models\Wipsys\Workorderhistory;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +16,7 @@ class WorkorderhistoryController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('workorderhistory_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Workorderhistory::with(['part'])->select(sprintf('%s.*', (new Workorderhistory)->table));
@@ -26,9 +26,9 @@ class WorkorderhistoryController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'workorderhistory_show';
-                $editGate      = 'workorderhistory_edit';
-                $deleteGate    = 'workorderhistory_delete';
+                $viewGate      = 'wipsys_show';
+                $editGate      = 'wipsys_edit';
+                $deleteGate    = 'wipsys_delete';
                 $crudRoutePart = 'workorderhistories';
 
                 return view('partials.datatablesActions', compact(
@@ -141,7 +141,7 @@ class WorkorderhistoryController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('workorderhistory_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $parts = Part::all()->pluck('number', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -157,7 +157,7 @@ class WorkorderhistoryController extends Controller
 
     public function edit(Workorderhistory $workorderhistory)
     {
-        abort_if(Gate::denies('workorderhistory_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $parts = Part::all()->pluck('number', 'id')->prepend(trans('global.pleaseSelect'), '');
 
@@ -175,7 +175,7 @@ class WorkorderhistoryController extends Controller
 
     public function show(Workorderhistory $workorderhistory)
     {
-        abort_if(Gate::denies('workorderhistory_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('wipsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $workorderhistory->load('part');
 
