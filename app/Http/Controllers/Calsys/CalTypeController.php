@@ -1,74 +1,74 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Calsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyCalTypeRequest;
-use App\Http\Requests\StoreCalTypeRequest;
-use App\Http\Requests\UpdateCalTypeRequest;
-use App\Models\CalType;
+use App\Http\Requests\MassDestroyTypeRequest;
+use App\Http\Requests\StoreTypeRequest;
+use App\Http\Requests\UpdateTypeRequest;
+use App\Models\Calsys\Type;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CalTypeController extends Controller
+class TypeController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('cal_type_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('calsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $calTypes = CalType::all();
+        $types = Type::all();
 
-        return view('admin.calTypes.index', compact('calTypes'));
+        return view('calsys.types.index', compact('types'));
     }
 
     public function create()
     {
-        abort_if(Gate::denies('cal_type_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('calsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.calTypes.create');
+        return view('calsys.types.create');
     }
 
-    public function store(StoreCalTypeRequest $request)
+    public function store(StoreTypeRequest $request)
     {
-        $calType = CalType::create($request->all());
+        $type = Type::create($request->all());
 
-        return redirect()->route('admin.cal-types.index');
+        return redirect()->route('calsys.cal-types.index');
     }
 
-    public function edit(CalType $calType)
+    public function edit(Type $type)
     {
-        abort_if(Gate::denies('cal_type_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('calsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.calTypes.edit', compact('calType'));
+        return view('calsys.types.edit', compact('type'));
     }
 
-    public function update(UpdateCalTypeRequest $request, CalType $calType)
+    public function update(UpdateTypeRequest $request, Type $type)
     {
-        $calType->update($request->all());
+        $type->update($request->all());
 
-        return redirect()->route('admin.cal-types.index');
+        return redirect()->route('calsys.cal-types.index');
     }
 
-    public function show(CalType $calType)
+    public function show(Type $type)
     {
-        abort_if(Gate::denies('cal_type_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('calsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.calTypes.show', compact('calType'));
+        return view('calsys.types.show', compact('type'));
     }
 
-    public function destroy(CalType $calType)
+    public function destroy(Type $type)
     {
-        abort_if(Gate::denies('cal_type_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('calsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $calType->delete();
+        $type->delete();
 
         return back();
     }
 
-    public function massDestroy(MassDestroyCalTypeRequest $request)
+    public function massDestroy(MassDestroyTypeRequest $request)
     {
-        CalType::whereIn('id', request('ids'))->delete();
+        Type::whereIn('id', request('ids'))->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
