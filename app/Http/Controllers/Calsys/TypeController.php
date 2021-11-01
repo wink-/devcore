@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Calsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyTypeRequest;
-use App\Http\Requests\StoreTypeRequest;
-use App\Http\Requests\UpdateTypeRequest;
+use App\Http\Requests\Calsys\MassDestroyTypeRequest;
+use App\Http\Requests\Calsys\StoreTypeRequest;
+use App\Http\Requests\Calsys\UpdateTypeRequest;
 use App\Models\Calsys\Type;
 use Gate;
 use Illuminate\Http\Request;

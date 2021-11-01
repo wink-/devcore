@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Calsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyEmployeeRequest;
-use App\Http\Requests\StoreEmployeeRequest;
-use App\Http\Requests\UpdateEmployeeRequest;
+use App\Http\Requests\Calsys\MassDestroyEmployeeRequest;
+use App\Http\Requests\Calsys\StoreEmployeeRequest;
+use App\Http\Requests\Calsys\UpdateEmployeeRequest;
 use App\Models\Calsys\Employee;
 use Gate;
 use Illuminate\Http\Request;

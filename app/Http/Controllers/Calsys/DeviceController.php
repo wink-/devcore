@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Calsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyCalDeviceRequest;
-use App\Http\Requests\StoreCalDeviceRequest;
-use App\Http\Requests\UpdateCalDeviceRequest;
+use App\Http\Requests\Calsys\MassDestroyDeviceRequest;
+use App\Http\Requests\Calsys\StoreDeviceRequest;
+use App\Http\Requests\Calsys\UpdateDeviceRequest;
 use App\Models\Calsys\Device;
 use App\Models\Calsys\Location;
 use App\Models\Calsys\Owner;
