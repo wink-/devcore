@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreEquipmentRequest;
-use App\Http\Requests\UpdateEquipmentRequest;
+use App\Http\Requests\Wipsys\StoreEquipmentRequest;
+use App\Http\Requests\Wipsys\UpdateEquipmentRequest;
 use App\Models\Wipsys\Equipment;
 use Gate;
 use Illuminate\Http\Request;

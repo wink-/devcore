@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyProcessRequest;
-use App\Http\Requests\StoreProcessRequest;
-use App\Http\Requests\UpdateProcessRequest;
+use App\Http\Requests\Wipsys\MassDestroyProcessRequest;
+use App\Http\Requests\Wipsys\StoreProcessRequest;
+use App\Http\Requests\Wipsys\UpdateProcessRequest;
 use App\Models\Wipsys\Process;
 use Gate;
 use Illuminate\Http\Request;

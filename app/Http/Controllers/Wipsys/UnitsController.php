@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyUnitRequest;
-use App\Http\Requests\StoreUnitRequest;
-use App\Http\Requests\UpdateUnitRequest;
+use App\Http\Requests\Wipsys\MassDestroyUnitRequest;
+use App\Http\Requests\Wipsys\StoreUnitRequest;
+use App\Http\Requests\Wipsys\UpdateUnitRequest;
 use App\Models\Wipsys\Unit;
 use Gate;
 use Illuminate\Http\Request;

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdatePartsBackupRequest;
+use App\Http\Requests\Wipsys\UpdatePartsBackupRequest;
 use App\Models\Wipsys\PartsBackup;
 use Gate;
 use Illuminate\Http\Request;

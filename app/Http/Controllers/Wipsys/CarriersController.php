@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyCarrierRequest;
-use App\Http\Requests\StoreCarrierRequest;
-use App\Http\Requests\UpdateCarrierRequest;
+use App\Http\Requests\Wipsys\MassDestroyCarrierRequest;
+use App\Http\Requests\Wipsys\StoreCarrierRequest;
+use App\Http\Requests\Wipsys\UpdateCarrierRequest;
 use App\Models\Wipsys\Carrier;
 use Gate;
 use Illuminate\Http\Request;

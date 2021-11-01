@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyDestinationRequest;
-use App\Http\Requests\StoreDestinationRequest;
-use App\Http\Requests\UpdateDestinationRequest;
+use App\Http\Requests\Wipsys\MassDestroyDestinationRequest;
+use App\Http\Requests\Wipsys\StoreDestinationRequest;
+use App\Http\Requests\Wipsys\UpdateDestinationRequest;
 use App\Models\Wipsys\Customer;
 use App\Models\Wipsys\Destination;
 use Gate;

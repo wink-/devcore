@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyFreightRequest;
-use App\Http\Requests\StoreFreightRequest;
-use App\Http\Requests\UpdateFreightRequest;
+use App\Http\Requests\Wipsys\MassDestroyFreightRequest;
+use App\Http\Requests\Wipsys\StoreFreightRequest;
+use App\Http\Requests\Wipsys\UpdateFreightRequest;
 use App\Models\Wipsys\Freight;
 use Gate;
 use Illuminate\Http\Request;

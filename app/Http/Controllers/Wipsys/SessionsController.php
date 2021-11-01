@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroySessionRequest;
-use App\Http\Requests\StoreSessionRequest;
-use App\Http\Requests\UpdateSessionRequest;
+use App\Http\Requests\Wipsys\MassDestroySessionRequest;
+use App\Http\Requests\Wipsys\StoreSessionRequest;
+use App\Http\Requests\Wipsys\UpdateSessionRequest;
 use App\Models\Wipsys\Session;
 use Gate;
 use Illuminate\Http\Request;

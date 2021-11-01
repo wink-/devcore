@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Tag;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreTagRequest;
-use App\Http\Requests\UpdateTagRequest;
+use App\Http\Requests\Wipsys\StoreTagRequest;
+use App\Http\Requests\Wipsys\UpdateTagRequest;
 use App\Models\Wipsys\Tag;
 use Gate;
 use Illuminate\Http\Request;

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyStepRequest;
-use App\Http\Requests\StoreStepRequest;
-use App\Http\Requests\UpdateStepRequest;
+use App\Http\Requests\Wipsys\MassDestroyStepRequest;
+use App\Http\Requests\Wipsys\StoreStepRequest;
+use App\Http\Requests\Wipsys\UpdateStepRequest;
 use App\Models\Wipsys\Step;
 use Gate;
 use Illuminate\Http\Request;

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreCustomerRequest;
-use App\Http\Requests\UpdateCustomerRequest;
+use App\Http\Requests\Wipsys\StoreCustomerRequest;
+use App\Http\Requests\Wipsys\UpdateCustomerRequest;
 use App\Models\Wipsys\Carrier;
 use App\Models\Wipsys\Customer;
 use Gate;

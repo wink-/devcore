@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyContactRequest;
-use App\Http\Requests\StoreContactRequest;
-use App\Http\Requests\UpdateContactRequest;
+use App\Http\Requests\Wipsys\MassDestroyContactRequest;
+use App\Http\Requests\Wipsys\StoreContactRequest;
+use App\Http\Requests\Wipsys\UpdateContactRequest;
 use App\Models\Wipsys\Contact;
 use App\Models\Wipsys\Customer;
 use Gate;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Calsys;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Calsys\MassDestroyLocationRequest;

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyMaterialRequest;
-use App\Http\Requests\StoreMaterialRequest;
-use App\Http\Requests\UpdateMaterialRequest;
+use App\Http\Requests\Wipsys\MassDestroyMaterialRequest;
+use App\Http\Requests\Wipsys\StoreMaterialRequest;
+use App\Http\Requests\Wipsys\UpdateMaterialRequest;
 use App\Models\Wipsys\Material;
 use Gate;
 use Illuminate\Http\Request;

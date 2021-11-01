@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyWorkgroupRequest;
-use App\Http\Requests\StoreWorkgroupRequest;
-use App\Http\Requests\UpdateWorkgroupRequest;
+use App\Http\Requests\Wipsys\MassDestroyWorkgroupRequest;
+use App\Http\Requests\Wipsys\StoreWorkgroupRequest;
+use App\Http\Requests\Wipsys\UpdateWorkgroupRequest;
 use App\Models\Wipsys\Workgroup;
 use Gate;
 use Illuminate\Http\Request;

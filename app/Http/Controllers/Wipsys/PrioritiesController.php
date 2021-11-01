@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyPriorityRequest;
-use App\Http\Requests\StorePriorityRequest;
-use App\Http\Requests\UpdatePriorityRequest;
+use App\Http\Requests\Wipsys\MassDestroyPriorityRequest;
+use App\Http\Requests\Wipsys\StorePriorityRequest;
+use App\Http\Requests\Wipsys\UpdatePriorityRequest;
 use App\Models\Wipsys\Priority;
 use Gate;
 use Illuminate\Http\Request;

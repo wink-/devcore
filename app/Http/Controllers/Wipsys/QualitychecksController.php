@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyQualitycheckRequest;
-use App\Http\Requests\StoreQualitycheckRequest;
-use App\Http\Requests\UpdateQualitycheckRequest;
+use App\Http\Requests\Wipsys\MassDestroyQualitycheckRequest;
+use App\Http\Requests\Wipsys\StoreQualitycheckRequest;
+use App\Http\Requests\Wipsys\UpdateQualitycheckRequest;
 use App\Models\Wipsys\Qualitycheck;
 use Gate;
 use Illuminate\Http\Request;

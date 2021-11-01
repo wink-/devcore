@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateLaborCardRequest;
+use App\Http\Requests\Wipsys\UpdateLaborCardRequest;
 use App\Models\Wipsys\LaborCard;
 use Gate;
 use Illuminate\Http\Request;

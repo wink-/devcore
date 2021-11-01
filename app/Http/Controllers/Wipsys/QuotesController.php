@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyQuoteRequest;
-use App\Http\Requests\StoreQuoteRequest;
-use App\Http\Requests\UpdateQuoteRequest;
+use App\Http\Requests\Wipsys\MassDestroyQuoteRequest;
+use App\Http\Requests\Wipsys\StoreQuoteRequest;
+use App\Http\Requests\Wipsys\UpdateQuoteRequest;
 use App\Models\Wipsys\Contact;
 use App\Models\Wipsys\Customer;
 use App\Models\Wipsys\Process;

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdatePackingListsDetailRequest;
+use App\Http\Requests\Wipsys\UpdatePackingListsDetailRequest;
 use App\Models\Wipsys\PackingListsDetail;
 use Gate;
 use Illuminate\Http\Request;

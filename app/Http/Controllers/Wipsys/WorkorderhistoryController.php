@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreWorkorderhistoryRequest;
-use App\Http\Requests\UpdateWorkorderhistoryRequest;
+use App\Http\Requests\Wipsys\StoreWorkorderhistoryRequest;
+use App\Http\Requests\Wipsys\UpdateWorkorderhistoryRequest;
 use App\Models\Wipsys\Part;
 use App\Models\Wipsys\Workorderhistory;
 use Gate;

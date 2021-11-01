@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyMethodRequest;
-use App\Http\Requests\StoreMethodRequest;
-use App\Http\Requests\UpdateMethodRequest;
+use App\Http\Requests\Wipsys\MassDestroyMethodRequest;
+use App\Http\Requests\Wipsys\StoreMethodRequest;
+use App\Http\Requests\Wipsys\UpdateMethodRequest;
 use App\Models\Wipsys\Method;
 use Gate;
 use Illuminate\Http\Request;

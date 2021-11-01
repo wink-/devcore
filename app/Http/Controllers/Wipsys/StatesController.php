@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyStateRequest;
-use App\Http\Requests\StoreStateRequest;
-use App\Http\Requests\UpdateStateRequest;
+use App\Http\Requests\Wipsys\MassDestroyStateRequest;
+use App\Http\Requests\Wipsys\StoreStateRequest;
+use App\Http\Requests\Wipsys\UpdateStateRequest;
 use App\Models\Wipsys\State;
 use Gate;
 use Illuminate\Http\Request;

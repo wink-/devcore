@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePrinterRequest;
-use App\Http\Requests\UpdatePrinterRequest;
+use App\Http\Requests\Wipsys\StorePrinterRequest;
+use App\Http\Requests\Wipsys\UpdatePrinterRequest;
 use App\Models\Wipsys\Printer;
 use Gate;
 use Illuminate\Http\Request;

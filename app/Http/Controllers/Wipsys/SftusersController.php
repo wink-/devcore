@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroySftuserRequest;
-use App\Http\Requests\StoreSftuserRequest;
-use App\Http\Requests\UpdateSftuserRequest;
+use App\Http\Requests\Wipsys\MassDestroySftuserRequest;
+use App\Http\Requests\Wipsys\StoreSftuserRequest;
+use App\Http\Requests\Wipsys\UpdateSftuserRequest;
 use App\Models\Wipsys\Sftuser;
 use Gate;
 use Illuminate\Http\Request;

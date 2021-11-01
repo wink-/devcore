@@ -6,3 +6,4 @@
 5. Create seeders for roles and permissions
 6. Create livewire datatables for everything
 7. Clean up routes
+8. Clean up resources

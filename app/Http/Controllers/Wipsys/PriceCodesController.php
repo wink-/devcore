@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyPriceCodeRequest;
-use App\Http\Requests\StorePriceCodeRequest;
-use App\Http\Requests\UpdatePriceCodeRequest;
+use App\Http\Requests\Wipsys\MassDestroyPriceCodeRequest;
+use App\Http\Requests\Wipsys\StorePriceCodeRequest;
+use App\Http\Requests\Wipsys\UpdatePriceCodeRequest;
 use App\Models\Wipsys\PriceCode;
 use Gate;
 use Illuminate\Http\Request;

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePartRequest;
-use App\Http\Requests\UpdatePartRequest;
+use App\Http\Requests\Wipsys\StorePartRequest;
+use App\Http\Requests\Wipsys\UpdatePartRequest;
 use App\Models\Wipsys\Workorder;
 use Gate;
 use Illuminate\Http\Request;
