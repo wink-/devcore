@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\ProcessData;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyVoltRequest;
-use App\Http\Requests\StoreVoltRequest;
-use App\Http\Requests\UpdateVoltRequest;
+use App\Http\Requests\ProcessData\MassDestroyVoltRequest;
+use App\Http\Requests\ProcessData\StoreVoltRequest;
+use App\Http\Requests\ProcessData\UpdateVoltRequest;
 use App\Models\ProcessData\Record;
 use App\Models\ProcessData\Volt;
 use Gate;
@@ -20,7 +20,7 @@ class VoltController extends Controller
 
         $volts = Volt::with(['record'])->get();
 
-        return view('admin.volts.index', compact('volts'));
+        return view('processData.volts.index', compact('volts'));
     }
 
     public function create()
@@ -29,14 +29,14 @@ class VoltController extends Controller
 
         $records = Record::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.volts.create', compact('records'));
+        return view('processData.volts.create', compact('records'));
     }
 
     public function store(StoreVoltRequest $request)
     {
         $volt = Volt::create($request->all());
 
-        return redirect()->route('admin.volts.index');
+        return redirect()->route('processData.volts.index');
     }
 
     public function edit(Volt $volt)
@@ -47,14 +47,14 @@ class VoltController extends Controller
 
         $volt->load('record');
 
-        return view('admin.volts.edit', compact('records', 'volt'));
+        return view('processData.volts.edit', compact('records', 'volt'));
     }
 
     public function update(UpdateVoltRequest $request, Volt $volt)
     {
         $volt->update($request->all());
 
-        return redirect()->route('admin.volts.index');
+        return redirect()->route('processData.volts.index');
     }
 
     public function show(Volt $volt)
@@ -63,7 +63,7 @@ class VoltController extends Controller
 
         $volt->load('record');
 
-        return view('admin.volts.show', compact('volt'));
+        return view('processData.volts.show', compact('volt'));
     }
 
     public function destroy(Volt $volt)

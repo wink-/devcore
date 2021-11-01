@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\ProcessData;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyAmpRequest;
-use App\Http\Requests\StoreAmpRequest;
-use App\Http\Requests\UpdateAmpRequest;
+use App\Http\Requests\ProcessData\MassDestroyAmpRequest;
+use App\Http\Requests\ProcessData\StoreAmpRequest;
+use App\Http\Requests\ProcessData\UpdateAmpRequest;
 use App\Models\ProcessData\Amp;
 use App\Models\ProcessData\Record;
 use Gate;
@@ -64,43 +64,43 @@ class AmpController extends Controller
             return $table->make(true);
         }
 
-        $pd_records = PdRecord::get();
+        $records = Record::get();
 
-        return view('admin.amps.index', compact('pd_records'));
+        return view('processData.amps.index', compact('records'));
     }
 
     public function create()
     {
         abort_if(Gate::denies('process_data_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $records = PdRecord::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $records = Record::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.amps.create', compact('records'));
+        return view('processData.amps.create', compact('records'));
     }
 
     public function store(StoreAmpRequest $request)
     {
         $amp = Amp::create($request->all());
 
-        return redirect()->route('admin.amps.index');
+        return redirect()->route('processData.amps.index');
     }
 
     public function edit(Amp $amp)
     {
         abort_if(Gate::denies('process_data_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $records = PdRecord::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $records = Record::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $amp->load('record');
 
-        return view('admin.amps.edit', compact('records', 'amp'));
+        return view('processData.amps.edit', compact('records', 'amp'));
     }
 
     public function update(UpdateAmpRequest $request, Amp $amp)
     {
         $amp->update($request->all());
 
-        return redirect()->route('admin.amps.index');
+        return redirect()->route('processData.amps.index');
     }
 
     public function show(Amp $amp)
@@ -109,7 +109,7 @@ class AmpController extends Controller
 
         $amp->load('record');
 
-        return view('admin.amps.show', compact('amp'));
+        return view('processData.amps.show', compact('amp'));
     }
 
     public function destroy(Amp $amp)

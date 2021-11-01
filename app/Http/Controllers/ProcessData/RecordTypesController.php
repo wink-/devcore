@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\ProcessData;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyRecordTypeRequest;
-use App\Http\Requests\StoreRecordTypeRequest;
-use App\Http\Requests\UpdateRecordTypeRequest;
+use App\Http\Requests\ProcessData\MassDestroyRecordTypeRequest;
+use App\Http\Requests\ProcessData\StoreRecordTypeRequest;
+use App\Http\Requests\ProcessData\UpdateRecordTypeRequest;
 use App\Models\ProcessData\RecordType;
 use Gate;
 use Illuminate\Http\Request;
@@ -19,42 +19,42 @@ class RecordTypesController extends Controller
 
         $recordTypes = RecordType::all();
 
-        return view('admin.recordTypes.index', compact('recordTypes'));
+        return view('processData.recordTypes.index', compact('recordTypes'));
     }
 
     public function create()
     {
         abort_if(Gate::denies('process_data_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.recordTypes.create');
+        return view('processData.recordTypes.create');
     }
 
     public function store(StoreRecordTypeRequest $request)
     {
         $recordType = RecordType::create($request->all());
 
-        return redirect()->route('admin.record-types.index');
+        return redirect()->route('processData.record-types.index');
     }
 
     public function edit(RecordType $recordType)
     {
         abort_if(Gate::denies('process_data_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.recordTypes.edit', compact('recordType'));
+        return view('processData.recordTypes.edit', compact('recordType'));
     }
 
     public function update(UpdateRecordTypeRequest $request, RecordType $recordType)
     {
         $recordType->update($request->all());
 
-        return redirect()->route('admin.record-types.index');
+        return redirect()->route('processData.record-types.index');
     }
 
     public function show(RecordType $recordType)
     {
         abort_if(Gate::denies('process_data_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.recordTypes.show', compact('recordType'));
+        return view('processData.recordTypes.show', compact('recordType'));
     }
 
     public function destroy(RecordType $recordType)

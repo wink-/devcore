@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\ProcessData;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyLoggerRequest;
-use App\Http\Requests\StoreLoggerRequest;
-use App\Http\Requests\UpdateLoggerRequest;
+use App\Http\Requests\ProcessData\MassDestroyLoggerRequest;
+use App\Http\Requests\ProcessData\StoreLoggerRequest;
+use App\Http\Requests\ProcessData\UpdateLoggerRequest;
 use App\Models\ProcessData\Logger;
 use App\Models\ProcessData\LoggerType;
 use Gate;
@@ -20,7 +20,7 @@ class LoggersController extends Controller
 
         $loggers = Logger::with(['process_data_type'])->get();
 
-        return view('admin.loggers.index', compact('loggers'));
+        return view('processData.loggers.index', compact('loggers'));
     }
 
     public function create()
@@ -29,14 +29,14 @@ class LoggersController extends Controller
 
         $process_data_types = LoggerType::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.loggers.create', compact('process_data_types'));
+        return view('processData.loggers.create', compact('process_data_types'));
     }
 
     public function store(StoreLoggerRequest $request)
     {
         $logger = Logger::create($request->all());
 
-        return redirect()->route('admin.loggers.index');
+        return redirect()->route('processData.loggers.index');
     }
 
     public function edit(Logger $logger)
@@ -47,14 +47,14 @@ class LoggersController extends Controller
 
         $logger->load('process_data_type');
 
-        return view('admin.loggers.edit', compact('process_data_types', 'logger'));
+        return view('processData.loggers.edit', compact('process_data_types', 'logger'));
     }
 
     public function update(UpdateLoggerRequest $request, Logger $logger)
     {
         $logger->update($request->all());
 
-        return redirect()->route('admin.loggers.index');
+        return redirect()->route('processData.loggers.index');
     }
 
     public function show(Logger $logger)
@@ -63,7 +63,7 @@ class LoggersController extends Controller
 
         $logger->load('process_data_type');
 
-        return view('admin.loggers.show', compact('logger'));
+        return view('processData.loggers.show', compact('logger'));
     }
 
     public function destroy(Logger $logger)

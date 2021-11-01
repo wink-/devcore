@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\ProcessData;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyRecordRequest;
-use App\Http\Requests\StoreRecordRequest;
-use App\Http\Requests\UpdateRecordRequest;
+use App\Http\Requests\ProcessData\MassDestroyRecordRequest;
+use App\Http\Requests\ProcessData\StoreRecordRequest;
+use App\Http\Requests\ProcessData\UpdateRecordRequest;
 use App\Models\ProcessData\Logger;
 use App\Models\ProcessData\Record;
 use App\Models\ProcessData\Unit;
@@ -20,9 +20,9 @@ class RecordsController extends Controller
     {
         abort_if(Gate::denies('process_data_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $Records = Record::with(['logger', 'record_type', 'unit'])->get();
+        $records = Record::with(['logger', 'record_type', 'unit'])->get();
 
-        return view('admin.records.index', compact('Records'));
+        return view('processData.records.index', compact('records'));
     }
 
     public function create()
@@ -35,14 +35,14 @@ class RecordsController extends Controller
 
         $units = Unit::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.records.create', compact('loggers', 'record_types', 'units'));
+        return view('processData.records.create', compact('loggers', 'record_types', 'units'));
     }
 
     public function store(StoreRecordRequest $request)
     {
-        $Record = Record::create($request->all());
+        $record = Record::create($request->all());
 
-        return redirect()->route('admin.-records.index');
+        return redirect()->route('processData.records.index');
     }
 
     public function edit(Record $Record)
@@ -55,25 +55,25 @@ class RecordsController extends Controller
 
         $units = Unit::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $Record->load('logger', 'record_type', 'unit');
+        $record->load('logger', 'record_type', 'unit');
 
-        return view('admin.records.edit', compact('loggers', 'record_types', 'units', 'Record'));
+        return view('processData.records.edit', compact('loggers', 'record_types', 'units', 'record'));
     }
 
     public function update(UpdateRecordRequest $request, Record $Record)
     {
-        $Record->update($request->all());
+        $record->update($request->all());
 
-        return redirect()->route('admin.records.index');
+        return redirect()->route('processData.records.index');
     }
 
     public function show(Record $Record)
     {
         abort_if(Gate::denies('process_data_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $Record->load('logger', 'record_type', 'unit');
+        $record->load('logger', 'record_type', 'unit');
 
-        return view('admin.records.show', compact('Record'));
+        return view('processData.records.show', compact('record'));
     }
 
     public function destroy(Record $Record)

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\ProcessData;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyLoggerTypeRequest;
-use App\Http\Requests\StoreLoggerTypeRequest;
-use App\Http\Requests\UpdateLoggerTypeRequest;
+use App\Http\Requests\ProcessData\MassDestroyLoggerTypeRequest;
+use App\Http\Requests\ProcessData\StoreLoggerTypeRequest;
+use App\Http\Requests\ProcessData\UpdateLoggerTypeRequest;
 use App\Models\ProcessData\LoggerType;
 use Gate;
 use Illuminate\Http\Request;
@@ -19,42 +19,42 @@ class LoggerTypesController extends Controller
 
         $loggerTypes = LoggerType::all();
 
-        return view('admin.loggerTypes.index', compact('loggerTypes'));
+        return view('processData.loggerTypes.index', compact('loggerTypes'));
     }
 
     public function create()
     {
         abort_if(Gate::denies('process_data_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.loggerTypes.create');
+        return view('processData.loggerTypes.create');
     }
 
     public function store(StoreLoggerTypeRequest $request)
     {
         $loggerType = LoggerType::create($request->all());
 
-        return redirect()->route('admin.logger-types.index');
+        return redirect()->route('processData.logger-types.index');
     }
 
     public function edit(LoggerType $loggerType)
     {
         abort_if(Gate::denies('process_data_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.loggerTypes.edit', compact('loggerType'));
+        return view('processData.loggerTypes.edit', compact('loggerType'));
     }
 
     public function update(UpdateLoggerTypeRequest $request, LoggerType $loggerType)
     {
         $loggerType->update($request->all());
 
-        return redirect()->route('admin.logger-types.index');
+        return redirect()->route('processData.logger-types.index');
     }
 
     public function show(LoggerType $loggerType)
     {
         abort_if(Gate::denies('process_data_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.loggerTypes.show', compact('loggerType'));
+        return view('processData.loggerTypes.show', compact('loggerType'));
     }
 
     public function destroy(LoggerType $loggerType)
