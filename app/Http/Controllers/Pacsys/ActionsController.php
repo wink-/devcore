@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyActionRequest;
-use App\Http\Requests\StoreActionRequest;
-use App\Http\Requests\UpdateActionRequest;
+use App\Http\Requests\Pacsys\MassDestroyActionRequest;
+use App\Http\Requests\Pacsys\StoreActionRequest;
+use App\Http\Requests\Pacsys\UpdateActionRequest;
 use App\Models\Pacsys\Action;
 use Gate;
 use Illuminate\Http\Request;

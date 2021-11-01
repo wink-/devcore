@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyRecordRequest;
-use App\Http\Requests\StoreRecordRequest;
-use App\Http\Requests\UpdateRecordRequest;
-use App\Models\Record;
+use App\Http\Requests\Pacsys\MassDestroyRecordRequest;
+use App\Http\Requests\Pacsys\StoreRecordRequest;
+use App\Http\Requests\Pacsys\UpdateRecordRequest;
+use App\Models\Pacsys\Record;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -77,42 +77,42 @@ class RecordController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.records.index');
+        return view('pacsys.records.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('record_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.records.create');
+        return view('pacsys.records.create');
     }
 
     public function store(StoreRecordRequest $request)
     {
         $record = Record::create($request->all());
 
-        return redirect()->route('admin.records.index');
+        return redirect()->route('pacsys.records.index');
     }
 
     public function edit(Record $record)
     {
         abort_if(Gate::denies('record_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.records.edit', compact('record'));
+        return view('pacsys.records.edit', compact('record'));
     }
 
     public function update(UpdateRecordRequest $request, Record $record)
     {
         $record->update($request->all());
 
-        return redirect()->route('admin.records.index');
+        return redirect()->route('pacsys.records.index');
     }
 
     public function show(Record $record)
     {
         abort_if(Gate::denies('record_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.records.show', compact('record'));
+        return view('pacsys.records.show', compact('record'));
     }
 
     public function destroy(Record $record)

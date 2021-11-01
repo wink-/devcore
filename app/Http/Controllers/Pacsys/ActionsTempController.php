@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyActionsTempRequest;
-use App\Http\Requests\StoreActionsTempRequest;
-use App\Http\Requests\UpdateActionsTempRequest;
-use App\Models\ActionsTemp;
+use App\Http\Requests\Pacsys\MassDestroyActionsTempRequest;
+use App\Http\Requests\Pacsys\StoreActionsTempRequest;
+use App\Http\Requests\Pacsys\UpdateActionsTempRequest;
+use App\Models\Pacsys\ActionsTemp;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -99,42 +99,42 @@ class ActionsTempController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.actionsTemps.index');
+        return view('pacsys.actionsTemps.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.actionsTemps.create');
+        return view('pacsys.actionsTemps.create');
     }
 
     public function store(StoreActionsTempRequest $request)
     {
         $actionsTemp = ActionsTemp::create($request->all());
 
-        return redirect()->route('admin.actions-temps.index');
+        return redirect()->route('pacsys.actions-temps.index');
     }
 
     public function edit(ActionsTemp $actionsTemp)
     {
         abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.actionsTemps.edit', compact('actionsTemp'));
+        return view('pacsys.actionsTemps.edit', compact('actionsTemp'));
     }
 
     public function update(UpdateActionsTempRequest $request, ActionsTemp $actionsTemp)
     {
         $actionsTemp->update($request->all());
 
-        return redirect()->route('admin.actions-temps.index');
+        return redirect()->route('pacsys.actions-temps.index');
     }
 
     public function show(ActionsTemp $actionsTemp)
     {
         abort_if(Gate::denies('pacsys'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.actionsTemps.show', compact('actionsTemp'));
+        return view('pacsys.actionsTemps.show', compact('actionsTemp'));
     }
 
     public function destroy(ActionsTemp $actionsTemp)

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyFormRequest;
-use App\Http\Requests\StoreFormRequest;
-use App\Http\Requests\UpdateFormRequest;
-use App\Models\Form;
+use App\Http\Requests\Pacsys\MassDestroyFormRequest;
+use App\Http\Requests\Pacsys\StoreFormRequest;
+use App\Http\Requests\Pacsys\UpdateFormRequest;
+use App\Models\Pacsys\Form;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -68,42 +68,42 @@ class FormController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.forms.index');
+        return view('pacsys.forms.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('form_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.forms.create');
+        return view('pacsys.forms.create');
     }
 
     public function store(StoreFormRequest $request)
     {
         $form = Form::create($request->all());
 
-        return redirect()->route('admin.forms.index');
+        return redirect()->route('pacsys.forms.index');
     }
 
     public function edit(Form $form)
     {
         abort_if(Gate::denies('form_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.forms.edit', compact('form'));
+        return view('pacsys.forms.edit', compact('form'));
     }
 
     public function update(UpdateFormRequest $request, Form $form)
     {
         $form->update($request->all());
 
-        return redirect()->route('admin.forms.index');
+        return redirect()->route('pacsys.forms.index');
     }
 
     public function show(Form $form)
     {
         abort_if(Gate::denies('form_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.forms.show', compact('form'));
+        return view('pacsys.forms.show', compact('form'));
     }
 
     public function destroy(Form $form)

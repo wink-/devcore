@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyAnalysisNewRequest;
-use App\Http\Requests\StoreAnalysisNewRequest;
-use App\Http\Requests\UpdateAnalysisNewRequest;
-use App\Models\AnalysisNew;
+use App\Http\Requests\Pacsys\MassDestroyAnalysisNewRequest;
+use App\Http\Requests\Pacsys\StoreAnalysisNewRequest;
+use App\Http\Requests\Pacsys\UpdateAnalysisNewRequest;
+use App\Models\Pacsys\AnalysisNew;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -129,42 +129,42 @@ class AnalysisNewController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.analysisNews.index');
+        return view('pacsys.analysisNews.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('analysis_new_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.analysisNews.create');
+        return view('pacsys.analysisNews.create');
     }
 
     public function store(StoreAnalysisNewRequest $request)
     {
         $analysisNew = AnalysisNew::create($request->all());
 
-        return redirect()->route('admin.analysis-news.index');
+        return redirect()->route('pacsys.analysis-news.index');
     }
 
     public function edit(AnalysisNew $analysisNew)
     {
         abort_if(Gate::denies('analysis_new_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.analysisNews.edit', compact('analysisNew'));
+        return view('pacsys.analysisNews.edit', compact('analysisNew'));
     }
 
     public function update(UpdateAnalysisNewRequest $request, AnalysisNew $analysisNew)
     {
         $analysisNew->update($request->all());
 
-        return redirect()->route('admin.analysis-news.index');
+        return redirect()->route('pacsys.analysis-news.index');
     }
 
     public function show(AnalysisNew $analysisNew)
     {
         abort_if(Gate::denies('analysis_new_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.analysisNews.show', compact('analysisNew'));
+        return view('pacsys.analysisNews.show', compact('analysisNew'));
     }
 
     public function destroy(AnalysisNew $analysisNew)

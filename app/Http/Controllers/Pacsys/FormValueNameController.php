@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyFormValueNameRequest;
-use App\Http\Requests\StoreFormValueNameRequest;
-use App\Http\Requests\UpdateFormValueNameRequest;
-use App\Models\FormValueName;
+use App\Http\Requests\Pacsys\MassDestroyFormValueNameRequest;
+use App\Http\Requests\Pacsys\StoreFormValueNameRequest;
+use App\Http\Requests\Pacsys\UpdateFormValueNameRequest;
+use App\Models\Pacsys\FormValueName;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -122,42 +122,42 @@ class FormValueNameController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.formValueNames.index');
+        return view('pacsys.formValueNames.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('form_value_name_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueNames.create');
+        return view('pacsys.formValueNames.create');
     }
 
     public function store(StoreFormValueNameRequest $request)
     {
         $formValueName = FormValueName::create($request->all());
 
-        return redirect()->route('admin.form-value-names.index');
+        return redirect()->route('pacsys.form-value-names.index');
     }
 
     public function edit(FormValueName $formValueName)
     {
         abort_if(Gate::denies('form_value_name_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueNames.edit', compact('formValueName'));
+        return view('pacsys.formValueNames.edit', compact('formValueName'));
     }
 
     public function update(UpdateFormValueNameRequest $request, FormValueName $formValueName)
     {
         $formValueName->update($request->all());
 
-        return redirect()->route('admin.form-value-names.index');
+        return redirect()->route('pacsys.form-value-names.index');
     }
 
     public function show(FormValueName $formValueName)
     {
         abort_if(Gate::denies('form_value_name_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueNames.show', compact('formValueName'));
+        return view('pacsys.formValueNames.show', compact('formValueName'));
     }
 
     public function destroy(FormValueName $formValueName)

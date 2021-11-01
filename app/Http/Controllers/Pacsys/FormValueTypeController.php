@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyFormValueTypeRequest;
-use App\Http\Requests\StoreFormValueTypeRequest;
-use App\Http\Requests\UpdateFormValueTypeRequest;
-use App\Models\FormValueType;
+use App\Http\Requests\Pacsys\MassDestroyFormValueTypeRequest;
+use App\Http\Requests\Pacsys\StoreFormValueTypeRequest;
+use App\Http\Requests\Pacsys\UpdateFormValueTypeRequest;
+use App\Models\Pacsys\FormValueType;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -125,42 +125,42 @@ class FormValueTypeController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.formValueTypes.index');
+        return view('pacsys.formValueTypes.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('form_value_type_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueTypes.create');
+        return view('pacsys.formValueTypes.create');
     }
 
     public function store(StoreFormValueTypeRequest $request)
     {
         $formValueType = FormValueType::create($request->all());
 
-        return redirect()->route('admin.form-value-types.index');
+        return redirect()->route('pacsys.form-value-types.index');
     }
 
     public function edit(FormValueType $formValueType)
     {
         abort_if(Gate::denies('form_value_type_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueTypes.edit', compact('formValueType'));
+        return view('pacsys.formValueTypes.edit', compact('formValueType'));
     }
 
     public function update(UpdateFormValueTypeRequest $request, FormValueType $formValueType)
     {
         $formValueType->update($request->all());
 
-        return redirect()->route('admin.form-value-types.index');
+        return redirect()->route('pacsys.form-value-types.index');
     }
 
     public function show(FormValueType $formValueType)
     {
         abort_if(Gate::denies('form_value_type_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueTypes.show', compact('formValueType'));
+        return view('pacsys.formValueTypes.show', compact('formValueType'));
     }
 
     public function destroy(FormValueType $formValueType)

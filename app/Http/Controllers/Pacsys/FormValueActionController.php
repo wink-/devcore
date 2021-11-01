@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyFormValueActionRequest;
-use App\Http\Requests\StoreFormValueActionRequest;
-use App\Http\Requests\UpdateFormValueActionRequest;
-use App\Models\FormValueAction;
+use App\Http\Requests\Pacsys\MassDestroyFormValueActionRequest;
+use App\Http\Requests\Pacsys\StoreFormValueActionRequest;
+use App\Http\Requests\Pacsys\UpdateFormValueActionRequest;
+use App\Models\Pacsys\FormValueAction;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -118,42 +118,42 @@ class FormValueActionController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.formValueActions.index');
+        return view('pacsys.formValueActions.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('form_value_action_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueActions.create');
+        return view('pacsys.formValueActions.create');
     }
 
     public function store(StoreFormValueActionRequest $request)
     {
         $formValueAction = FormValueAction::create($request->all());
 
-        return redirect()->route('admin.form-value-actions.index');
+        return redirect()->route('pacsys.form-value-actions.index');
     }
 
     public function edit(FormValueAction $formValueAction)
     {
         abort_if(Gate::denies('form_value_action_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueActions.edit', compact('formValueAction'));
+        return view('pacsys.formValueActions.edit', compact('formValueAction'));
     }
 
     public function update(UpdateFormValueActionRequest $request, FormValueAction $formValueAction)
     {
         $formValueAction->update($request->all());
 
-        return redirect()->route('admin.form-value-actions.index');
+        return redirect()->route('pacsys.form-value-actions.index');
     }
 
     public function show(FormValueAction $formValueAction)
     {
         abort_if(Gate::denies('form_value_action_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueActions.show', compact('formValueAction'));
+        return view('pacsys.formValueActions.show', compact('formValueAction'));
     }
 
     public function destroy(FormValueAction $formValueAction)

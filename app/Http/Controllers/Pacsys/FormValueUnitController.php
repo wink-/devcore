@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyFormValueUnitRequest;
-use App\Http\Requests\StoreFormValueUnitRequest;
-use App\Http\Requests\UpdateFormValueUnitRequest;
-use App\Models\FormValueUnit;
+use App\Http\Requests\Pacsys\MassDestroyFormValueUnitRequest;
+use App\Http\Requests\Pacsys\StoreFormValueUnitRequest;
+use App\Http\Requests\Pacsys\UpdateFormValueUnitRequest;
+use App\Models\Pacsys\FormValueUnit;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -118,42 +118,42 @@ class FormValueUnitController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.formValueUnits.index');
+        return view('pacsys.formValueUnits.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('form_value_unit_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueUnits.create');
+        return view('pacsys.formValueUnits.create');
     }
 
     public function store(StoreFormValueUnitRequest $request)
     {
         $formValueUnit = FormValueUnit::create($request->all());
 
-        return redirect()->route('admin.form-value-units.index');
+        return redirect()->route('pacsys.form-value-units.index');
     }
 
     public function edit(FormValueUnit $formValueUnit)
     {
         abort_if(Gate::denies('form_value_unit_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueUnits.edit', compact('formValueUnit'));
+        return view('pacsys.formValueUnits.edit', compact('formValueUnit'));
     }
 
     public function update(UpdateFormValueUnitRequest $request, FormValueUnit $formValueUnit)
     {
         $formValueUnit->update($request->all());
 
-        return redirect()->route('admin.form-value-units.index');
+        return redirect()->route('pacsys.form-value-units.index');
     }
 
     public function show(FormValueUnit $formValueUnit)
     {
         abort_if(Gate::denies('form_value_unit_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueUnits.show', compact('formValueUnit'));
+        return view('pacsys.formValueUnits.show', compact('formValueUnit'));
     }
 
     public function destroy(FormValueUnit $formValueUnit)

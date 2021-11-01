@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyCalcValueRequest;
-use App\Http\Requests\StoreCalcValueRequest;
-use App\Http\Requests\UpdateCalcValueRequest;
-use App\Models\CalcValue;
+use App\Http\Requests\Pacsys\MassDestroyCalcValueRequest;
+use App\Http\Requests\Pacsys\StoreCalcValueRequest;
+use App\Http\Requests\Pacsys\UpdateCalcValueRequest;
+use App\Models\Pacsys\CalcValue;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -67,42 +67,42 @@ class CalcValueController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.calcValues.index');
+        return view('pacsys.calcValues.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('calc_value_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.calcValues.create');
+        return view('pacsys.calcValues.create');
     }
 
     public function store(StoreCalcValueRequest $request)
     {
         $calcValue = CalcValue::create($request->all());
 
-        return redirect()->route('admin.calc-values.index');
+        return redirect()->route('pacsys.calc-values.index');
     }
 
     public function edit(CalcValue $calcValue)
     {
         abort_if(Gate::denies('calc_value_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.calcValues.edit', compact('calcValue'));
+        return view('pacsys.calcValues.edit', compact('calcValue'));
     }
 
     public function update(UpdateCalcValueRequest $request, CalcValue $calcValue)
     {
         $calcValue->update($request->all());
 
-        return redirect()->route('admin.calc-values.index');
+        return redirect()->route('pacsys.calc-values.index');
     }
 
     public function show(CalcValue $calcValue)
     {
         abort_if(Gate::denies('calc_value_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.calcValues.show', compact('calcValue'));
+        return view('pacsys.calcValues.show', compact('calcValue'));
     }
 
     public function destroy(CalcValue $calcValue)

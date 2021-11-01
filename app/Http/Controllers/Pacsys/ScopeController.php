@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyScopeRequest;
-use App\Http\Requests\StoreScopeRequest;
-use App\Http\Requests\UpdateScopeRequest;
-use App\Models\Scope;
+use App\Http\Requests\Pacsys\MassDestroyScopeRequest;
+use App\Http\Requests\Pacsys\StoreScopeRequest;
+use App\Http\Requests\Pacsys\UpdateScopeRequest;
+use App\Models\Pacsys\Scope;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,42 +19,42 @@ class ScopeController extends Controller
 
         $scopes = Scope::all();
 
-        return view('admin.scopes.index', compact('scopes'));
+        return view('pacsys.scopes.index', compact('scopes'));
     }
 
     public function create()
     {
         abort_if(Gate::denies('scope_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.scopes.create');
+        return view('pacsys.scopes.create');
     }
 
     public function store(StoreScopeRequest $request)
     {
         $scope = Scope::create($request->all());
 
-        return redirect()->route('admin.scopes.index');
+        return redirect()->route('pacsys.scopes.index');
     }
 
     public function edit(Scope $scope)
     {
         abort_if(Gate::denies('scope_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.scopes.edit', compact('scope'));
+        return view('pacsys.scopes.edit', compact('scope'));
     }
 
     public function update(UpdateScopeRequest $request, Scope $scope)
     {
         $scope->update($request->all());
 
-        return redirect()->route('admin.scopes.index');
+        return redirect()->route('pacsys.scopes.index');
     }
 
     public function show(Scope $scope)
     {
         abort_if(Gate::denies('scope_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.scopes.show', compact('scope'));
+        return view('pacsys.scopes.show', compact('scope'));
     }
 
     public function destroy(Scope $scope)

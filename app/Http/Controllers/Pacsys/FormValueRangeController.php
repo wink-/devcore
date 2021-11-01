@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyFormValueRangeRequest;
-use App\Http\Requests\StoreFormValueRangeRequest;
-use App\Http\Requests\UpdateFormValueRangeRequest;
-use App\Models\FormValueRange;
+use App\Http\Requests\Pacsys\MassDestroyFormValueRangeRequest;
+use App\Http\Requests\Pacsys\StoreFormValueRangeRequest;
+use App\Http\Requests\Pacsys\UpdateFormValueRangeRequest;
+use App\Models\Pacsys\FormValueRange;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -178,42 +178,42 @@ class FormValueRangeController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.formValueRanges.index');
+        return view('pacsys.formValueRanges.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('form_value_range_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueRanges.create');
+        return view('pacsys.formValueRanges.create');
     }
 
     public function store(StoreFormValueRangeRequest $request)
     {
         $formValueRange = FormValueRange::create($request->all());
 
-        return redirect()->route('admin.form-value-ranges.index');
+        return redirect()->route('pacsys.form-value-ranges.index');
     }
 
     public function edit(FormValueRange $formValueRange)
     {
         abort_if(Gate::denies('form_value_range_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueRanges.edit', compact('formValueRange'));
+        return view('pacsys.formValueRanges.edit', compact('formValueRange'));
     }
 
     public function update(UpdateFormValueRangeRequest $request, FormValueRange $formValueRange)
     {
         $formValueRange->update($request->all());
 
-        return redirect()->route('admin.form-value-ranges.index');
+        return redirect()->route('pacsys.form-value-ranges.index');
     }
 
     public function show(FormValueRange $formValueRange)
     {
         abort_if(Gate::denies('form_value_range_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValueRanges.show', compact('formValueRange'));
+        return view('pacsys.formValueRanges.show', compact('formValueRange'));
     }
 
     public function destroy(FormValueRange $formValueRange)

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyValidationRequest;
-use App\Http\Requests\StoreValidationRequest;
-use App\Http\Requests\UpdateValidationRequest;
-use App\Models\Validation;
+use App\Http\Requests\Pacsys\MassDestroyValidationRequest;
+use App\Http\Requests\Pacsys\StoreValidationRequest;
+use App\Http\Requests\Pacsys\UpdateValidationRequest;
+use App\Models\Pacsys\Validation;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,42 +19,42 @@ class ValidationController extends Controller
 
         $validations = Validation::all();
 
-        return view('admin.validations.index', compact('validations'));
+        return view('pacsys.validations.index', compact('validations'));
     }
 
     public function create()
     {
         abort_if(Gate::denies('validation_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.validations.create');
+        return view('pacsys.validations.create');
     }
 
     public function store(StoreValidationRequest $request)
     {
         $validation = Validation::create($request->all());
 
-        return redirect()->route('admin.validations.index');
+        return redirect()->route('pacsys.validations.index');
     }
 
     public function edit(Validation $validation)
     {
         abort_if(Gate::denies('validation_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.validations.edit', compact('validation'));
+        return view('pacsys.validations.edit', compact('validation'));
     }
 
     public function update(UpdateValidationRequest $request, Validation $validation)
     {
         $validation->update($request->all());
 
-        return redirect()->route('admin.validations.index');
+        return redirect()->route('pacsys.validations.index');
     }
 
     public function show(Validation $validation)
     {
         abort_if(Gate::denies('validation_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.validations.show', compact('validation'));
+        return view('pacsys.validations.show', compact('validation'));
     }
 
     public function destroy(Validation $validation)

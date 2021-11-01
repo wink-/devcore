@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyYearRequest;
-use App\Http\Requests\StoreYearRequest;
-use App\Http\Requests\UpdateYearRequest;
-use App\Models\Year;
+use App\Http\Requests\Pacsys\MassDestroyYearRequest;
+use App\Http\Requests\Pacsys\StoreYearRequest;
+use App\Http\Requests\Pacsys\UpdateYearRequest;
+use App\Models\Pacsys\Year;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,42 +19,42 @@ class YearsController extends Controller
 
         $years = Year::all();
 
-        return view('admin.years.index', compact('years'));
+        return view('pacsys.years.index', compact('years'));
     }
 
     public function create()
     {
         abort_if(Gate::denies('year_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.years.create');
+        return view('pacsys.years.create');
     }
 
     public function store(StoreYearRequest $request)
     {
         $year = Year::create($request->all());
 
-        return redirect()->route('admin.years.index');
+        return redirect()->route('pacsys.years.index');
     }
 
     public function edit(Year $year)
     {
         abort_if(Gate::denies('year_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.years.edit', compact('year'));
+        return view('pacsys.years.edit', compact('year'));
     }
 
     public function update(UpdateYearRequest $request, Year $year)
     {
         $year->update($request->all());
 
-        return redirect()->route('admin.years.index');
+        return redirect()->route('pacsys.years.index');
     }
 
     public function show(Year $year)
     {
         abort_if(Gate::denies('year_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.years.show', compact('year'));
+        return view('pacsys.years.show', compact('year'));
     }
 
     public function destroy(Year $year)

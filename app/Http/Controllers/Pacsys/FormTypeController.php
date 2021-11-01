@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyFormTypeRequest;
-use App\Http\Requests\StoreFormTypeRequest;
-use App\Http\Requests\UpdateFormTypeRequest;
-use App\Models\FormType;
+use App\Http\Requests\Pacsys\MassDestroyFormTypeRequest;
+use App\Http\Requests\Pacsys\StoreFormTypeRequest;
+use App\Http\Requests\Pacsys\UpdateFormTypeRequest;
+use App\Models\Pacsys\FormType;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -55,42 +55,42 @@ class FormTypeController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.formTypes.index');
+        return view('pacsys.formTypes.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('form_type_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formTypes.create');
+        return view('pacsys.formTypes.create');
     }
 
     public function store(StoreFormTypeRequest $request)
     {
         $formType = FormType::create($request->all());
 
-        return redirect()->route('admin.form-types.index');
+        return redirect()->route('pacsys.form-types.index');
     }
 
     public function edit(FormType $formType)
     {
         abort_if(Gate::denies('form_type_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formTypes.edit', compact('formType'));
+        return view('pacsys.formTypes.edit', compact('formType'));
     }
 
     public function update(UpdateFormTypeRequest $request, FormType $formType)
     {
         $formType->update($request->all());
 
-        return redirect()->route('admin.form-types.index');
+        return redirect()->route('pacsys.form-types.index');
     }
 
     public function show(FormType $formType)
     {
         abort_if(Gate::denies('form_type_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formTypes.show', compact('formType'));
+        return view('pacsys.formTypes.show', compact('formType'));
     }
 
     public function destroy(FormType $formType)

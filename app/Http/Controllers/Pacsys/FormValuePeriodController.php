@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyFormValuePeriodRequest;
-use App\Http\Requests\StoreFormValuePeriodRequest;
-use App\Http\Requests\UpdateFormValuePeriodRequest;
-use App\Models\FormValuePeriod;
+use App\Http\Requests\Pacsys\MassDestroyFormValuePeriodRequest;
+use App\Http\Requests\Pacsys\StoreFormValuePeriodRequest;
+use App\Http\Requests\Pacsys\UpdateFormValuePeriodRequest;
+use App\Models\Pacsys\FormValuePeriod;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -118,42 +118,42 @@ class FormValuePeriodController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.formValuePeriods.index');
+        return view('pacsys.formValuePeriods.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('form_value_period_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValuePeriods.create');
+        return view('pacsys.formValuePeriods.create');
     }
 
     public function store(StoreFormValuePeriodRequest $request)
     {
         $formValuePeriod = FormValuePeriod::create($request->all());
 
-        return redirect()->route('admin.form-value-periods.index');
+        return redirect()->route('pacsys.form-value-periods.index');
     }
 
     public function edit(FormValuePeriod $formValuePeriod)
     {
         abort_if(Gate::denies('form_value_period_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValuePeriods.edit', compact('formValuePeriod'));
+        return view('pacsys.formValuePeriods.edit', compact('formValuePeriod'));
     }
 
     public function update(UpdateFormValuePeriodRequest $request, FormValuePeriod $formValuePeriod)
     {
         $formValuePeriod->update($request->all());
 
-        return redirect()->route('admin.form-value-periods.index');
+        return redirect()->route('pacsys.form-value-periods.index');
     }
 
     public function show(FormValuePeriod $formValuePeriod)
     {
         abort_if(Gate::denies('form_value_period_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.formValuePeriods.show', compact('formValuePeriod'));
+        return view('pacsys.formValuePeriods.show', compact('formValuePeriod'));
     }
 
     public function destroy(FormValuePeriod $formValuePeriod)

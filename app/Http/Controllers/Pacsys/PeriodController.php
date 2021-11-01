@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyPeriodRequest;
-use App\Http\Requests\StorePeriodRequest;
-use App\Http\Requests\UpdatePeriodRequest;
-use App\Models\Period;
+use App\Http\Requests\Pacsys\MassDestroyPeriodRequest;
+use App\Http\Requests\Pacsys\StorePeriodRequest;
+use App\Http\Requests\Pacsys\UpdatePeriodRequest;
+use App\Models\Pacsys\Period;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,42 +19,42 @@ class PeriodController extends Controller
 
         $periods = Period::all();
 
-        return view('admin.periods.index', compact('periods'));
+        return view('pacsys.periods.index', compact('periods'));
     }
 
     public function create()
     {
         abort_if(Gate::denies('period_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.periods.create');
+        return view('pacsys.periods.create');
     }
 
     public function store(StorePeriodRequest $request)
     {
         $period = Period::create($request->all());
 
-        return redirect()->route('admin.periods.index');
+        return redirect()->route('pacsys.periods.index');
     }
 
     public function edit(Period $period)
     {
         abort_if(Gate::denies('period_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.periods.edit', compact('period'));
+        return view('pacsys.periods.edit', compact('period'));
     }
 
     public function update(UpdatePeriodRequest $request, Period $period)
     {
         $period->update($request->all());
 
-        return redirect()->route('admin.periods.index');
+        return redirect()->route('pacsys.periods.index');
     }
 
     public function show(Period $period)
     {
         abort_if(Gate::denies('period_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.periods.show', compact('period'));
+        return view('pacsys.periods.show', compact('period'));
     }
 
     public function destroy(Period $period)

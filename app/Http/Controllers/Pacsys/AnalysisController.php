@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MassDestroyAnalysiRequest;
-use App\Http\Requests\StoreAnalysiRequest;
-use App\Http\Requests\UpdateAnalysiRequest;
-use App\Models\Analysi;
+use App\Http\Requests\Pacsys\MassDestroyAnalysiRequest;
+use App\Http\Requests\Pacsys\StoreAnalysiRequest;
+use App\Http\Requests\Pacsys\UpdateAnalysiRequest;
+use App\Models\Pacsys\Analysi;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -189,42 +189,42 @@ class AnalysisController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.analysis.index');
+        return view('pacsys.analysis.index');
     }
 
     public function create()
     {
         abort_if(Gate::denies('analysi_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.analysis.create');
+        return view('pacsys.analysis.create');
     }
 
     public function store(StoreAnalysiRequest $request)
     {
         $analysi = Analysi::create($request->all());
 
-        return redirect()->route('admin.analysis.index');
+        return redirect()->route('pacsys.analysis.index');
     }
 
     public function edit(Analysi $analysi)
     {
         abort_if(Gate::denies('analysi_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.analysis.edit', compact('analysi'));
+        return view('pacsys.analysis.edit', compact('analysi'));
     }
 
     public function update(UpdateAnalysiRequest $request, Analysi $analysi)
     {
         $analysi->update($request->all());
 
-        return redirect()->route('admin.analysis.index');
+        return redirect()->route('pacsys.analysis.index');
     }
 
     public function show(Analysi $analysi)
     {
         abort_if(Gate::denies('analysi_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.analysis.show', compact('analysi'));
+        return view('pacsys.analysis.show', compact('analysi'));
     }
 
     public function destroy(Analysi $analysi)
