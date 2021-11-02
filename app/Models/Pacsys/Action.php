@@ -15,7 +15,7 @@ class Action extends Model
 
     protected $connection ='pacsys';
 
-    protected $primaryKey = 'ID';
+    public $primaryKey = 'ID';
 
     public $timestamps = false;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Datatables;
 
 use Illuminate\Support\Carbon;
 use App\Models\Wipsys\Workorder;
@@ -25,7 +25,7 @@ class WorkordersTable extends LivewireDatatable
         return [
             Column::name('number')
                 ->label('Workorder')
-                ->linkTo('admin/workorders')
+                ->linkTo('wipsys/workorders')
                 ->defaultSort('desc')
                 ->searchable()
                 ->filterable(),
@@ -91,19 +91,22 @@ class WorkordersTable extends LivewireDatatable
             DateColumn::name('date_received')
                 ->label('Received')
                 ->hideable()
-                ->filterable(),
+                ->filterable()
+                ->format('m-d-Y'),
 
             DateColumn::name('date_required')
                 ->label('Required')
                 ->hideable()
                 ->hide()
-                ->filterable(),
+                ->filterable()
+                ->format('m-d-Y'),
 
             DateColumn::name('date_shipped')
                 ->label('Date Shipped')
                 ->hideable()
                 ->hide()
-                ->filterable(),
+                ->filterable()
+                ->format('m-d-Y'),
 
             Column::name('customer_purchase_order')
                 ->label('PO')
@@ -145,7 +148,8 @@ class WorkordersTable extends LivewireDatatable
                 ->label('Invoice Date')
                 ->hideable()
                 ->hide()
-                ->filterable(),
+                ->filterable()
+                ->format('m-d-Y'),
 
             Column::name('priority')
                 ->label('priority')

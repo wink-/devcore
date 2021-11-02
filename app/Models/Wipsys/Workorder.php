@@ -63,7 +63,6 @@ class Workorder extends Model
         'invoiced',
         'note',
         'image_count',
-        'session',
         'archive',
         'revision',
         'printed',

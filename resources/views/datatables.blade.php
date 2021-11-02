@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-	<livewire:workorders-table/>
+	<livewire:datatables.workorders-table/>
 	
     <livewire:scripts />
 {{--    <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>--}}

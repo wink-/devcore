@@ -5,12 +5,11 @@ namespace App\Models\Wipsys;
 use App\Traits\Auditable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use \DateTimeInterface;
 
 class Customer extends Model
 {
-    use SoftDeletes, Auditable, HasFactory;
+    use Auditable, HasFactory;
 
     public $table = 'sft_customers';
 
