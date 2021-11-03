@@ -2,16 +2,16 @@
 
 namespace App\Http\Requests\Pacsys;
 
-use App\Models\Pacsys\PUnit;
+use App\Models\Pacsys\Unit;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
-class StorePUnitRequest extends FormRequest
+class StoreUnitRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('p_unit_create');
+        return Gate::allows('pacsys_create');
     }
 
     public function rules()
