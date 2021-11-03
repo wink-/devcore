@@ -1,31 +1,27 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\Calemployee;
+use App\Models\Calsys\Type;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
-class StoreCalemployeeRequest extends FormRequest
+class StoreTypeRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('calemployee_create');
+        return Gate::allows('calsys_create');
     }
 
     public function rules()
     {
         return [
-            'iden'      => [
-                'string',
-                'nullable',
-            ],
-            'user_init' => [
-                'string',
-                'nullable',
-            ],
             'name'      => [
+                'string',
+                'nullable',
+            ],
+            'proc_link' => [
                 'string',
                 'nullable',
             ],

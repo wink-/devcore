@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalType;
+use App\Models\Calsys\Owner;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Symfony\Component\HttpFoundation\Response;
 
-class MassDestroyCalTypeRequest extends FormRequest
+class MassDestroyOwnerRequest extends FormRequest
 {
     public function authorize()
     {
-        abort_if(Gate::denies('cal_type_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('calsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return true;
     }
@@ -20,7 +20,7 @@ class MassDestroyCalTypeRequest extends FormRequest
     {
         return [
             'ids'   => 'required|array',
-            'ids.*' => 'exists:cal_types,id',
+            'ids.*' => 'exists:owners,id',
         ];
     }
 }

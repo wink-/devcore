@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalLocation;
+use App\Models\Calsys\Location;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
-class UpdateCalLocationRequest extends FormRequest
+class StoreLocationRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('cal_location_edit');
+        return Gate::allows('calsys_create');
     }
 
     public function rules()

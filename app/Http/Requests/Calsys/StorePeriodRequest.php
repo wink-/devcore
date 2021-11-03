@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalPeriod;
+use App\Models\Calsys\Period;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
-class StoreCalPeriodRequest extends FormRequest
+class StorePeriodRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('cal_period_create');
+        return Gate::allows('calsys_create');
     }
 
     public function rules()

@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalStatus;
+use App\Models\Calsys\Status;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
-class UpdateCalStatusRequest extends FormRequest
+class UpdateStatusRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('cal_status_edit');
+        return Gate::allows('calsys_edit');
     }
 
     public function rules()

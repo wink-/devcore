@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalibratedBy;
+use App\Models\Calsys\ibratedBy;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
-class UpdateCalibratedByRequest extends FormRequest
+class UpdateibratedByRequest extends FormRequest
 {
     public function authorize()
     {

@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalOwner;
+use App\Models\Calsys\Owner;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
-class StoreCalOwnerRequest extends FormRequest
+class StoreOwnerRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('cal_owner_create');
+        return Gate::allows('calsys_create');
     }
 
     public function rules()

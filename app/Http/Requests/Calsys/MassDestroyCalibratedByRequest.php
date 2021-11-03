@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalibratedBy;
+use App\Models\Calsys\CalibratedBy;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,7 +11,7 @@ class MassDestroyCalibratedByRequest extends FormRequest
 {
     public function authorize()
     {
-        abort_if(Gate::denies('calibrated_by_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('calsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return true;
     }

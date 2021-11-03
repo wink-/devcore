@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalibratedBy;
+use App\Models\Calsys\CalibratedBy;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
@@ -11,7 +11,7 @@ class StoreCalibratedByRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('calibrated_by_create');
+        return Gate::allows('calsys_create');
     }
 
     public function rules()

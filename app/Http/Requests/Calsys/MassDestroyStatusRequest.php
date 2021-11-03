@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalLocation;
+use App\Models\Calsys\Status;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Symfony\Component\HttpFoundation\Response;
 
-class MassDestroyCalLocationRequest extends FormRequest
+class MassDestroyStatusRequest extends FormRequest
 {
     public function authorize()
     {
-        abort_if(Gate::denies('cal_location_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('calsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return true;
     }
@@ -20,7 +20,7 @@ class MassDestroyCalLocationRequest extends FormRequest
     {
         return [
             'ids'   => 'required|array',
-            'ids.*' => 'exists:cal_locations,id',
+            'ids.*' => 'exists:statuses,id',
         ];
     }
 }

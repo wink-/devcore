@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalSource;
+use App\Models\Calsys\Source;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
-class UpdateCalSourceRequest extends FormRequest
+class StoreSourceRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('cal_source_edit');
+        return Gate::allows('calsys_create');
     }
 
     public function rules()

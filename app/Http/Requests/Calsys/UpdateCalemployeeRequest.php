@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\Calemployee;
+use App\Models\Calsys\employee;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
-class UpdateCalemployeeRequest extends FormRequest
+class UpdateemployeeRequest extends FormRequest
 {
     public function authorize()
     {

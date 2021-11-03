@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalDevice;
+use App\Models\Calsys\Device;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
-class UpdateCalDeviceRequest extends FormRequest
+class UpdateDeviceRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('cal_device_edit');
+        return Gate::allows('calsys_edit');
     }
 
     public function rules()

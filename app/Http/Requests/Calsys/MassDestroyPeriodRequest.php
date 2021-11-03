@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Calsys;
 
-use App\Models\CalDevice;
+use App\Models\Calsys\Period;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Symfony\Component\HttpFoundation\Response;
 
-class MassDestroyCalDeviceRequest extends FormRequest
+class MassDestroyPeriodRequest extends FormRequest
 {
     public function authorize()
     {
-        abort_if(Gate::denies('cal_device_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('calsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return true;
     }
@@ -20,7 +20,7 @@ class MassDestroyCalDeviceRequest extends FormRequest
     {
         return [
             'ids'   => 'required|array',
-            'ids.*' => 'exists:cal_devices,id',
+            'ids.*' => 'exists:periods,id',
         ];
     }
 }
