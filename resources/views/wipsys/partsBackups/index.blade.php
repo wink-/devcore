@@ -181,7 +181,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.parts-backups.index') }}",
+    ajax: "{{ route('wipsys.parts-backups.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

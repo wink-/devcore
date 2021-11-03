@@ -3,7 +3,7 @@
 @can('part_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.parts.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.parts.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.part.title_singular') }}
             </a>
         </div>
@@ -129,7 +129,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.parts.index') }}",
+    ajax: "{{ route('wipsys.parts.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

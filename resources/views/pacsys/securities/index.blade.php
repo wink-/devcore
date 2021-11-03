@@ -66,7 +66,7 @@
 
                                 @can('security_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('pacsys.securities.edit', $security->id) }}">
-                                        {{ trans('global.edit') }}
+                                        Edit
                                     </a>
                                 @endcan
 

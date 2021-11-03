@@ -54,7 +54,7 @@
 
                                 @can('calibrated_by_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('calsys.calibrated-bies.edit', $calibratedBy->id) }}">
-                                        {{ trans('global.edit') }}
+                                        Edit
                                     </a>
                                 @endcan
 

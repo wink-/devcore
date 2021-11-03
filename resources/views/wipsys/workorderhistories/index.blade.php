@@ -3,7 +3,7 @@
 @can('workorderhistory_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.workorderhistories.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.workorderhistories.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.workorderhistory.title_singular') }}
             </a>
         </div>
@@ -237,7 +237,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.workorderhistories.index') }}",
+    ajax: "{{ route('wipsys.workorderhistories.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

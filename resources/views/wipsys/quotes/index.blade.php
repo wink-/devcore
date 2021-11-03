@@ -3,7 +3,7 @@
 @can('quote_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.quotes.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.quotes.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.quote.title_singular') }}
             </a>
         </div>
@@ -301,7 +301,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.quotes.massDestroy') }}",
+    url: "{{ route('wipsys.quotes.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).data(), function (entry) {
@@ -333,7 +333,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.quotes.index') }}",
+    ajax: "{{ route('wipsys.quotes.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

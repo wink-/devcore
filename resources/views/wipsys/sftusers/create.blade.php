@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.sftusers.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("wipsys.sftusers.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="userid">{{ trans('cruds.sftuser.fields.userid') }}</label>

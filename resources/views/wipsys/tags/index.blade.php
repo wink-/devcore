@@ -3,7 +3,7 @@
 @can('tag_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.tags.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.tags.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.tag.title_singular') }}
             </a>
         </div>
@@ -103,7 +103,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.tags.index') }}",
+    ajax: "{{ route('wipsys.tags.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

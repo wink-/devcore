@@ -66,7 +66,7 @@
 
                                 @can('calsys_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('calsys.employees.edit', $employee->id) }}">
-                                        {{ trans('global.edit') }}
+                                        Edit
                                     </a>
                                 @endcan
 

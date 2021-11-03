@@ -60,7 +60,7 @@
 
                                 @can('cal_type_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('calsys.types.edit', $calType->id) }}">
-                                        {{ trans('global.edit') }}
+                                        Edit
                                     </a>
                                 @endcan
 

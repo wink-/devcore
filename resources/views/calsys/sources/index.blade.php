@@ -54,7 +54,7 @@
 
                                 @can('cal_source_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('calsys.sources.edit', $calSource->id) }}">
-                                        {{ trans('global.edit') }}
+                                        Edit
                                     </a>
                                 @endcan
 

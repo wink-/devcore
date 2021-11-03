@@ -3,7 +3,7 @@
 @can('process_data_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.amps.create') }}">
+            <a class="btn btn-success" href="{{ route('processdata.amps.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.amp.title_singular') }}
             </a>
         </div>
@@ -82,7 +82,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.amps.massDestroy') }}",
+    url: "{{ route('processdata.amps.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).data(), function (entry) {
@@ -114,7 +114,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.amps.index') }}",
+    ajax: "{{ route('processdata.amps.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

@@ -177,7 +177,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.packing-lists-details.index') }}",
+    ajax: "{{ route('wipsys.packing-lists-details.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.packing-lists-details.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("wipsys.packing-lists-details.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="packing_list_number">{{ trans('cruds.packingListsDetail.fields.packing_list_number') }}</label>

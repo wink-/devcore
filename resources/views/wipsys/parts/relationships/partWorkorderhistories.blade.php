@@ -2,7 +2,7 @@
     @can('workorderhistory_create')
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-12">
-                <a class="btn btn-success" href="{{ route('admin.workorderhistories.create') }}">
+                <a class="btn btn-success" href="{{ route('wipsys.workorderhistories.create') }}">
                     {{ trans('global.add') }} {{ trans('cruds.workorderhistory.title_singular') }}
                 </a>
             </div>
@@ -233,14 +233,14 @@
                                 </td>
                                 <td>
                                     @can('workorderhistory_show')
-                                        <a class="btn btn-xs btn-primary" href="{{ route('admin.workorderhistories.show', $workorderhistory->id) }}">
+                                        <a class="btn btn-xs btn-primary" href="{{ route('wipsys.workorderhistories.show', $workorderhistory->id) }}">
                                             {{ trans('global.view') }}
                                         </a>
                                     @endcan
 
                                     @can('workorderhistory_edit')
-                                        <a class="btn btn-xs btn-info" href="{{ route('admin.workorderhistories.edit', $workorderhistory->id) }}">
-                                            {{ trans('global.edit') }}
+                                        <a class="btn btn-xs btn-info" href="{{ route('wipsys.workorderhistories.edit', $workorderhistory->id) }}">
+                                            Edit
                                         </a>
                                     @endcan
 

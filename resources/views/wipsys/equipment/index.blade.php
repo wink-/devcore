@@ -3,7 +3,7 @@
 @can('equipment_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.equipment.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.equipment.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.equipment.title_singular') }}
             </a>
         </div>
@@ -53,14 +53,14 @@
                             </td>
                             <td>
                                 @can('equipment_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.equipment.show', $equipment->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('wipsys.equipment.show', $equipment->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('equipment_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.equipment.edit', $equipment->id) }}">
-                                        {{ trans('global.edit') }}
+                                    <a class="btn btn-xs btn-info" href="{{ route('wipsys.equipment.edit', $equipment->id) }}">
+                                        Edit
                                     </a>
                                 @endcan
 

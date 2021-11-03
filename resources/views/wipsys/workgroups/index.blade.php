@@ -3,7 +3,7 @@
 @can('workgroup_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.workgroups.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.workgroups.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.workgroup.title_singular') }}
             </a>
         </div>
@@ -71,19 +71,19 @@
                             </td>
                             <td>
                                 @can('workgroup_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.workgroups.show', $workgroup->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('wipsys.workgroups.show', $workgroup->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('workgroup_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.workgroups.edit', $workgroup->id) }}">
-                                        {{ trans('global.edit') }}
+                                    <a class="btn btn-xs btn-info" href="{{ route('wipsys.workgroups.edit', $workgroup->id) }}">
+                                        Edit
                                     </a>
                                 @endcan
 
                                 @can('workgroup_delete')
-                                    <form action="{{ route('admin.workgroups.destroy', $workgroup->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('wipsys.workgroups.destroy', $workgroup->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
@@ -112,7 +112,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.workgroups.massDestroy') }}",
+    url: "{{ route('wipsys.workgroups.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {

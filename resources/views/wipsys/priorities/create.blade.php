@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.priorities.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("wipsys.priorities.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="code">{{ trans('cruds.priority.fields.code') }}</label>

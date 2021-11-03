@@ -51,7 +51,7 @@
                             </td>
                             <td>
                                 @can('log_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.logs.show', $log->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('wipsys.logs.show', $log->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan

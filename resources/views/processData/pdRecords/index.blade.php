@@ -3,7 +3,7 @@
 @can('pd_record_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.pd-records.create') }}">
+            <a class="btn btn-success" href="{{ route('processdata.pd-records.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.pdRecord.title_singular') }}
             </a>
         </div>
@@ -120,19 +120,19 @@
                             </td>
                             <td>
                                 @can('pd_record_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.pd-records.show', $pdRecord->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('processdata.pd-records.show', $pdRecord->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('pd_record_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.pd-records.edit', $pdRecord->id) }}">
-                                        {{ trans('global.edit') }}
+                                    <a class="btn btn-xs btn-info" href="{{ route('processdata.pd-records.edit', $pdRecord->id) }}">
+                                        Edit
                                     </a>
                                 @endcan
 
                                 @can('pd_record_delete')
-                                    <form action="{{ route('admin.pd-records.destroy', $pdRecord->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('processdata.pd-records.destroy', $pdRecord->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
@@ -161,7 +161,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.pd-records.massDestroy') }}",
+    url: "{{ route('processdata.pd-records.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {

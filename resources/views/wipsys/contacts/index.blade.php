@@ -3,7 +3,7 @@
 @can('contact_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.contacts.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.contacts.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.contact.title_singular') }}
             </a>
         </div>
@@ -102,19 +102,19 @@
                             </td>
                             <td>
                                 @can('contact_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.contacts.show', $contact->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('wipsys.contacts.show', $contact->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('contact_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.contacts.edit', $contact->id) }}">
-                                        {{ trans('global.edit') }}
+                                    <a class="btn btn-xs btn-info" href="{{ route('wipsys.contacts.edit', $contact->id) }}">
+                                        Edit
                                     </a>
                                 @endcan
 
                                 @can('contact_delete')
-                                    <form action="{{ route('admin.contacts.destroy', $contact->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('wipsys.contacts.destroy', $contact->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
@@ -143,7 +143,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.contacts.massDestroy') }}",
+    url: "{{ route('wipsys.contacts.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {

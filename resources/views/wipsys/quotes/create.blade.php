@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.quotes.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("wipsys.quotes.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label class="required" for="customer_id">{{ trans('cruds.quote.fields.customer') }}</label>

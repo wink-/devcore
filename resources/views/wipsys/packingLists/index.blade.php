@@ -3,7 +3,7 @@
 @can('packing_list_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.packing-lists.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.packing-lists.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.packingList.title_singular') }}
             </a>
         </div>
@@ -142,7 +142,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.packing-lists.index') }}",
+    ajax: "{{ route('wipsys.packing-lists.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

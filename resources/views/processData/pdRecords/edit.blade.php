@@ -3,11 +3,11 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.edit') }} {{ trans('cruds.pdRecord.title_singular') }}
+        Edit {{ trans('cruds.pdRecord.title_singular') }}
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.pd-records.update", [$pdRecord->id]) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("processdata.pd-records.update", [$pdRecord->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="form-group">

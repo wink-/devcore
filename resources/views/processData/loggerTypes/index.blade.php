@@ -3,7 +3,7 @@
 @can('logger_type_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.logger-types.create') }}">
+            <a class="btn btn-success" href="{{ route('processdata.logger-types.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.loggerType.title_singular') }}
             </a>
         </div>
@@ -53,19 +53,19 @@
                             </td>
                             <td>
                                 @can('logger_type_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.logger-types.show', $loggerType->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('processdata.logger-types.show', $loggerType->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('logger_type_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.logger-types.edit', $loggerType->id) }}">
-                                        {{ trans('global.edit') }}
+                                    <a class="btn btn-xs btn-info" href="{{ route('processdata.logger-types.edit', $loggerType->id) }}">
+                                        Edit
                                     </a>
                                 @endcan
 
                                 @can('logger_type_delete')
-                                    <form action="{{ route('admin.logger-types.destroy', $loggerType->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('processdata.logger-types.destroy', $loggerType->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
@@ -94,7 +94,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.logger-types.massDestroy') }}",
+    url: "{{ route('processdata.logger-types.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {

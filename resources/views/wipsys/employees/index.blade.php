@@ -3,7 +3,7 @@
 @can('employee_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.employees.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.employees.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.employee.title_singular') }}
             </a>
         </div>
@@ -54,7 +54,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.employees.index') }}",
+    ajax: "{{ route('wipsys.employees.index') }}",
     columns: [
         { data: 'placeholder', name: 'placeholder' },
         { data: 'id', name: 'id' },

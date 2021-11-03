@@ -3,7 +3,7 @@
 @can('sftuser_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.sftusers.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.sftusers.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.sftuser.title_singular') }}
             </a>
         </div>
@@ -71,19 +71,19 @@
                             </td>
                             <td>
                                 @can('sftuser_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.sftusers.show', $sftuser->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('wipsys.sftusers.show', $sftuser->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('sftuser_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.sftusers.edit', $sftuser->id) }}">
-                                        {{ trans('global.edit') }}
+                                    <a class="btn btn-xs btn-info" href="{{ route('wipsys.sftusers.edit', $sftuser->id) }}">
+                                        Edit
                                     </a>
                                 @endcan
 
                                 @can('sftuser_delete')
-                                    <form action="{{ route('admin.sftusers.destroy', $sftuser->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('wipsys.sftusers.destroy', $sftuser->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
@@ -112,7 +112,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.sftusers.massDestroy') }}",
+    url: "{{ route('wipsys.sftusers.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {

@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.ups.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("wipsys.ups.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="tracking_number">{{ trans('cruds.up.fields.tracking_number') }}</label>

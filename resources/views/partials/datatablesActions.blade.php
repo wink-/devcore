@@ -5,7 +5,7 @@
 @endcan
 @can($editGate)
     <a class="btn btn-xs btn-info" href="{{ route('admin.' . $crudRoutePart . '.edit', $row->getKey()) }}">
-        {{ trans('global.edit') }}
+        Edit
     </a>
 @endcan
 @can($deleteGate)

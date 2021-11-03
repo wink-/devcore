@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.amps.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("processdata.amps.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="record_id">{{ trans('cruds.amp.fields.record') }}</label>

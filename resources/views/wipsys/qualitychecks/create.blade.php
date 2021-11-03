@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.qualitychecks.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("wipsys.qualitychecks.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="description">{{ trans('cruds.qualitycheck.fields.description') }}</label>

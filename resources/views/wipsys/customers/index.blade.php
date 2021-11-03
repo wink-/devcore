@@ -3,7 +3,7 @@
 @can('customer_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.customers.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.customers.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.customer.title_singular') }}
             </a>
         </div>
@@ -66,7 +66,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.customers.index') }}",
+    ajax: "{{ route('wipsys.customers.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

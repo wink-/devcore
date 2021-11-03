@@ -3,7 +3,7 @@
 @can('wipsys_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.workorders.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.workorders.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.workorder.title_singular') }}
             </a>
         </div>
@@ -223,7 +223,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.workorders.index') }}",
+    ajax: "{{ route('wipsys.workorders.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

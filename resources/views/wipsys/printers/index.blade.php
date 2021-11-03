@@ -3,7 +3,7 @@
 @can('printer_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.printers.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.printers.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.printer.title_singular') }}
             </a>
         </div>
@@ -66,14 +66,14 @@
                             </td>
                             <td>
                                 @can('printer_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.printers.show', $printer->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('wipsys.printers.show', $printer->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('printer_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.printers.edit', $printer->id) }}">
-                                        {{ trans('global.edit') }}
+                                    <a class="btn btn-xs btn-info" href="{{ route('wipsys.printers.edit', $printer->id) }}">
+                                        Edit
                                     </a>
                                 @endcan
 

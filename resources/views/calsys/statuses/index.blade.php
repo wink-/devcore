@@ -54,7 +54,7 @@
 
                                 @can('cal_status_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('calsys.statuses.edit', $calStatus->id) }}">
-                                        {{ trans('global.edit') }}
+                                        Edit
                                     </a>
                                 @endcan
 

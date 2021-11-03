@@ -3,11 +3,11 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.edit') }} {{ trans('cruds.procedure.title_singular') }}
+        Edit {{ trans('cruds.procedure.title_singular') }}
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.procedures.update", [$procedure->id]) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("wipsys.procedures.update", [$procedure->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="form-group">

@@ -143,7 +143,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.labor-cards.index') }}",
+    ajax: "{{ route('wipsys.labor-cards.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

@@ -60,7 +60,7 @@
 
                                 @can('period_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('pacsys.periods.edit', $period->id) }}">
-                                        {{ trans('global.edit') }}
+                                        Edit
                                     </a>
                                 @endcan
 

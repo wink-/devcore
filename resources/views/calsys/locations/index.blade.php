@@ -54,7 +54,7 @@
 
                                 @can('cal_location_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('calsys.locations.edit', $calLocation->id) }}">
-                                        {{ trans('global.edit') }}
+                                        Edit
                                     </a>
                                 @endcan
 

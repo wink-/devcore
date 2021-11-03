@@ -273,7 +273,7 @@
 
                                 @can('form_value_visible_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('pacsys.form-value-visibles.edit', $formValueVisible->id) }}">
-                                        {{ trans('global.edit') }}
+                                        Edit
                                     </a>
                                 @endcan
 

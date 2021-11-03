@@ -3,7 +3,7 @@
 @can('process_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.processes.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.processes.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.process.title_singular') }}
             </a>
         </div>
@@ -73,19 +73,19 @@
                             </td>
                             <td>
                                 @can('process_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.processes.show', $process->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('wipsys.processes.show', $process->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('process_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.processes.edit', $process->id) }}">
-                                        {{ trans('global.edit') }}
+                                    <a class="btn btn-xs btn-info" href="{{ route('wipsys.processes.edit', $process->id) }}">
+                                        Edit
                                     </a>
                                 @endcan
 
                                 @can('process_delete')
-                                    <form action="{{ route('admin.processes.destroy', $process->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('wipsys.processes.destroy', $process->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
@@ -114,7 +114,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.processes.massDestroy') }}",
+    url: "{{ route('wipsys.processes.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {

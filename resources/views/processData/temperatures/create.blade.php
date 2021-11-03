@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.temperatures.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("processdata.temperatures.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="record_id">{{ trans('cruds.temperature.fields.record') }}</label>

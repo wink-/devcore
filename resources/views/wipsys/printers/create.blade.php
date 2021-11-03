@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.printers.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("wipsys.printers.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="printer">{{ trans('cruds.printer.fields.printer') }}</label>

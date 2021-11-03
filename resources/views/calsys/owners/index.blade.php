@@ -54,7 +54,7 @@
 
                                 @can('cal_owner_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('calsys.owners.edit', $calOwner->id) }}">
-                                        {{ trans('global.edit') }}
+                                        Edit
                                     </a>
                                 @endcan
 

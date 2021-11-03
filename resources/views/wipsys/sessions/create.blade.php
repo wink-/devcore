@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.sessions.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("wipsys.sessions.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="session">{{ trans('cruds.session.fields.session') }}</label>

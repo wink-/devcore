@@ -3,7 +3,7 @@
 @can('qualitycheck_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.qualitychecks.create') }}">
+            <a class="btn btn-success" href="{{ route('wipsys.qualitychecks.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.qualitycheck.title_singular') }}
             </a>
         </div>
@@ -47,19 +47,19 @@
                             </td>
                             <td>
                                 @can('qualitycheck_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.qualitychecks.show', $qualitycheck->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('wipsys.qualitychecks.show', $qualitycheck->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('qualitycheck_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.qualitychecks.edit', $qualitycheck->id) }}">
-                                        {{ trans('global.edit') }}
+                                    <a class="btn btn-xs btn-info" href="{{ route('wipsys.qualitychecks.edit', $qualitycheck->id) }}">
+                                        Edit
                                     </a>
                                 @endcan
 
                                 @can('qualitycheck_delete')
-                                    <form action="{{ route('admin.qualitychecks.destroy', $qualitycheck->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('wipsys.qualitychecks.destroy', $qualitycheck->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
@@ -88,7 +88,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.qualitychecks.massDestroy') }}",
+    url: "{{ route('wipsys.qualitychecks.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {

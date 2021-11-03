@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.pd-records.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("processdata.pd-records.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <div class="form-check {{ $errors->has('active') ? 'is-invalid' : '' }}">
