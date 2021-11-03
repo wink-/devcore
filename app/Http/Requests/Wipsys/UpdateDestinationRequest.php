@@ -46,7 +46,7 @@ class UpdateDestinationRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'contact_1'         => [
+            'CONTACT1'         => [
                 'string',
                 'nullable',
             ],
@@ -58,19 +58,19 @@ class UpdateDestinationRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'extension_1'       => [
+            'EXTENSION1'       => [
                 'string',
                 'nullable',
             ],
-            'contact_2'         => [
+            'CONTACT2'         => [
                 'string',
                 'nullable',
             ],
-            'phone_2'           => [
+            'PHONE2'           => [
                 'string',
                 'nullable',
             ],
-            'extension_2'       => [
+            'EXTENSION2'       => [
                 'string',
                 'nullable',
             ],

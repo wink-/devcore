@@ -64,7 +64,7 @@ class UpdateCustomerRequest extends FormRequest
                 'min:-2147483648',
                 'max:2147483647',
             ],
-            'contact_1'            => [
+            'CONTACT1'            => [
                 'string',
                 'max:25',
                 'nullable',
@@ -74,22 +74,22 @@ class UpdateCustomerRequest extends FormRequest
                 'max:13',
                 'nullable',
             ],
-            'extension_1'          => [
+            'EXTENSION1'          => [
                 'string',
                 'max:4',
                 'nullable',
             ],
-            'contact_2'            => [
+            'CONTACT2'            => [
                 'string',
                 'max:25',
                 'nullable',
             ],
-            'phone_2'              => [
+            'PHONE2'              => [
                 'string',
                 'max:13',
                 'nullable',
             ],
-            'extension_2'          => [
+            'EXTENSION2'          => [
                 'string',
                 'max:4',
                 'nullable',

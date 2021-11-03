@@ -83,12 +83,12 @@
                 <span class="help-block">{{ trans('cruds.customer.fields.packing_list_copies_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="contact_1">{{ trans('cruds.customer.fields.contact_1') }}</label>
-                <input class="form-control {{ $errors->has('contact_1') ? 'is-invalid' : '' }}" type="text" name="contact_1" id="contact_1" value="{{ old('contact_1', $customer->contact_1) }}">
-                @if($errors->has('contact_1'))
-                    <span class="text-danger">{{ $errors->first('contact_1') }}</span>
+                <label for="CONTACT1">{{ trans('cruds.customer.fields.CONTACT1') }}</label>
+                <input class="form-control {{ $errors->has('CONTACT1') ? 'is-invalid' : '' }}" type="text" name="CONTACT1" id="CONTACT1" value="{{ old('CONTACT1', $customer->CONTACT1) }}">
+                @if($errors->has('CONTACT1'))
+                    <span class="text-danger">{{ $errors->first('CONTACT1') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.customer.fields.contact_1_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.customer.fields.CONTACT1_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="company_phone">{{ trans('cruds.customer.fields.company_phone') }}</label>
@@ -99,36 +99,36 @@
                 <span class="help-block">{{ trans('cruds.customer.fields.company_phone_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="extension_1">{{ trans('cruds.customer.fields.extension_1') }}</label>
-                <input class="form-control {{ $errors->has('extension_1') ? 'is-invalid' : '' }}" type="text" name="extension_1" id="extension_1" value="{{ old('extension_1', $customer->extension_1) }}">
-                @if($errors->has('extension_1'))
-                    <span class="text-danger">{{ $errors->first('extension_1') }}</span>
+                <label for="EXTENSION1">{{ trans('cruds.customer.fields.EXTENSION1') }}</label>
+                <input class="form-control {{ $errors->has('EXTENSION1') ? 'is-invalid' : '' }}" type="text" name="EXTENSION1" id="EXTENSION1" value="{{ old('EXTENSION1', $customer->EXTENSION1) }}">
+                @if($errors->has('EXTENSION1'))
+                    <span class="text-danger">{{ $errors->first('EXTENSION1') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.customer.fields.extension_1_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.customer.fields.EXTENSION1_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="contact_2">{{ trans('cruds.customer.fields.contact_2') }}</label>
-                <input class="form-control {{ $errors->has('contact_2') ? 'is-invalid' : '' }}" type="text" name="contact_2" id="contact_2" value="{{ old('contact_2', $customer->contact_2) }}">
-                @if($errors->has('contact_2'))
-                    <span class="text-danger">{{ $errors->first('contact_2') }}</span>
+                <label for="CONTACT2">{{ trans('cruds.customer.fields.CONTACT2') }}</label>
+                <input class="form-control {{ $errors->has('CONTACT2') ? 'is-invalid' : '' }}" type="text" name="CONTACT2" id="CONTACT2" value="{{ old('CONTACT2', $customer->CONTACT2) }}">
+                @if($errors->has('CONTACT2'))
+                    <span class="text-danger">{{ $errors->first('CONTACT2') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.customer.fields.contact_2_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.customer.fields.CONTACT2_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="phone_2">{{ trans('cruds.customer.fields.phone_2') }}</label>
-                <input class="form-control {{ $errors->has('phone_2') ? 'is-invalid' : '' }}" type="text" name="phone_2" id="phone_2" value="{{ old('phone_2', $customer->phone_2) }}">
-                @if($errors->has('phone_2'))
-                    <span class="text-danger">{{ $errors->first('phone_2') }}</span>
+                <label for="PHONE2">{{ trans('cruds.customer.fields.PHONE2') }}</label>
+                <input class="form-control {{ $errors->has('PHONE2') ? 'is-invalid' : '' }}" type="text" name="PHONE2" id="PHONE2" value="{{ old('PHONE2', $customer->PHONE2) }}">
+                @if($errors->has('PHONE2'))
+                    <span class="text-danger">{{ $errors->first('PHONE2') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.customer.fields.phone_2_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.customer.fields.PHONE2_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="extension_2">{{ trans('cruds.customer.fields.extension_2') }}</label>
-                <input class="form-control {{ $errors->has('extension_2') ? 'is-invalid' : '' }}" type="text" name="extension_2" id="extension_2" value="{{ old('extension_2', $customer->extension_2) }}">
-                @if($errors->has('extension_2'))
-                    <span class="text-danger">{{ $errors->first('extension_2') }}</span>
+                <label for="EXTENSION2">{{ trans('cruds.customer.fields.EXTENSION2') }}</label>
+                <input class="form-control {{ $errors->has('EXTENSION2') ? 'is-invalid' : '' }}" type="text" name="EXTENSION2" id="EXTENSION2" value="{{ old('EXTENSION2', $customer->EXTENSION2) }}">
+                @if($errors->has('EXTENSION2'))
+                    <span class="text-danger">{{ $errors->first('EXTENSION2') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.customer.fields.extension_2_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.customer.fields.EXTENSION2_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="fax">{{ trans('cruds.customer.fields.fax') }}</label>
@@ -166,12 +166,12 @@
                 <span class="help-block">{{ trans('cruds.customer.fields.cod_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="tax">{{ trans('cruds.customer.fields.tax') }}</label>
-                <input class="form-control {{ $errors->has('tax') ? 'is-invalid' : '' }}" type="text" name="tax" id="tax" value="{{ old('tax', $customer->tax) }}">
-                @if($errors->has('tax'))
-                    <span class="text-danger">{{ $errors->first('tax') }}</span>
+                <label for="tax_id">{{ trans('cruds.customer.fields.tax_id') }}</label>
+                <input class="form-control {{ $errors->has('tax_id') ? 'is-invalid' : '' }}" type="text" name="tax_id" id="tax_id" value="{{ old('tax_id', $customer->tax_id) }}">
+                @if($errors->has('tax_id'))
+                    <span class="text-danger">{{ $errors->first('tax_id') }}</span>
                 @endif
-                <span class="help-block">{{ trans('cruds.customer.fields.tax_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.customer.fields.tax_id_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="note">{{ trans('cruds.customer.fields.note') }}</label>

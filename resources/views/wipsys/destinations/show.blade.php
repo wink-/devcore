@@ -89,10 +89,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.destination.fields.contact_1') }}
+                            {{ trans('cruds.destination.fields.CONTACT1') }}
                         </th>
                         <td>
-                            {{ $destination->contact_1 }}
+                            {{ $destination->CONTACT1 }}
                         </td>
                     </tr>
                     <tr>
@@ -113,34 +113,34 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.destination.fields.extension_1') }}
+                            {{ trans('cruds.destination.fields.EXTENSION1') }}
                         </th>
                         <td>
-                            {{ $destination->extension_1 }}
+                            {{ $destination->EXTENSION1 }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.destination.fields.contact_2') }}
+                            {{ trans('cruds.destination.fields.CONTACT2') }}
                         </th>
                         <td>
-                            {{ $destination->contact_2 }}
+                            {{ $destination->CONTACT2 }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.destination.fields.phone_2') }}
+                            {{ trans('cruds.destination.fields.PHONE2') }}
                         </th>
                         <td>
-                            {{ $destination->phone_2 }}
+                            {{ $destination->PHONE2 }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.destination.fields.extension_2') }}
+                            {{ trans('cruds.destination.fields.EXTENSION2') }}
                         </th>
                         <td>
-                            {{ $destination->extension_2 }}
+                            {{ $destination->EXTENSION2 }}
                         </td>
                     </tr>
                     <tr>

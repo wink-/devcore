@@ -17,13 +17,13 @@ class CreateDestinationsTable extends Migration
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('zip')->nullable();
-            $table->string('contact_1')->nullable();
+            $table->string('CONTACT1')->nullable();
             $table->string('company_phone')->nullable();
             $table->string('phone_1')->nullable();
-            $table->string('extension_1')->nullable();
-            $table->string('contact_2')->nullable();
-            $table->string('phone_2')->nullable();
-            $table->string('extension_2')->nullable();
+            $table->string('EXTENSION1')->nullable();
+            $table->string('CONTACT2')->nullable();
+            $table->string('PHONE2')->nullable();
+            $table->string('EXTENSION2')->nullable();
             $table->string('fax')->nullable();
             $table->string('email')->nullable();
             $table->longText('note')->nullable();

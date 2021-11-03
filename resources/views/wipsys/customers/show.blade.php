@@ -97,10 +97,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.customer.fields.contact_1') }}
+                            {{ trans('cruds.customer.fields.CONTACT1') }}
                         </th>
                         <td>
-                            {{ $customer->contact_1 }}
+                            {{ $customer->CONTACT1 }}
                         </td>
                     </tr>
                     <tr>
@@ -113,34 +113,34 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.customer.fields.extension_1') }}
+                            {{ trans('cruds.customer.fields.EXTENSION1') }}
                         </th>
                         <td>
-                            {{ $customer->extension_1 }}
+                            {{ $customer->EXTENSION1 }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.customer.fields.contact_2') }}
+                            {{ trans('cruds.customer.fields.CONTACT2') }}
                         </th>
                         <td>
-                            {{ $customer->contact_2 }}
+                            {{ $customer->CONTACT2 }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.customer.fields.phone_2') }}
+                            {{ trans('cruds.customer.fields.PHONE2') }}
                         </th>
                         <td>
-                            {{ $customer->phone_2 }}
+                            {{ $customer->PHONE2 }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.customer.fields.extension_2') }}
+                            {{ trans('cruds.customer.fields.EXTENSION2') }}
                         </th>
                         <td>
-                            {{ $customer->extension_2 }}
+                            {{ $customer->EXTENSION2 }}
                         </td>
                     </tr>
                     <tr>
@@ -177,10 +177,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.customer.fields.tax') }}
+                            {{ trans('cruds.customer.fields.tax_id') }}
                         </th>
                         <td>
-                            {{ $customer->tax }}
+                            {{ $customer->tax_id }}
                         </td>
                     </tr>
                     <tr>
