@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.validations.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("pacsys.validations.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="validation_text">{{ trans('cruds.validation.fields.validation_text') }}</label>

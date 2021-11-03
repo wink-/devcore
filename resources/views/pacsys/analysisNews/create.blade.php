@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.analysis-news.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("pacsys.analysis-news.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="record_name">{{ trans('cruds.analysisNew.fields.record_name') }}</label>

@@ -3,13 +3,13 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.pUnit.title') }}
+        {{ trans('global.show') }} {{ trans('cruds.employee.title') }}
     </div>
 
     <div class="card-body">
         <div class="form-group">
             <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.p-units.index') }}">
+                <a class="btn btn-default" href="{{ route('pacsys.employees.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
             </div>
@@ -17,32 +17,40 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.pUnit.fields.id') }}
+                            {{ trans('cruds.employee.fields.id') }}
                         </th>
                         <td>
-                            {{ $pUnit->id }}
+                            {{ $employee->id }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.pUnit.fields.unit') }}
+                            {{ trans('cruds.employee.fields.name') }}
                         </th>
                         <td>
-                            {{ $pUnit->unit }}
+                            {{ $employee->name }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.pUnit.fields.description') }}
+                            {{ trans('cruds.employee.fields.user_name') }}
                         </th>
                         <td>
-                            {{ $pUnit->description }}
+                            {{ $employee->user_name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.employee.fields.code') }}
+                        </th>
+                        <td>
+                            {{ $employee->code }}
                         </td>
                     </tr>
                 </tbody>
             </table>
             <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.p-units.index') }}">
+                <a class="btn btn-default" href="{{ route('pacsys.employees.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
             </div>

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Pacsys;
 
-use App\Models\FormValuePeriod;
+use App\Models\Pacsys\FormValuePeriod;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;

@@ -3,35 +3,35 @@
 @can('p_employee_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.p-employees.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.pEmployee.title_singular') }}
+            <a class="btn btn-success" href="{{ route('pacsys.p-employees.create') }}">
+                {{ trans('global.add') }} {{ trans('cruds.employee.title_singular') }}
             </a>
         </div>
     </div>
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.pEmployee.title_singular') }} {{ trans('global.list') }}
+        {{ trans('cruds.employee.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
-        <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-PEmployee">
+        <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-employee">
             <thead>
                 <tr>
                     <th width="10">
 
                     </th>
                     <th>
-                        {{ trans('cruds.pEmployee.fields.id') }}
+                        {{ trans('cruds.employee.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.pEmployee.fields.name') }}
+                        {{ trans('cruds.employee.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.pEmployee.fields.user_name') }}
+                        {{ trans('cruds.employee.fields.user_name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.pEmployee.fields.code') }}
+                        {{ trans('cruds.employee.fields.code') }}
                     </th>
                     <th>
                         &nbsp;
@@ -72,7 +72,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.p-employees.massDestroy') }}",
+    url: "{{ route('pacsys.p-employees.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).data(), function (entry) {
@@ -104,7 +104,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.p-employees.index') }}",
+    ajax: "{{ route('pacsys.p-employees.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },
@@ -117,7 +117,7 @@
     order: [[ 1, 'desc' ]],
     pageLength: 100,
   };
-  let table = $('.datatable-PEmployee').DataTable(dtOverrideGlobals);
+  let table = $('.datatable-employee').DataTable(dtOverrideGlobals);
   $('a[data-toggle="tab"]').on('shown.bs.tab click', function(e){
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();

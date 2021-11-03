@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Pacsys;
 
-use App\Models\PEmployee;
+use App\Models\Pacsys\PEmployee;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,7 +11,7 @@ class MassDestroyPEmployeeRequest extends FormRequest
 {
     public function authorize()
     {
-        abort_if(Gate::denies('p_employee_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return true;
     }
@@ -20,7 +20,7 @@ class MassDestroyPEmployeeRequest extends FormRequest
     {
         return [
             'ids'   => 'required|array',
-            'ids.*' => 'exists:p_employees,id',
+            'ids.*' => 'exists:employees,id',
         ];
     }
 }

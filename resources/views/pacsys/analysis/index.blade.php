@@ -3,7 +3,7 @@
 @can('analysi_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.analysis.create') }}">
+            <a class="btn btn-success" href="{{ route('pacsys.analysis.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.analysi.title_singular') }}
             </a>
         </div>
@@ -339,7 +339,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.analysis.massDestroy') }}",
+    url: "{{ route('pacsys.analysis.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).data(), function (entry) {
@@ -371,7 +371,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.analysis.index') }}",
+    ajax: "{{ route('pacsys.analysis.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Pacsys;
 
-use App\Models\AnalysisNew;
+use App\Models\Pacsys\AnalysisNew;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;

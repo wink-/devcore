@@ -3,7 +3,7 @@
 @can('form_value_range_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.form-value-ranges.create') }}">
+            <a class="btn btn-success" href="{{ route('pacsys.form-value-ranges.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.formValueRange.title_singular') }}
             </a>
         </div>
@@ -177,7 +177,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.form-value-ranges.massDestroy') }}",
+    url: "{{ route('pacsys.form-value-ranges.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).data(), function (entry) {
@@ -209,7 +209,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.form-value-ranges.index') }}",
+    ajax: "{{ route('pacsys.form-value-ranges.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

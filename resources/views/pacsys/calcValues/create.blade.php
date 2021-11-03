@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.calc-values.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("pacsys.calc-values.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="value_name">{{ trans('cruds.calcValue.fields.value_name') }}</label>

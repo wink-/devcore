@@ -2155,7 +2155,7 @@ return [
             'deleted_at_helper'     => ' ',
         ],
     ],
-    'pEmployee' => [
+    'employee' => [
         'title'          => 'P Employee',
         'title_singular' => 'P Employee',
         'fields'         => [

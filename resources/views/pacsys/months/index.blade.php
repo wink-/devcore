@@ -3,7 +3,7 @@
 @can('month_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.months.create') }}">
+            <a class="btn btn-success" href="{{ route('pacsys.months.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.month.title_singular') }}
             </a>
         </div>
@@ -53,19 +53,19 @@
                             </td>
                             <td>
                                 @can('month_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.months.show', $month->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('pacsys.months.show', $month->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('month_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.months.edit', $month->id) }}">
+                                    <a class="btn btn-xs btn-info" href="{{ route('pacsys.months.edit', $month->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
 
                                 @can('month_delete')
-                                    <form action="{{ route('admin.months.destroy', $month->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('pacsys.months.destroy', $month->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
@@ -94,7 +94,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.months.massDestroy') }}",
+    url: "{{ route('pacsys.months.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {

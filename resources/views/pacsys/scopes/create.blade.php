@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.scopes.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("pacsys.scopes.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="name">{{ trans('cruds.scope.fields.name') }}</label>

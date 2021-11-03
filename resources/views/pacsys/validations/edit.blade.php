@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.validations.update", [$validation->id]) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("pacsys.validations.update", [$validation->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="form-group">

@@ -3,7 +3,7 @@
 @can('form_type_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.form-types.create') }}">
+            <a class="btn btn-success" href="{{ route('pacsys.form-types.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.formType.title_singular') }}
             </a>
         </div>
@@ -72,7 +72,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.form-types.massDestroy') }}",
+    url: "{{ route('pacsys.form-types.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).data(), function (entry) {
@@ -104,7 +104,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.form-types.index') }}",
+    ajax: "{{ route('pacsys.form-types.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },
