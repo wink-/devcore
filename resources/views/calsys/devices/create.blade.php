@@ -3,11 +3,11 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.create') }} {{ trans('cruds.calDevice.title_singular') }}
+        Create {{ trans('cruds.calDevice.title_singular') }}
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.cal-devices.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("calsys.devices.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="name">{{ trans('cruds.calDevice.fields.name') }}</label>
@@ -111,7 +111,7 @@
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
-                    {{ trans('global.save') }}
+                    Save
                 </button>
             </div>
         </form>

@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.create') }} {{ trans('cruds.validation.title_singular') }}
+        Create {{ trans('cruds.validation.title_singular') }}
     </div>
 
     <div class="card-body">
@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
-                    {{ trans('global.save') }}
+                    Save
                 </button>
             </div>
         </form>

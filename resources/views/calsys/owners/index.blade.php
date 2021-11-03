@@ -3,7 +3,7 @@
 @can('cal_owner_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.cal-owners.create') }}">
+            <a class="btn btn-success" href="{{ route('calsys.owners.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.calOwner.title_singular') }}
             </a>
         </div>
@@ -47,19 +47,19 @@
                             </td>
                             <td>
                                 @can('cal_owner_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.cal-owners.show', $calOwner->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('calsys.owners.show', $calOwner->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
                                 @can('cal_owner_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.cal-owners.edit', $calOwner->id) }}">
+                                    <a class="btn btn-xs btn-info" href="{{ route('calsys.owners.edit', $calOwner->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
 
                                 @can('cal_owner_delete')
-                                    <form action="{{ route('admin.cal-owners.destroy', $calOwner->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('calsys.owners.destroy', $calOwner->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
@@ -88,7 +88,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.cal-owners.massDestroy') }}",
+    url: "{{ route('calsys.owners.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {

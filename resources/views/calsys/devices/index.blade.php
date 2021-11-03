@@ -3,7 +3,7 @@
 @can('cal_device_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.cal-devices.create') }}">
+            <a class="btn btn-success" href="{{ route('calsys.devices.create') }}">
                 {{ trans('global.add') }} {{ trans('cruds.calDevice.title_singular') }}
             </a>
         </div>
@@ -72,7 +72,7 @@
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.cal-devices.massDestroy') }}",
+    url: "{{ route('calsys.devices.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).data(), function (entry) {
@@ -104,7 +104,7 @@
     serverSide: true,
     retrieve: true,
     aaSorting: [],
-    ajax: "{{ route('admin.cal-devices.index') }}",
+    ajax: "{{ route('calsys.devices.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },

@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.cal-statuses.update", [$calStatus->id]) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("calsys.statuses.update", [$calStatus->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="form-group">
@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
-                    {{ trans('global.save') }}
+                    Save
                 </button>
             </div>
         </form>

@@ -7,12 +7,12 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.cal-devices.update", [$calDevice->id]) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("calsys.devices.update", [$device->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="form-group">
                 <label for="name">{{ trans('cruds.calDevice.fields.name') }}</label>
-                <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" id="name" value="{{ old('name', $calDevice->name) }}">
+                <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" id="name" value="{{ old('name', $device->name) }}">
                 @if($errors->has('name'))
                     <span class="text-danger">{{ $errors->first('name') }}</span>
                 @endif
@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label for="description">{{ trans('cruds.calDevice.fields.description') }}</label>
-                <input class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" type="text" name="description" id="description" value="{{ old('description', $calDevice->description) }}">
+                <input class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" type="text" name="description" id="description" value="{{ old('description', $device->description) }}">
                 @if($errors->has('description'))
                     <span class="text-danger">{{ $errors->first('description') }}</span>
                 @endif
@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label for="serial_number">{{ trans('cruds.calDevice.fields.serial_number') }}</label>
-                <input class="form-control {{ $errors->has('serial_number') ? 'is-invalid' : '' }}" type="text" name="serial_number" id="serial_number" value="{{ old('serial_number', $calDevice->serial_number) }}">
+                <input class="form-control {{ $errors->has('serial_number') ? 'is-invalid' : '' }}" type="text" name="serial_number" id="serial_number" value="{{ old('serial_number', $device->serial_number) }}">
                 @if($errors->has('serial_number'))
                     <span class="text-danger">{{ $errors->first('serial_number') }}</span>
                 @endif
@@ -38,7 +38,7 @@
                 <label for="source_id">{{ trans('cruds.calDevice.fields.source') }}</label>
                 <select class="form-control select2 {{ $errors->has('source') ? 'is-invalid' : '' }}" name="source_id" id="source_id">
                     @foreach($sources as $id => $source)
-                        <option value="{{ $id }}" {{ (old('source_id') ? old('source_id') : $calDevice->source->id ?? '') == $id ? 'selected' : '' }}>{{ $source }}</option>
+                        <option value="{{ $id }}" {{ (old('source_id') ? old('source_id') : $device->source->id ?? '') == $id ? 'selected' : '' }}>{{ $source }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('source'))
@@ -50,7 +50,7 @@
                 <label for="type_id">{{ trans('cruds.calDevice.fields.type') }}</label>
                 <select class="form-control select2 {{ $errors->has('type') ? 'is-invalid' : '' }}" name="type_id" id="type_id">
                     @foreach($types as $id => $type)
-                        <option value="{{ $id }}" {{ (old('type_id') ? old('type_id') : $calDevice->type->id ?? '') == $id ? 'selected' : '' }}>{{ $type }}</option>
+                        <option value="{{ $id }}" {{ (old('type_id') ? old('type_id') : $device->type->id ?? '') == $id ? 'selected' : '' }}>{{ $type }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('type'))
@@ -62,7 +62,7 @@
                 <label for="period_id">{{ trans('cruds.calDevice.fields.period') }}</label>
                 <select class="form-control select2 {{ $errors->has('period') ? 'is-invalid' : '' }}" name="period_id" id="period_id">
                     @foreach($periods as $id => $period)
-                        <option value="{{ $id }}" {{ (old('period_id') ? old('period_id') : $calDevice->period->id ?? '') == $id ? 'selected' : '' }}>{{ $period }}</option>
+                        <option value="{{ $id }}" {{ (old('period_id') ? old('period_id') : $device->period->id ?? '') == $id ? 'selected' : '' }}>{{ $period }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('period'))
@@ -74,7 +74,7 @@
                 <label for="location_id">{{ trans('cruds.calDevice.fields.location') }}</label>
                 <select class="form-control select2 {{ $errors->has('location') ? 'is-invalid' : '' }}" name="location_id" id="location_id">
                     @foreach($locations as $id => $location)
-                        <option value="{{ $id }}" {{ (old('location_id') ? old('location_id') : $calDevice->location->id ?? '') == $id ? 'selected' : '' }}>{{ $location }}</option>
+                        <option value="{{ $id }}" {{ (old('location_id') ? old('location_id') : $device->location->id ?? '') == $id ? 'selected' : '' }}>{{ $location }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('location'))
@@ -84,7 +84,7 @@
             </div>
             <div class="form-group">
                 <label for="init_date">{{ trans('cruds.calDevice.fields.init_date') }}</label>
-                <input class="form-control date {{ $errors->has('init_date') ? 'is-invalid' : '' }}" type="text" name="init_date" id="init_date" value="{{ old('init_date', $calDevice->init_date) }}">
+                <input class="form-control date {{ $errors->has('init_date') ? 'is-invalid' : '' }}" type="text" name="init_date" id="init_date" value="{{ old('init_date', $device->init_date) }}">
                 @if($errors->has('init_date'))
                     <span class="text-danger">{{ $errors->first('init_date') }}</span>
                 @endif
@@ -94,7 +94,7 @@
                 <label for="owner_id">{{ trans('cruds.calDevice.fields.owner') }}</label>
                 <select class="form-control select2 {{ $errors->has('owner') ? 'is-invalid' : '' }}" name="owner_id" id="owner_id">
                     @foreach($owners as $id => $owner)
-                        <option value="{{ $id }}" {{ (old('owner_id') ? old('owner_id') : $calDevice->owner->id ?? '') == $id ? 'selected' : '' }}>{{ $owner }}</option>
+                        <option value="{{ $id }}" {{ (old('owner_id') ? old('owner_id') : $device->owner->id ?? '') == $id ? 'selected' : '' }}>{{ $owner }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('owner'))
@@ -104,7 +104,7 @@
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
-                    {{ trans('global.save') }}
+                    Save
                 </button>
             </div>
         </form>

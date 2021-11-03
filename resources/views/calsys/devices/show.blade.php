@@ -9,7 +9,7 @@
     <div class="card-body">
         <div class="form-group">
             <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.cal-devices.index') }}">
+                <a class="btn btn-default" href="{{ route('calsys.devices.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
             </div>
@@ -20,7 +20,7 @@
                             {{ trans('cruds.calDevice.fields.id') }}
                         </th>
                         <td>
-                            {{ $calDevice->id }}
+                            {{ $device->id }}
                         </td>
                     </tr>
                     <tr>
@@ -28,7 +28,7 @@
                             {{ trans('cruds.calDevice.fields.name') }}
                         </th>
                         <td>
-                            {{ $calDevice->name }}
+                            {{ $device->name }}
                         </td>
                     </tr>
                     <tr>
@@ -36,7 +36,7 @@
                             {{ trans('cruds.calDevice.fields.description') }}
                         </th>
                         <td>
-                            {{ $calDevice->description }}
+                            {{ $device->description }}
                         </td>
                     </tr>
                     <tr>
@@ -44,7 +44,7 @@
                             {{ trans('cruds.calDevice.fields.serial_number') }}
                         </th>
                         <td>
-                            {{ $calDevice->serial_number }}
+                            {{ $device->serial_number }}
                         </td>
                     </tr>
                     <tr>
@@ -52,7 +52,7 @@
                             {{ trans('cruds.calDevice.fields.source') }}
                         </th>
                         <td>
-                            {{ $calDevice->source->name ?? '' }}
+                            {{ $device->source->name ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -60,7 +60,7 @@
                             {{ trans('cruds.calDevice.fields.type') }}
                         </th>
                         <td>
-                            {{ $calDevice->type->name ?? '' }}
+                            {{ $device->type->name ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -68,7 +68,7 @@
                             {{ trans('cruds.calDevice.fields.period') }}
                         </th>
                         <td>
-                            {{ $calDevice->period->name ?? '' }}
+                            {{ $device->period->name ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -76,7 +76,7 @@
                             {{ trans('cruds.calDevice.fields.location') }}
                         </th>
                         <td>
-                            {{ $calDevice->location->name ?? '' }}
+                            {{ $device->location->name ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -84,7 +84,7 @@
                             {{ trans('cruds.calDevice.fields.init_date') }}
                         </th>
                         <td>
-                            {{ $calDevice->init_date }}
+                            {{ $device->init_date }}
                         </td>
                     </tr>
                     <tr>
@@ -92,7 +92,7 @@
                             {{ trans('cruds.calDevice.fields.time_stamp') }}
                         </th>
                         <td>
-                            {{ $calDevice->time_stamp }}
+                            {{ $device->time_stamp }}
                         </td>
                     </tr>
                     <tr>
@@ -100,13 +100,13 @@
                             {{ trans('cruds.calDevice.fields.owner') }}
                         </th>
                         <td>
-                            {{ $calDevice->owner->name ?? '' }}
+                            {{ $device->owner->name ?? '' }}
                         </td>
                     </tr>
                 </tbody>
             </table>
             <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.cal-devices.index') }}">
+                <a class="btn btn-default" href="{{ route('calsys.devices.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
             </div>
