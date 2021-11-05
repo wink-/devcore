@@ -39,3 +39,34 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/** Alpinejs **/
+
+import Alpine from 'alpinejs'
+ 
+window.Alpine = Alpine
+ 
+Alpine.start()
+
+/** Datatables.net requirements **/
+require( 'jquery' );
+require( 'jszip' );
+require( 'pdfmake' );
+require( 'datatables.net-bs5' )();
+require( 'datatables.net-autofill-bs5' )();
+require( 'datatables.net-buttons-bs5' )();
+require( 'datatables.net-buttons/js/buttons.colVis.js' )();
+require( 'datatables.net-buttons/js/buttons.html5.js' )();
+require( 'datatables.net-buttons/js/buttons.print.js' )();
+require( 'datatables.net-colreorder-bs5' )();
+require( 'datatables.net-datetime' )();
+require( 'datatables.net-fixedcolumns-bs5' )();
+require( 'datatables.net-fixedheader-bs5' )();
+require( 'datatables.net-keytable-bs5' )();
+require( 'datatables.net-responsive-bs5' )();
+require( 'datatables.net-rowgroup-bs5' )();
+require( 'datatables.net-rowreorder-bs5' )();
+require( 'datatables.net-scroller-bs5' )();
+require( 'datatables.net-searchbuilder-bs5' )();
+require( 'datatables.net-searchpanes-bs5' )();
+require( 'datatables.net-select-bs5' )();

@@ -23,6 +23,7 @@
         "livewire/livewire": "^2.4",
         "mediconesystems/livewire-datatables": "^0.6.8",
         "rappasoft/laravel-livewire-tables": "^1.6",
+        "yajra/laravel-datatables": "^1.5",
         "yajra/laravel-datatables-oracle": "^9.11"
     },
     "require-dev": {

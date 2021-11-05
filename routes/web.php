@@ -3,6 +3,11 @@
 Route::redirect('/', '/login');
 Route::view('/playground', 'playground');
 Route::view('/datatables', 'datatables');
+Route::get('datatablesnet/workorders', 'DataTablesNetController@workorders')->name('datatablesnet.workorders');
+Route::get('datatablesnet/getWorkorders', 'DataTablesNetController@getWorkorders')->name('datatablesnet.getWorkorders');
+
+
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
