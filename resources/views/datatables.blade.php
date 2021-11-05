@@ -7,8 +7,6 @@
 
     <livewire:styles />
 
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
-
     <style>
         [x-cloak] { display: none !important; }
     </style>
@@ -18,6 +16,7 @@
 	
     <livewire:scripts />
 {{--    <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>--}}
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://unpkg.com/@nextapps-be/livewire-sortablejs@0.1.1/dist/livewire-sortable.js"></script>
 </body>
 </html>
