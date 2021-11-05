@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroyRecordRequest;
 use App\Http\Requests\Pacsys\StoreRecordRequest;
 use App\Http\Requests\Pacsys\UpdateRecordRequest;
-use App\Models\Pacsys\Record;
+use App\Models\Pacsys\Pacsys\Record;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreWorkgroupRequest;
-use App\Http\Requests\UpdateWorkgroupRequest;
-use App\Http\Resources\Admin\WorkgroupResource;
-use App\Models\Workgroup;
+use App\Http\Requests\Wipsys\StoreWorkgroupRequest;
+use App\Http\Requests\Wipsys\UpdateWorkgroupRequest;
+use App\Http\Resources\Wipsys\WorkgroupResource;
+use App\Models\Wipsys\Workgroup;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

@@ -11,7 +11,7 @@ class MassDestroyVoltRequest extends FormRequest
 {
     public function authorize()
     {
-        abort_if(Gate::denies('volt_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('processdata_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return true;
     }

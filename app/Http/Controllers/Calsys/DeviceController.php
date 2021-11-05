@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Calsys\MassDestroyDeviceRequest;
 use App\Http\Requests\Calsys\StoreDeviceRequest;
 use App\Http\Requests\Calsys\UpdateDeviceRequest;
-use App\Models\Calsys\Device;
-use App\Models\Calsys\Location;
-use App\Models\Calsys\Owner;
-use App\Models\Calsys\Period;
-use App\Models\Calsys\Source;
-use App\Models\Calsys\Type;
+use App\Models\Calsys\Calsys\Device;
+use App\Models\Calsys\Calsys\Location;
+use App\Models\Calsys\Calsys\Owner;
+use App\Models\Calsys\Calsys\Period;
+use App\Models\Calsys\Calsys\Source;
+use App\Models\Calsys\Calsys\Type;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -89,15 +89,15 @@ class DeviceController extends Controller
     {
         abort_if(Gate::denies('calsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $sources = Source::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $sources = Source::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $types = Type::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $types = Type::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $periods = Period::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $periods = Period::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $locations = Location::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $locations = Location::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $owners = Owner::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $owners = Owner::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         return view('calsys.devices.create', compact('sources', 'types', 'periods', 'locations', 'owners'));
     }
@@ -113,15 +113,15 @@ class DeviceController extends Controller
     {
         abort_if(Gate::denies('calsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $sources = Source::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $sources = Source::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $types = Type::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $types = Type::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $periods = Period::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $periods = Period::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $locations = Location::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $locations = Location::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $owners = Owner::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $owners = Owner::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         $device->load('source', 'type', 'period', 'location', 'owner');
 

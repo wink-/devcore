@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreMethodRequest;
-use App\Http\Requests\UpdateMethodRequest;
-use App\Http\Resources\Admin\MethodResource;
-use App\Models\Method;
+use App\Http\Requests\Wipsys\StoreMethodRequest;
+use App\Http\Requests\Wipsys\UpdateMethodRequest;
+use App\Http\Resources\Wipsys\MethodResource;
+use App\Models\Wipsys\Method;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePeriodRequest;
-use App\Http\Requests\UpdatePeriodRequest;
-use App\Http\Resources\Admin\PeriodResource;
+use App\Http\Requests\Pacsys\StorePeriodRequest;
+use App\Http\Requests\Pacsys\UpdatePeriodRequest;
+use App\Http\Resources\Pacsys\PeriodResource;
 use App\Models\Period;
 use Gate;
 use Illuminate\Http\Request;

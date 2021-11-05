@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreRecordRequest;
-use App\Http\Requests\UpdateRecordRequest;
-use App\Http\Resources\Admin\RecordResource;
-use App\Models\Record;
+use App\Http\Requests\Wipsys\StoreRecordRequest;
+use App\Http\Requests\Wipsys\UpdateRecordRequest;
+use App\Http\Resources\Wipsys\RecordResource;
+use App\Models\Wipsys\Record;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

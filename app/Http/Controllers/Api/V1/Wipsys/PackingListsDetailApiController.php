@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdatePackingListsDetailRequest;
-use App\Http\Resources\Admin\PackingListsDetailResource;
-use App\Models\PackingListsDetail;
+use App\Http\Requests\Wipsys\UpdatePackingListsDetailRequest;
+use App\Http\Resources\Wipsys\PackingListsDetailResource;
+use App\Models\Wipsys\PackingListsDetail;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

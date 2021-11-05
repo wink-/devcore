@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Calsys\MassDestroyPeriodRequest;
 use App\Http\Requests\Calsys\StorePeriodRequest;
 use App\Http\Requests\Calsys\UpdatePeriodRequest;
-use App\Models\Calsys\Period;
+use App\Models\Calsys\Calsys\Period;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

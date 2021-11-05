@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreQualitycheckRequest;
-use App\Http\Requests\UpdateQualitycheckRequest;
-use App\Http\Resources\Admin\QualitycheckResource;
-use App\Models\Qualitycheck;
+use App\Http\Requests\Wipsys\StoreQualitycheckRequest;
+use App\Http\Requests\Wipsys\UpdateQualitycheckRequest;
+use App\Http\Resources\Wipsys\QualitycheckResource;
+use App\Models\Wipsys\Qualitycheck;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

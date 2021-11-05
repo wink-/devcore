@@ -11,7 +11,7 @@ class UpdateVoltRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('volt_edit');
+        return Gate::allows('processdata_edit');
     }
 
     public function rules()

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePUnitRequest;
-use App\Http\Requests\UpdatePUnitRequest;
-use App\Http\Resources\Admin\PUnitResource;
+use App\Http\Requests\Pacsys\StorePUnitRequest;
+use App\Http\Requests\Pacsys\UpdatePUnitRequest;
+use App\Http\Resources\Pacsys\PUnitResource;
 use App\Models\PUnit;
 use Gate;
 use Illuminate\Http\Request;

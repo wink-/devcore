@@ -3,28 +3,28 @@
 namespace App\Http\Controllers\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Pacsys\MassDestroyPUnitRequest;
-use App\Http\Requests\Pacsys\StorePUnitRequest;
-use App\Http\Requests\Pacsys\UpdatePUnitRequest;
-use App\Models\Pacsys\Unit;
+use App\Http\Requests\Pacsys\MassDestroyUnitRequest;
+use App\Http\Requests\Pacsys\StoreUnitRequest;
+use App\Http\Requests\Pacsys\UpdateUnitRequest;
+use App\Models\Pacsys\Pacsys\Unit;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class PUnitController extends Controller
+class UnitController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('p_unit_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $units = Unit::all();
 
-        return view('pacsys.pUnits.index', compact('pUnits'));
+        return view('pacsys.units.index', compact('pUnits'));
     }
 
     public function create()
     {
-        abort_if(Gate::denies('p_unit_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('pacsys.units.create');
     }
@@ -36,39 +36,39 @@ class PUnitController extends Controller
         return redirect()->route('pacsys.units.index');
     }
 
-    public function edit(PUnit $pUnit)
+    public function edit(Unit $unit)
     {
-        abort_if(Gate::denies('p_unit_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('pacsys.pUnits.edit', compact('pUnit'));
+        return view('pacsys.units.edit', compact('unit'));
     }
 
-    public function update(UpdatePUnitRequest $request, PUnit $pUnit)
+    public function update(UpdateUnitRequest $request, Unit $unit)
     {
         $pUnit->update($request->all());
 
-        return redirect()->route('pacsys.p-units.index');
+        return redirect()->route('pacsys.units.index');
     }
 
-    public function show(PUnit $pUnit)
+    public function show(Unit $unit)
     {
-        abort_if(Gate::denies('p_unit_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('pacsys.pUnits.show', compact('pUnit'));
+        return view('pacsys.units.show', compact('unit'));
     }
 
-    public function destroy(PUnit $pUnit)
+    public function destroy(Unit $unit)
     {
-        abort_if(Gate::denies('p_unit_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $pUnit->delete();
+        $unit->delete();
 
         return back();
     }
 
-    public function massDestroy(MassDestroyPUnitRequest $request)
+    public function massDestroy(MassDestroyUnitRequest $request)
     {
-        PUnit::whereIn('id', request('ids'))->delete();
+        Unit::whereIn('id', request('ids'))->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
     }

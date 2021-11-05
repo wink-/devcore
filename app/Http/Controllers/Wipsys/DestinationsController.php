@@ -27,7 +27,7 @@ class DestinationsController extends Controller
     {
         abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $customer_codes = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $customer_codes = Customer::all()->pluck('code', 'id')->prepend('Please Select', '');
 
         return view('admin.destinations.create', compact('customer_codes'));
     }
@@ -43,7 +43,7 @@ class DestinationsController extends Controller
     {
         abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $customer_codes = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $customer_codes = Customer::all()->pluck('code', 'id')->prepend('Please Select', '');
 
         $destination->load('customer_code');
 

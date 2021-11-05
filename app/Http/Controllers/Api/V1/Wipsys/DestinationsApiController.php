@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreDestinationRequest;
-use App\Http\Requests\UpdateDestinationRequest;
-use App\Http\Resources\Admin\DestinationResource;
-use App\Models\Destination;
+use App\Http\Requests\Wipsys\StoreDestinationRequest;
+use App\Http\Requests\Wipsys\UpdateDestinationRequest;
+use App\Http\Resources\Wipsys\DestinationResource;
+use App\Models\Wipsys\Destination;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

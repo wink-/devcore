@@ -11,7 +11,7 @@ class StoreTemperatureRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('temperature_create');
+        return Gate::allows('processdata_create');
     }
 
     public function rules()

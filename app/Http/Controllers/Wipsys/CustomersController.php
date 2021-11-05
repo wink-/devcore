@@ -74,7 +74,7 @@ class CustomersController extends Controller
     {
         abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $carriers = Carrier::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $carriers = Carrier::all()->pluck('code', 'id')->prepend('Please Select', '');
 
         return view('admin.customers.create', compact('carriers'));
     }
@@ -90,7 +90,7 @@ class CustomersController extends Controller
     {
         abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $carriers = Carrier::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $carriers = Carrier::all()->pluck('code', 'id')->prepend('Please Select', '');
 
         $customer->load('carrier');
 

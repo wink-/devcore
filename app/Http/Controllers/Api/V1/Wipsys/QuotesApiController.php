@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreQuoteRequest;
-use App\Http\Requests\UpdateQuoteRequest;
-use App\Http\Resources\Admin\QuoteResource;
-use App\Models\Quote;
+use App\Http\Requests\Wipsys\StoreQuoteRequest;
+use App\Http\Requests\Wipsys\UpdateQuoteRequest;
+use App\Http\Resources\Wipsys\QuoteResource;
+use App\Models\Wipsys\Quote;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

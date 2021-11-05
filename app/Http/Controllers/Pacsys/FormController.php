@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroyFormRequest;
 use App\Http\Requests\Pacsys\StoreFormRequest;
 use App\Http\Requests\Pacsys\UpdateFormRequest;
-use App\Models\Pacsys\Form;
+use App\Models\Pacsys\Pacsys\Form;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +16,7 @@ class FormController extends Controller
 {
     public function index(Request $request)
     {
-        abort_if(Gate::denies('form_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
             $query = Form::query()->select(sprintf('%s.*', (new Form)->table));
@@ -26,9 +26,9 @@ class FormController extends Controller
             $table->addColumn('actions', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
-                $viewGate      = 'form_show';
-                $editGate      = 'form_edit';
-                $deleteGate    = 'form_delete';
+                $viewGate      = 'pacsys_show';
+                $editGate      = 'pacsys_edit';
+                $deleteGate    = 'pacsys_delete';
                 $crudRoutePart = 'forms';
 
                 return view('partials.datatablesActions', compact(
@@ -49,8 +49,8 @@ class FormController extends Controller
             $table->editColumn('description', function ($row) {
                 return $row->description ? $row->description : "";
             });
-            $table->editColumn('form_type', function ($row) {
-                return $row->form_type ? $row->form_type : "";
+            $table->editColumn('pacsys_type', function ($row) {
+                return $row->pacsys_type ? $row->pacsys_type : "";
             });
 
             $table->editColumn('archived', function ($row) {
@@ -73,7 +73,7 @@ class FormController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('form_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('pacsys.forms.create');
     }
@@ -87,7 +87,7 @@ class FormController extends Controller
 
     public function edit(Form $form)
     {
-        abort_if(Gate::denies('form_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('pacsys.forms.edit', compact('form'));
     }
@@ -101,14 +101,14 @@ class FormController extends Controller
 
     public function show(Form $form)
     {
-        abort_if(Gate::denies('form_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('pacsys.forms.show', compact('form'));
     }
 
     public function destroy(Form $form)
     {
-        abort_if(Gate::denies('form_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('pacsys_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $form->delete();
 

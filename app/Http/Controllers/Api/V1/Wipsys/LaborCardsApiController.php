@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateLaborCardRequest;
-use App\Http\Resources\Admin\LaborCardResource;
-use App\Models\LaborCard;
+use App\Http\Requests\Wipsys\UpdateLaborCardRequest;
+use App\Http\Resources\Wipsys\LaborCardResource;
+use App\Models\Wipsys\LaborCard;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

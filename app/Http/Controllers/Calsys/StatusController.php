@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Calsys\MassDestroyStatusRequest;
 use App\Http\Requests\Calsys\StoreStatusRequest;
 use App\Http\Requests\Calsys\UpdateStatusRequest;
-use App\Models\Calsys\Status;
+use App\Models\Calsys\Calsys\Status;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CalStatusController extends Controller
+class StatusController extends Controller
 {
     public function index()
     {

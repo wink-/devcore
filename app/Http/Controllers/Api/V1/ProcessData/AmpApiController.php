@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\ProcessData;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreAmpRequest;
-use App\Http\Requests\UpdateAmpRequest;
-use App\Http\Resources\Admin\AmpResource;
-use App\Models\Amp;
+use App\Http\Requests\ProcessData\StoreAmpRequest;
+use App\Http\Requests\ProcessData\UpdateAmpRequest;
+use App\Http\Resources\ProcessData\AmpResource;
+use App\Models\ProcessData\Amp;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

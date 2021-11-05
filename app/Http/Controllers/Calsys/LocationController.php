@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Calsys\MassDestroyLocationRequest;
 use App\Http\Requests\Calsys\StoreLocationRequest;
 use App\Http\Requests\Calsys\UpdateLocationRequest;
-use App\Models\Calsys\location;
+use App\Models\Calsys\Calsys\location;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class locationController extends Controller
+class LocationController extends Controller
 {
     public function index()
     {

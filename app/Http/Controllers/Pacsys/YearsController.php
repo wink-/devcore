@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroyYearRequest;
 use App\Http\Requests\Pacsys\StoreYearRequest;
 use App\Http\Requests\Pacsys\UpdateYearRequest;
-use App\Models\Pacsys\Year;
+use App\Models\Pacsys\Pacsys\Year;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

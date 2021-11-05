@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroyFormValueTypeRequest;
 use App\Http\Requests\Pacsys\StoreFormValueTypeRequest;
 use App\Http\Requests\Pacsys\UpdateFormValueTypeRequest;
-use App\Models\Pacsys\FormValueType;
+use App\Models\Pacsys\Pacsys\FormValueType;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

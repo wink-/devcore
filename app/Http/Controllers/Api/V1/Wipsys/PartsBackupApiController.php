@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdatePartsBackupRequest;
-use App\Http\Resources\Admin\PartsBackupResource;
-use App\Models\PartsBackup;
+use App\Http\Requests\Wipsys\UpdatePartsBackupRequest;
+use App\Http\Resources\Wipsys\PartsBackupResource;
+use App\Models\Wipsys\PartsBackup;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

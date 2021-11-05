@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Calsys\MassDestroyOwnerRequest;
 use App\Http\Requests\Calsys\StoreOwnerRequest;
 use App\Http\Requests\Calsys\UpdateOwnerRequest;
-use App\Models\Calsys\Owner;
+use App\Models\Calsys\Calsys\Owner;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

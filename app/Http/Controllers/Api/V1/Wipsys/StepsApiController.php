@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreStepRequest;
-use App\Http\Requests\UpdateStepRequest;
-use App\Http\Resources\Admin\StepResource;
-use App\Models\Step;
+use App\Http\Requests\Wipsys\StoreStepRequest;
+use App\Http\Requests\Wipsys\UpdateStepRequest;
+use App\Http\Resources\Wipsys\StepResource;
+use App\Models\Wipsys\Step;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

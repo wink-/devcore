@@ -11,7 +11,7 @@ class StoreLoggerTypeRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('logger_type_create');
+        return Gate::allows('processdata_create');
     }
 
     public function rules()

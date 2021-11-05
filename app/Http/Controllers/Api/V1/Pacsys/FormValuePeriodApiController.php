@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreFormValuePeriodRequest;
-use App\Http\Requests\UpdateFormValuePeriodRequest;
-use App\Http\Resources\Admin\FormValuePeriodResource;
+use App\Http\Requests\Pacsys\StoreFormValuePeriodRequest;
+use App\Http\Requests\Pacsys\UpdateFormValuePeriodRequest;
+use App\Http\Resources\Pacsys\FormValuePeriodResource;
 use App\Models\FormValuePeriod;
 use Gate;
 use Illuminate\Http\Request;

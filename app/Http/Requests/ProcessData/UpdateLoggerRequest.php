@@ -11,7 +11,7 @@ class UpdateLoggerRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('logger_edit');
+        return Gate::allows('processdata_edit');
     }
 
     public function rules()

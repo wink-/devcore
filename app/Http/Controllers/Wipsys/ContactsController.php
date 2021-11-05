@@ -27,7 +27,7 @@ class ContactsController extends Controller
     {
         abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $customers = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $customers = Customer::all()->pluck('code', 'id')->prepend('Please Select', '');
 
         return view('admin.contacts.create', compact('customers'));
     }
@@ -43,7 +43,7 @@ class ContactsController extends Controller
     {
         abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $customers = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $customers = Customer::all()->pluck('code', 'id')->prepend('Please Select', '');
 
         $contact->load('customer');
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreYearRequest;
-use App\Http\Requests\UpdateYearRequest;
-use App\Http\Resources\Admin\YearResource;
+use App\Http\Requests\Pacsys\StoreYearRequest;
+use App\Http\Requests\Pacsys\UpdateYearRequest;
+use App\Http\Resources\Pacsys\YearResource;
 use App\Models\Year;
 use Gate;
 use Illuminate\Http\Request;

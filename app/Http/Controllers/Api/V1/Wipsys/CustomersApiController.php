@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreCustomerRequest;
-use App\Http\Requests\UpdateCustomerRequest;
-use App\Http\Resources\Admin\CustomerResource;
-use App\Models\Customer;
+use App\Http\Requests\Wipsys\StoreCustomerRequest;
+use App\Http\Requests\Wipsys\UpdateCustomerRequest;
+use App\Http\Resources\Wipsys\CustomerResource;
+use App\Models\Wipsys\Customer;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

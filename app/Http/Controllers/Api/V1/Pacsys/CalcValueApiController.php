@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreCalcValueRequest;
-use App\Http\Requests\UpdateCalcValueRequest;
-use App\Http\Resources\Admin\CalcValueResource;
+use App\Http\Requests\Pacsys\StoreCalcValueRequest;
+use App\Http\Requests\Pacsys\UpdateCalcValueRequest;
+use App\Http\Resources\Pacsys\CalcValueResource;
 use App\Models\CalcValue;
 use Gate;
 use Illuminate\Http\Request;

@@ -11,7 +11,7 @@ class StoreRecordTypeRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('record_type_create');
+        return Gate::allows('processdata_create');
     }
 
     public function rules()

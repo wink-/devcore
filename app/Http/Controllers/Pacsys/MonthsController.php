@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroyMonthRequest;
 use App\Http\Requests\Pacsys\StoreMonthRequest;
 use App\Http\Requests\Pacsys\UpdateMonthRequest;
-use App\Models\Pacsys\Month;
+use App\Models\Pacsys\Pacsys\Month;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

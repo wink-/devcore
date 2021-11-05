@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroyFormValuePeriodRequest;
 use App\Http\Requests\Pacsys\StoreFormValuePeriodRequest;
 use App\Http\Requests\Pacsys\UpdateFormValuePeriodRequest;
-use App\Models\Pacsys\FormValuePeriod;
+use App\Models\Pacsys\Pacsys\FormValuePeriod;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

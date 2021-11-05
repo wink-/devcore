@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroyCalcValueRequest;
 use App\Http\Requests\Pacsys\StoreCalcValueRequest;
 use App\Http\Requests\Pacsys\UpdateCalcValueRequest;
-use App\Models\Pacsys\CalcValue;
+use App\Models\Pacsys\Pacsys\CalcValue;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

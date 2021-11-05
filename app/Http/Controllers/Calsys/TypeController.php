@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Calsys\MassDestroyTypeRequest;
 use App\Http\Requests\Calsys\StoreTypeRequest;
 use App\Http\Requests\Calsys\UpdateTypeRequest;
-use App\Models\Calsys\Type;
+use App\Models\Calsys\Calsys\Type;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

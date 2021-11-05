@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePEmployeeRequest;
-use App\Http\Requests\UpdatePEmployeeRequest;
-use App\Http\Resources\Admin\PEmployeeResource;
+use App\Http\Requests\Pacsys\StorePEmployeeRequest;
+use App\Http\Requests\Pacsys\UpdatePEmployeeRequest;
+use App\Http\Resources\Pacsys\PEmployeeResource;
 use App\Models\PEmployee;
 use Gate;
 use Illuminate\Http\Request;

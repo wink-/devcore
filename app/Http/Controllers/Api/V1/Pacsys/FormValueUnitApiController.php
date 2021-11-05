@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreFormValueUnitRequest;
-use App\Http\Requests\UpdateFormValueUnitRequest;
-use App\Http\Resources\Admin\FormValueUnitResource;
+use App\Http\Requests\Pacsys\StoreFormValueUnitRequest;
+use App\Http\Requests\Pacsys\UpdateFormValueUnitRequest;
+use App\Http\Resources\Pacsys\FormValueUnitResource;
 use App\Models\FormValueUnit;
 use Gate;
 use Illuminate\Http\Request;

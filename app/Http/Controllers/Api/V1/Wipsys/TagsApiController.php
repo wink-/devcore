@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreTagRequest;
-use App\Http\Requests\UpdateTagRequest;
-use App\Http\Resources\Admin\TagResource;
-use App\Models\Tag;
+use App\Http\Requests\Wipsys\StoreTagRequest;
+use App\Http\Requests\Wipsys\UpdateTagRequest;
+use App\Http\Resources\Wipsys\TagResource;
+use App\Models\Wipsys\Tag;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

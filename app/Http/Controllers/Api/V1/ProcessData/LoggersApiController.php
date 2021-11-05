@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\ProcessData;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreLoggerRequest;
-use App\Http\Requests\UpdateLoggerRequest;
-use App\Http\Resources\Admin\LoggerResource;
-use App\Models\Logger;
+use App\Http\Requests\ProcessData\StoreLoggerRequest;
+use App\Http\Requests\ProcessData\UpdateLoggerRequest;
+use App\Http\Resources\ProcessData\LoggerResource;
+use App\Models\ProcessData\Logger;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

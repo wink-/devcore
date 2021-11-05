@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreMaterialRequest;
-use App\Http\Requests\UpdateMaterialRequest;
-use App\Http\Resources\Admin\MaterialResource;
-use App\Models\Material;
+use App\Http\Requests\Wipsys\StoreMaterialRequest;
+use App\Http\Requests\Wipsys\UpdateMaterialRequest;
+use App\Http\Resources\Wipsys\MaterialResource;
+use App\Models\Wipsys\Material;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

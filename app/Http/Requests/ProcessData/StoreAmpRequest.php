@@ -11,7 +11,7 @@ class StoreAmpRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('amp_create');
+        return Gate::allows('processdata_create');
     }
 
     public function rules()

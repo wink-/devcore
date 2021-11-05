@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreUnitRequest;
-use App\Http\Requests\UpdateUnitRequest;
-use App\Http\Resources\Admin\UnitResource;
-use App\Models\Unit;
+use App\Http\Requests\Wipsys\StoreUnitRequest;
+use App\Http\Requests\Wipsys\UpdateUnitRequest;
+use App\Http\Resources\Wipsys\UnitResource;
+use App\Models\Wipsys\Unit;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

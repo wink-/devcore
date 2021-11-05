@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreWorkorderRequest;
-use App\Http\Requests\UpdateWorkorderRequest;
-use App\Http\Resources\Admin\WorkorderResource;
-use App\Models\Workorder;
+use App\Http\Requests\Wipsys\StoreWorkorderRequest;
+use App\Http\Requests\Wipsys\UpdateWorkorderRequest;
+use App\Http\Resources\Wipsys\WorkorderResource;
+use App\Models\Wipsys\Workorder;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

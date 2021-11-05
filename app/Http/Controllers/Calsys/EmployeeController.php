@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Calsys\MassDestroyEmployeeRequest;
 use App\Http\Requests\Calsys\StoreEmployeeRequest;
 use App\Http\Requests\Calsys\UpdateEmployeeRequest;
-use App\Models\Calsys\Employee;
+use App\Models\Calsys\Calsys\Employee;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreActionRequest;
-use App\Http\Requests\UpdateActionRequest;
-use App\Http\Resources\Admin\ActionResource;
+use App\Http\Requests\Pacsys\StoreActionRequest;
+use App\Http\Requests\Pacsys\UpdateActionRequest;
+use App\Http\Resources\Pacsys\ActionResource;
 use App\Models\Action;
 use Gate;
 use Illuminate\Http\Request;

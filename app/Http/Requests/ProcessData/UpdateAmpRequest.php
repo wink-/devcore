@@ -11,7 +11,7 @@ class UpdateAmpRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('amp_edit');
+        return Gate::allows('processdata_edit');
     }
 
     public function rules()

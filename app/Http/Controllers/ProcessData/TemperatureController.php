@@ -27,7 +27,7 @@ class TemperatureController extends Controller
     {
         abort_if(Gate::denies('process_data_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $records = Record::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $records = Record::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         return view('processData.temperatures.create', compact('records'));
     }
@@ -43,7 +43,7 @@ class TemperatureController extends Controller
     {
         abort_if(Gate::denies('process_data_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $records = Record::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $records = Record::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         $temperature->load('record');
 

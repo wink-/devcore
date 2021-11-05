@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreSessionRequest;
-use App\Http\Requests\UpdateSessionRequest;
-use App\Http\Resources\Admin\SessionResource;
-use App\Models\Session;
+use App\Http\Requests\Wipsys\StoreSessionRequest;
+use App\Http\Requests\Wipsys\UpdateSessionRequest;
+use App\Http\Resources\Wipsys\SessionResource;
+use App\Models\Wipsys\Session;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

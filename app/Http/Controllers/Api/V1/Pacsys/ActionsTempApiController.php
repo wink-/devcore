@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreActionsTempRequest;
-use App\Http\Requests\UpdateActionsTempRequest;
-use App\Http\Resources\Admin\ActionsTempResource;
+use App\Http\Requests\Pacsys\StoreActionsTempRequest;
+use App\Http\Requests\Pacsys\UpdateActionsTempRequest;
+use App\Http\Resources\Pacsys\ActionsTempResource;
 use App\Models\ActionsTemp;
 use Gate;
 use Illuminate\Http\Request;

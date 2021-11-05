@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreCarrierRequest;
-use App\Http\Requests\UpdateCarrierRequest;
-use App\Http\Resources\Admin\CarrierResource;
-use App\Models\Carrier;
+use App\Http\Requests\Wipsys\StoreCarrierRequest;
+use App\Http\Requests\Wipsys\UpdateCarrierRequest;
+use App\Http\Resources\Wipsys\CarrierResource;
+use App\Models\Wipsys\Carrier;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

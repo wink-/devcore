@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreAnalysisNewRequest;
-use App\Http\Requests\UpdateAnalysisNewRequest;
-use App\Http\Resources\Admin\AnalysisNewResource;
+use App\Http\Requests\Pacsys\StoreAnalysisNewRequest;
+use App\Http\Requests\Pacsys\UpdateAnalysisNewRequest;
+use App\Http\Resources\Pacsys\AnalysisNewResource;
 use App\Models\AnalysisNew;
 use Gate;
 use Illuminate\Http\Request;

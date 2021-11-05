@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreSftuserRequest;
-use App\Http\Requests\UpdateSftuserRequest;
-use App\Http\Resources\Admin\SftuserResource;
-use App\Models\Sftuser;
+use App\Http\Requests\Wipsys\StoreSftuserRequest;
+use App\Http\Requests\Wipsys\UpdateSftuserRequest;
+use App\Http\Resources\Wipsys\SftuserResource;
+use App\Models\Wipsys\Sftuser;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

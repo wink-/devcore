@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wipsys;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Wipsys\StoreWorkorderhistoryRequest;
@@ -136,41 +136,41 @@ class WorkorderhistoryController extends Controller
 
         $parts = Part::get();
 
-        return view('admin.workorderhistories.index', compact('parts'));
+        return view('wipsys.workorderhistories.index', compact('parts'));
     }
 
     public function create()
     {
         abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $parts = Part::all()->pluck('number', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $parts = Part::all()->pluck('number', 'id')->prepend('Please Select', '');
 
-        return view('admin.workorderhistories.create', compact('parts'));
+        return view('wipsys.workorderhistories.create', compact('parts'));
     }
 
     public function store(StoreWorkorderhistoryRequest $request)
     {
         $workorderhistory = Workorderhistory::create($request->all());
 
-        return redirect()->route('admin.workorderhistories.index');
+        return redirect()->route('wipsys.workorderhistories.index');
     }
 
     public function edit(Workorderhistory $workorderhistory)
     {
         abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $parts = Part::all()->pluck('number', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $parts = Part::all()->pluck('number', 'id')->prepend('Please Select', '');
 
         $workorderhistory->load('part');
 
-        return view('admin.workorderhistories.edit', compact('parts', 'workorderhistory'));
+        return view('wipsys.workorderhistories.edit', compact('parts', 'workorderhistory'));
     }
 
     public function update(UpdateWorkorderhistoryRequest $request, Workorderhistory $workorderhistory)
     {
         $workorderhistory->update($request->all());
 
-        return redirect()->route('admin.workorderhistories.index');
+        return redirect()->route('wipsys.workorderhistories.index');
     }
 
     public function show(Workorderhistory $workorderhistory)
@@ -179,6 +179,6 @@ class WorkorderhistoryController extends Controller
 
         $workorderhistory->load('part');
 
-        return view('admin.workorderhistories.show', compact('workorderhistory'));
+        return view('wipsys.workorderhistories.show', compact('workorderhistory'));
     }
 }

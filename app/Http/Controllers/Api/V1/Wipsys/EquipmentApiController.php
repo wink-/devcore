@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreEquipmentRequest;
-use App\Http\Requests\UpdateEquipmentRequest;
-use App\Http\Resources\Admin\EquipmentResource;
-use App\Models\Equipment;
+use App\Http\Requests\Wipsys\StoreEquipmentRequest;
+use App\Http\Requests\Wipsys\UpdateEquipmentRequest;
+use App\Http\Resources\Wipsys\EquipmentResource;
+use App\Models\Wipsys\Equipment;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

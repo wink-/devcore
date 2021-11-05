@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePriorityRequest;
-use App\Http\Requests\UpdatePriorityRequest;
-use App\Http\Resources\Admin\PriorityResource;
-use App\Models\Priority;
+use App\Http\Requests\Wipsys\StorePriorityRequest;
+use App\Http\Requests\Wipsys\UpdatePriorityRequest;
+use App\Http\Resources\Wipsys\PriorityResource;
+use App\Models\Wipsys\Priority;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

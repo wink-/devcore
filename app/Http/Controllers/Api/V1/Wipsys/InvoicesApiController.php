@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Admin\InvoiceResource;
-use App\Models\Invoice;
+use App\Http\Resources\Wipsys\InvoiceResource;
+use App\Models\Wipsys\Invoice;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

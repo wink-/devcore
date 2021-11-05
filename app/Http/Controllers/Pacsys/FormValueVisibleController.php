@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroyFormValueVisibleRequest;
 use App\Http\Requests\Pacsys\StoreFormValueVisibleRequest;
 use App\Http\Requests\Pacsys\UpdateFormValueVisibleRequest;
-use App\Models\Pacsys\FormValueVisible;
+use App\Models\Pacsys\Pacsys\FormValueVisible;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

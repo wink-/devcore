@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreProcessRequest;
-use App\Http\Requests\UpdateProcessRequest;
-use App\Http\Resources\Admin\ProcessResource;
-use App\Models\Process;
+use App\Http\Requests\Wipsys\StoreProcessRequest;
+use App\Http\Requests\Wipsys\UpdateProcessRequest;
+use App\Http\Resources\Wipsys\ProcessResource;
+use App\Models\Wipsys\Process;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

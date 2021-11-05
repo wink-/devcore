@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroyFormValueNameRequest;
 use App\Http\Requests\Pacsys\StoreFormValueNameRequest;
 use App\Http\Requests\Pacsys\UpdateFormValueNameRequest;
-use App\Models\Pacsys\FormValueName;
+use App\Models\Pacsys\Pacsys\FormValueName;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

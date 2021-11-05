@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreContactRequest;
-use App\Http\Requests\UpdateContactRequest;
-use App\Http\Resources\Admin\ContactResource;
-use App\Models\Contact;
+use App\Http\Requests\Wipsys\StoreContactRequest;
+use App\Http\Requests\Wipsys\UpdateContactRequest;
+use App\Http\Resources\Wipsys\ContactResource;
+use App\Models\Wipsys\Contact;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

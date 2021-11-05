@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreRecordTypeRequest;
-use App\Http\Requests\UpdateRecordTypeRequest;
-use App\Http\Resources\Admin\RecordTypeResource;
+use App\Http\Requests\Pacsys\StoreRecordTypeRequest;
+use App\Http\Requests\Pacsys\UpdateRecordTypeRequest;
+use App\Http\Resources\Pacsys\RecordTypeResource;
 use App\Models\RecordType;
 use Gate;
 use Illuminate\Http\Request;

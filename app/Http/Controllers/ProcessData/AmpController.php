@@ -73,7 +73,7 @@ class AmpController extends Controller
     {
         abort_if(Gate::denies('process_data_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $records = Record::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $records = Record::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         return view('processData.amps.create', compact('records'));
     }
@@ -89,7 +89,7 @@ class AmpController extends Controller
     {
         abort_if(Gate::denies('process_data_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $records = Record::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $records = Record::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         $amp->load('record');
 

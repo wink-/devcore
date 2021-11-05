@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreFormRequest;
-use App\Http\Requests\UpdateFormRequest;
-use App\Http\Resources\Admin\FormResource;
+use App\Http\Requests\Pacsys\StoreFormRequest;
+use App\Http\Requests\Pacsys\UpdateFormRequest;
+use App\Http\Resources\Pacsys\FormResource;
 use App\Models\Form;
 use Gate;
 use Illuminate\Http\Request;

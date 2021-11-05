@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreStateRequest;
-use App\Http\Requests\UpdateStateRequest;
-use App\Http\Resources\Admin\StateResource;
-use App\Models\State;
+use App\Http\Requests\Wipsys\StoreStateRequest;
+use App\Http\Requests\Wipsys\UpdateStateRequest;
+use App\Http\Resources\Wipsys\StateResource;
+use App\Models\Wipsys\State;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

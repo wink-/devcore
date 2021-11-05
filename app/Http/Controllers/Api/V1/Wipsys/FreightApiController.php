@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreFreightRequest;
-use App\Http\Requests\UpdateFreightRequest;
-use App\Http\Resources\Admin\FreightResource;
-use App\Models\Freight;
+use App\Http\Requests\Wipsys\StoreFreightRequest;
+use App\Http\Requests\Wipsys\UpdateFreightRequest;
+use App\Http\Resources\Wipsys\FreightResource;
+use App\Models\Wipsys\Freight;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

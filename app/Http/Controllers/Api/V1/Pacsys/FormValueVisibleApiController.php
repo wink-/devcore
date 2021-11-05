@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreFormValueVisibleRequest;
-use App\Http\Requests\UpdateFormValueVisibleRequest;
-use App\Http\Resources\Admin\FormValueVisibleResource;
+use App\Http\Requests\Pacsys\StoreFormValueVisibleRequest;
+use App\Http\Requests\Pacsys\UpdateFormValueVisibleRequest;
+use App\Http\Resources\Pacsys\FormValueVisibleResource;
 use App\Models\FormValueVisible;
 use Gate;
 use Illuminate\Http\Request;

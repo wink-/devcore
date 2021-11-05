@@ -11,7 +11,7 @@ class UpdateRecordTypeRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('record_type_edit');
+        return Gate::allows('processdata_edit');
     }
 
     public function rules()

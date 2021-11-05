@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Calsys\MassDestroyCalibratedByRequest;
 use App\Http\Requests\Calsys\StoreCalibratedByRequest;
 use App\Http\Requests\Calsys\UpdateCalibratedByRequest;
-use App\Models\Calsys\CalibratedBy;
+use App\Models\Calsys\Calsys\CalibratedBy;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

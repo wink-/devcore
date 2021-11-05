@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\ProcessData;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreVoltRequest;
-use App\Http\Requests\UpdateVoltRequest;
-use App\Http\Resources\Admin\VoltResource;
-use App\Models\Volt;
+use App\Http\Requests\ProcessData\StoreVoltRequest;
+use App\Http\Requests\ProcessData\UpdateVoltRequest;
+use App\Http\Resources\ProcessData\VoltResource;
+use App\Models\ProcessData\Volt;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

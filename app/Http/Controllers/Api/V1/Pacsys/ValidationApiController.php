@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreValidationRequest;
-use App\Http\Requests\UpdateValidationRequest;
-use App\Http\Resources\Admin\ValidationResource;
+use App\Http\Requests\Pacsys\StoreValidationRequest;
+use App\Http\Requests\Pacsys\UpdateValidationRequest;
+use App\Http\Resources\Pacsys\ValidationResource;
 use App\Models\Validation;
 use Gate;
 use Illuminate\Http\Request;

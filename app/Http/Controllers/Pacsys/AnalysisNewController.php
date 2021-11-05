@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroyAnalysisNewRequest;
 use App\Http\Requests\Pacsys\StoreAnalysisNewRequest;
 use App\Http\Requests\Pacsys\UpdateAnalysisNewRequest;
-use App\Models\Pacsys\AnalysisNew;
+use App\Models\Pacsys\Pacsys\AnalysisNew;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

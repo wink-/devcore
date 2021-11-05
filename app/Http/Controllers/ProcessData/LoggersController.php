@@ -27,7 +27,7 @@ class LoggersController extends Controller
     {
         abort_if(Gate::denies('process_data_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $process_data_types = LoggerType::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $process_data_types = LoggerType::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         return view('processData.loggers.create', compact('process_data_types'));
     }
@@ -43,7 +43,7 @@ class LoggersController extends Controller
     {
         abort_if(Gate::denies('process_data_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $process_data_types = LoggerType::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $process_data_types = LoggerType::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         $logger->load('process_data_type');
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdatePartshistoryRequest;
-use App\Http\Resources\Admin\PartshistoryResource;
-use App\Models\Partshistory;
+use App\Http\Requests\Wipsys\UpdatePartshistoryRequest;
+use App\Http\Resources\Wipsys\PartshistoryResource;
+use App\Models\Wipsys\Partshistory;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

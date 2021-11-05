@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePrinterRequest;
-use App\Http\Requests\UpdatePrinterRequest;
-use App\Http\Resources\Admin\PrinterResource;
-use App\Models\Printer;
+use App\Http\Requests\Wipsys\StorePrinterRequest;
+use App\Http\Requests\Wipsys\UpdatePrinterRequest;
+use App\Http\Resources\Wipsys\PrinterResource;
+use App\Models\Wipsys\Printer;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

@@ -29,11 +29,11 @@ class RecordsController extends Controller
     {
         abort_if(Gate::denies('process_data_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $loggers = Logger::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $loggers = Logger::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $record_types = RecordType::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $record_types = RecordType::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $units = Unit::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $units = Unit::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         return view('processData.records.create', compact('loggers', 'record_types', 'units'));
     }
@@ -49,11 +49,11 @@ class RecordsController extends Controller
     {
         abort_if(Gate::denies('process_data_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $loggers = Logger::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $loggers = Logger::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $record_types = RecordType::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $record_types = RecordType::all()->pluck('name', 'id')->prepend('Please Select', '');
 
-        $units = Unit::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $units = Unit::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         $record->load('logger', 'record_type', 'unit');
 

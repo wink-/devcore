@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePartRequest;
-use App\Http\Requests\UpdatePartRequest;
-use App\Http\Resources\Admin\PartResource;
-use App\Models\Part;
+use App\Http\Requests\Wipsys\StorePartRequest;
+use App\Http\Requests\Wipsys\UpdatePartRequest;
+use App\Http\Resources\Wipsys\PartResource;
+use App\Models\Wipsys\Part;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

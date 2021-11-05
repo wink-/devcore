@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroySecurityRequest;
 use App\Http\Requests\Pacsys\StoreSecurityRequest;
 use App\Http\Requests\Pacsys\UpdateSecurityRequest;
-use App\Models\Pacsys\Security;
+use App\Models\Pacsys\Pacsys\Security;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

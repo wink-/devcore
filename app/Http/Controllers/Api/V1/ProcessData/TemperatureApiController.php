@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\ProcessData;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreTemperatureRequest;
-use App\Http\Requests\UpdateTemperatureRequest;
-use App\Http\Resources\Admin\TemperatureResource;
-use App\Models\Temperature;
+use App\Http\Requests\ProcessData\StoreTemperatureRequest;
+use App\Http\Requests\ProcessData\UpdateTemperatureRequest;
+use App\Http\Resources\ProcessData\TemperatureResource;
+use App\Models\ProcessData\Temperature;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

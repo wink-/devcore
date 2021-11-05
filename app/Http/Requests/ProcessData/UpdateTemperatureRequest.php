@@ -11,7 +11,7 @@ class UpdateTemperatureRequest extends FormRequest
 {
     public function authorize()
     {
-        return Gate::allows('temperature_edit');
+        return Gate::allows('processdata_edit');
     }
 
     public function rules()

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Calsys\MassDestroySourceRequest;
 use App\Http\Requests\Calsys\StoreSourceRequest;
 use App\Http\Requests\Calsys\UpdateSourceRequest;
-use App\Models\Calsys\Source;
+use App\Models\Calsys\Calsys\Source;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

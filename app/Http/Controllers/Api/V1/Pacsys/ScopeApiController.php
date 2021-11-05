@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Pacsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreScopeRequest;
-use App\Http\Requests\UpdateScopeRequest;
-use App\Http\Resources\Admin\ScopeResource;
+use App\Http\Requests\Pacsys\StoreScopeRequest;
+use App\Http\Requests\Pacsys\UpdateScopeRequest;
+use App\Http\Resources\Pacsys\ScopeResource;
 use App\Models\Scope;
 use Gate;
 use Illuminate\Http\Request;

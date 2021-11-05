@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Admin;
+namespace App\Http\Controllers\Api\V1\Wipsys;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreWorkorderhistoryRequest;
-use App\Http\Requests\UpdateWorkorderhistoryRequest;
-use App\Http\Resources\Admin\WorkorderhistoryResource;
-use App\Models\Workorderhistory;
+use App\Http\Requests\Wipsys\StoreWorkorderhistoryRequest;
+use App\Http\Requests\Wipsys\UpdateWorkorderhistoryRequest;
+use App\Http\Resources\Wipsys\WorkorderhistoryResource;
+use App\Models\Wipsys\Workorderhistory;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

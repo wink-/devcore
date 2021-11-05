@@ -186,13 +186,13 @@ class QuotesController extends Controller
     {
         abort_if(Gate::denies('wipsys_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $customers = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $customers = Customer::all()->pluck('code', 'id')->prepend('Please Select', '');
 
-        $contacts = Contact::all()->pluck('first_name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $contacts = Contact::all()->pluck('first_name', 'id')->prepend('Please Select', '');
 
-        $processes = Process::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $processes = Process::all()->pluck('code', 'id')->prepend('Please Select', '');
 
-        $users = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $users = User::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         return view('admin.quotes.create', compact('customers', 'contacts', 'processes', 'users'));
     }
@@ -208,13 +208,13 @@ class QuotesController extends Controller
     {
         abort_if(Gate::denies('wipsys_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $customers = Customer::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $customers = Customer::all()->pluck('code', 'id')->prepend('Please Select', '');
 
-        $contacts = Contact::all()->pluck('first_name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $contacts = Contact::all()->pluck('first_name', 'id')->prepend('Please Select', '');
 
-        $processes = Process::all()->pluck('code', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $processes = Process::all()->pluck('code', 'id')->prepend('Please Select', '');
 
-        $users = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $users = User::all()->pluck('name', 'id')->prepend('Please Select', '');
 
         $quote->load('customer', 'contact', 'process', 'user');
 

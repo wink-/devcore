@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pacsys\MassDestroyScopeRequest;
 use App\Http\Requests\Pacsys\StoreScopeRequest;
 use App\Http\Requests\Pacsys\UpdateScopeRequest;
-use App\Models\Pacsys\Scope;
+use App\Models\Pacsys\Pacsys\Scope;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
