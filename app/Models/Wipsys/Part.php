@@ -69,7 +69,6 @@ class Part extends Model
         'quality_check_5',
         'quality_check_6',
         'image_count',
-        'session',
         'archive',
         'revision',
         'created_at',
