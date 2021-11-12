@@ -55,33 +55,6 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
     // Equipment
     Route::apiResource('equipment', 'EquipmentApiController', ['except' => ['destroy']]);
 
-    // Calibrated By
-    Route::apiResource('calibrated-bies', 'CalibratedByApiController');
-
-    // Calemployee
-    Route::apiResource('calemployees', 'CalemployeeApiController');
-
-    // Cal Type
-    Route::apiResource('cal-types', 'CalTypeApiController');
-
-    // Cal Location
-    Route::apiResource('cal-locations', 'CalLocationApiController');
-
-    // Cal Owner
-    Route::apiResource('cal-owners', 'CalOwnerApiController');
-
-    // Cal Period
-    Route::apiResource('cal-periods', 'CalPeriodApiController');
-
-    // Cal Source
-    Route::apiResource('cal-sources', 'CalSourceApiController');
-
-    // Cal Status
-    Route::apiResource('cal-statuses', 'CalStatusApiController');
-
-    // Cal Device
-    Route::apiResource('cal-devices', 'CalDeviceApiController');
-
     // Priorities
     Route::apiResource('priorities', 'PrioritiesApiController');
 
@@ -228,4 +201,37 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
     // Validation
     Route::apiResource('validations', 'ValidationApiController');
+});
+
+Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Calsys', 'middleware' => ['auth:sanctum']], function () {
+    // Calibrated By
+    Route::apiResource('calibrated-bies', 'CalibratedByApiController');
+
+    // Calemployee
+    Route::apiResource('calemployees', 'CalemployeeApiController');
+
+    // Cal Type
+    Route::apiResource('cal-types', 'CalTypeApiController');
+
+    // Cal Location
+    Route::apiResource('cal-locations', 'CalLocationApiController');
+
+    // Cal Owner
+    Route::apiResource('cal-owners', 'CalOwnerApiController');
+
+    // Cal Period
+    Route::apiResource('cal-periods', 'CalPeriodApiController');
+
+    // Cal Source
+    Route::apiResource('cal-sources', 'CalSourceApiController');
+
+    // Cal Status
+    Route::apiResource('cal-statuses', 'CalStatusApiController');
+
+    // Cal Device
+    Route::apiResource('cal-devices', 'CalDeviceApiController');
+});
+
+Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\ProcessData', 'middleware' => ['auth:sanctum']], function () {
+
 });
