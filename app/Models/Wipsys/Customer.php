@@ -91,8 +91,9 @@ class Customer extends Model
         return $this->hasMany(Quote::class, 'customer_id', 'id');
     }
 
-    public function carrier()
+    public function customerWorkorders()
     {
-        return $this->belongsTo(Carrier::class, 'carrier_id');
-    }
+        return $this->hasMany(Workorder::class, 'customer_code', 'code');
+    }    
+
 }

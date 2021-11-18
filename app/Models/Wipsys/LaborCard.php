@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \DateTimeInterface;
+use App\Models\Wipsys\Workorder;
 
 class LaborCard extends Model
 {
@@ -78,4 +79,11 @@ class LaborCard extends Model
     {
         $this->attributes['time_finished'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
+
+
+    public function workorder()
+    {
+        return $this->belongsTo(Workorder::class, 'number', 'work_order_number');
+    }    
+    
 }

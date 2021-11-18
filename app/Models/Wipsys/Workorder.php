@@ -119,4 +119,18 @@ class Workorder extends Model
     {
         $this->attributes['invoice_date'] = $value ? Carbon::createFromFormat(config('panel.date_format'), $value)->format('Y-m-d') : null;
     }
+
+    /**
+     * Get the laborcards for a workorder.
+     */
+    public function laborcards()
+    {
+        return $this->hasMany(LaborCard::class, 'work_order_number', 'number');
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'code', 'customer_code');
+    }    
+
 }
