@@ -1,18 +1,18 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\ProcessData;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\ProcessData\Amp;
+use App\Models\ProcessData\LoggerType;
 
-class AmpFactory extends Factory
+class LoggerTypeFactory extends Factory
 {
     /**
     * The name of the factory's corresponding model.
     *
     * @var  string
     */
-    protected $model = Amp::class;
+    protected $model = LoggerType::class;
 
     /**
     * Define the model's default state.
@@ -22,9 +22,8 @@ class AmpFactory extends Factory
     public function definition(): array
     {
         return [
-            'record_id' => \App\Models\ProcessData\Record::factory(),
-            'amp' => $this->faker->randomNumber(),
-            'amp_minute' => $this->faker->randomNumber(),
+            'name' => $this->faker->name,
+            'description' => $this->faker->text,
         ];
     }
 }

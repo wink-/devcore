@@ -1,18 +1,18 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\ProcessData;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\ProcessData\LoggerType;
+use App\Models\ProcessData\Temperature;
 
-class LoggerTypeFactory extends Factory
+class TemperatureFactory extends Factory
 {
     /**
     * The name of the factory's corresponding model.
     *
     * @var  string
     */
-    protected $model = LoggerType::class;
+    protected $model = Temperature::class;
 
     /**
     * Define the model's default state.
@@ -22,8 +22,7 @@ class LoggerTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
-            'description' => $this->faker->text,
+            'record_id' => \App\Models\ProcessData\Record::factory(),
         ];
     }
 }

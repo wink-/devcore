@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\Calsys;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Calsys\Period;

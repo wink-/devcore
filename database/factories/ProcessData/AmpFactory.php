@@ -1,18 +1,18 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\ProcessData;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\ProcessData\Temperature;
+use App\Models\ProcessData\Amp;
 
-class TemperatureFactory extends Factory
+class AmpFactory extends Factory
 {
     /**
     * The name of the factory's corresponding model.
     *
     * @var  string
     */
-    protected $model = Temperature::class;
+    protected $model = Amp::class;
 
     /**
     * Define the model's default state.
@@ -23,6 +23,8 @@ class TemperatureFactory extends Factory
     {
         return [
             'record_id' => \App\Models\ProcessData\Record::factory(),
+            'amp' => $this->faker->randomNumber(),
+            'amp_minute' => $this->faker->randomNumber(),
         ];
     }
 }
