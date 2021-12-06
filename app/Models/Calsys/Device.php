@@ -45,22 +45,22 @@ class Device extends Model
 
     public function source()
     {
-        return $this->belongsTo(CalSource::class, 'source_id');
+        return $this->belongsTo(Source::class, 'sourceID');
     }
 
     public function type()
     {
-        return $this->belongsTo(CalType::class, 'type_id');
+        return $this->belongsTo(Type::class, 'typeID');
     }
 
     public function period()
     {
-        return $this->belongsTo(CalPeriod::class, 'period_id');
+        return $this->belongsTo(Period::class, 'periodID');
     }
 
     public function location()
     {
-        return $this->belongsTo(CalLocation::class, 'location_id');
+        return $this->belongsTo(Location::class, 'locationID');
     }
 
     public function getInitDateAttribute($value)
@@ -85,6 +85,6 @@ class Device extends Model
 
     public function owner()
     {
-        return $this->belongsTo(CalOwner::class, 'owner_id');
+        return $this->belongsTo(Owner::class, 'ownerID');
     }
 }

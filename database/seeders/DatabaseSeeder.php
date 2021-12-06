@@ -15,5 +15,18 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             RoleUserTableSeeder::class,
         ]);
+        $this->call([        
+            Calsys/EmployeeTableSeeder::class,
+            Calsys/DeviceTableSeeder::class,
+            Calsys/PeriodTableSeeder::class,
+            Calsys/SourceTableSeeder::class,
+            Calsys/CalibratedByTableSeeder::class,
+            Calsys/CalibrationTableSeeder::class,
+            Calsys/LocationTableSeeder::class,
+            Calsys/OwnerTableSeeder::class,
+            Calsys/StatusTableSeeder::class,
+            Calsys/TypeTableSeeder::class,
+        ]);
+        $this->call(AmpTableSeeder::class);
     }
 }

@@ -13,7 +13,7 @@ class ActionsTemp extends Model
 
     public $table = 'ActionsTemp';
 
-    public $connection = 'pacsys'
+    public $connection = 'pacsys';
 
     protected $primaryKey = 'ID';
 
